@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data & Artefak Sementara (sesuaikan jika PDF atau indeks besar tidak ingin di-commit)
+# Catatan: Jika PDF Pedoman Kurikulum boleh/perlu dibagikan lewat repo privat, hapus baris *.pdf di bawah.
+data/raw/*.pdf
+*.pkl
+*.joblib
+*.log

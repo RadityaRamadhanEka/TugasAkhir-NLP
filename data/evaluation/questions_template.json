@@ -1,0 +1,14 @@
+[
+  {
+    "id": "Q01",
+    "author": "Anggota 1",
+    "question": "Contoh: Apa prasyarat untuk mengambil Kecerdasan Artifisial Lanjut?",
+    "ground_truth": "Kecerdasan Artifisial dengan nilai minimum C.",
+    "source_page": 20,
+    "source_section": "Struktur Kurikulum",
+    "content_type": "table",
+    "question_type": "course_prerequisite",
+    "acceptance_criteria": "Menyebutkan mata kuliah prasyarat dan nilai minimum jika tercantum pada tabel.",
+    "validated_by": ""
+  }
+]

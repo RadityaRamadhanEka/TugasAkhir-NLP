@@ -1,0 +1,14 @@
+# Base & Testing
+pytest>=8.0.0
+
+# PDF & Visual Extraction (Anggota 1 - sesuaikan pilihan library yang disepakati)
+# pymupdf>=1.24.0
+# pdfplumber>=0.11.0
+# pytesseract>=0.3.10
+# pillow>=10.0.0
+
+# Classic NLP & Information Retrieval (Anggota 2, 3, 4)
+# nltk>=3.8.1
+# scikit-learn>=1.4.0
+# rank-bm25>=0.2.2
+# sastrawi>=1.0.1
