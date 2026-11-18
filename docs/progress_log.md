@@ -38,3 +38,4 @@ Gunakan dokumen ini sebagai papan kontrol progres kelompok agar setiap anggota d
 | Tanggal | Anggota | Modul / Area | Ringkasan Progres |
 |---|---|---|---|
 | 2026-11-18 | Initializer | Repository Setup | Membuat struktur folder, kontrak JSON (`src/contracts.py`), kerangka modul, unit test dasar, dan dokumentasi panduan. |
+| 2026-11-18 | Initializer | Eksplorasi Korpus | Mendokumentasikan peta 100 halaman PDF, inventarisasi 16 visual, dan temuan *edge case* di `docs/corpus_exploration.md`. |
