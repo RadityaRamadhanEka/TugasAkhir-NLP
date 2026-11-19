@@ -1,14 +1,19 @@
 # Base & Testing
 pytest>=8.0.0
 
-# PDF & Visual Extraction (Anggota 1 - sesuaikan pilihan library yang disepakati)
-# pymupdf>=1.24.0
-# pdfplumber>=0.11.0
+# PDF & Visual Extraction (Anggota 1)
+pymupdf>=1.24.0
+pdfplumber>=0.11.0
+pillow>=10.0.0
+# Opsional bila memakai OCR lokal (butuh binary Tesseract terpasang di OS):
 # pytesseract>=0.3.10
-# pillow>=10.0.0
 
-# Classic NLP & Information Retrieval (Anggota 2, 3, 4)
-# nltk>=3.8.1
-# scikit-learn>=1.4.0
-# rank-bm25>=0.2.2
-# sastrawi>=1.0.1
+# Classic NLP, POS Tagging, Stemming & ML Classification (Anggota 2, 3, 5)
+# Catatan: Seluruh library bersifat Classic NLP/IR (tanpa LLM).
+nltk>=3.8.1
+Sastrawi>=1.0.1
+scikit-learn>=1.4.0
+python-crfsuite>=0.9.10
+
+# Information Retrieval (Anggota 4)
+rank-bm25>=0.2.2

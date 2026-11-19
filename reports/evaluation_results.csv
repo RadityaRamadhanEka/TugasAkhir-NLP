@@ -1,1 +1,1 @@
-id,pertanyaan,jawaban_acuan,jawaban_sistem,sumber,status,analisis
+id,pertanyaan,speech_act,question_category,answer_type,jawaban_acuan,jawaban_sistem,top_candidates,correct_rank,reciprocal_rank,sumber_pdf_page,sumber_doc_page,status,analisis

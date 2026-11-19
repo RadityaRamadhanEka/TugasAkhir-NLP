@@ -1,6 +1,6 @@
 # Sistem Question Answering Kurikulum 2024 Teknik Informatika UB
 
-Proyek Akhir Mata Kuliah **Pemrosesan Bahasa Alami (NLP)** — membangun sistem *Question Answering* faktual berbasis **Classic NLP & Information Retrieval (tanpa LLM)** dengan korpus utama *Buku Pedoman Pelaksanaan Kurikulum 2024 Teknik Informatika Universitas Brawijaya*.
+Proyek Akhir Mata Kuliah **Pemrosesan Bahasa Alami (NLP)** — membangun sistem *Question Answering* faktual berbasis **Classic NLP & Hybrid QA (IR-based + Structured Knowledge Base, tanpa LLM)** sesuai materi PBA14, dengan korpus utama *Buku Pedoman Pelaksanaan Kurikulum 2024 Teknik Informatika Universitas Brawijaya*.
 
 Dokumen pembagian tugas lengkap dapat dibaca di [brief-task-delegation-qa-kurikulum-tif-revisi.md](brief-task-delegation-qa-kurikulum-tif-revisi.md).
 
@@ -12,11 +12,11 @@ Isi nama anggota kelompok pada tabel berikut (dan di `docs/progress_log.md`) set
 
 | Peran | Modul / Folder | Tanggung Jawab Utama | Nama Anggota |
 |---|---|---|---|
-| **Anggota 1** | `src/document_ingestion/` | Ekstraksi teks, tabel, dan visual/OCR dari PDF | *(Belum diisi)* |
-| **Anggota 2** | `src/preprocessing/` | Pembersihan teks, normalisasi, pembentukan *passage* & metadata | *(Belum diisi)* |
-| **Anggota 3** | `src/question_processing/` | Klasifikasi pertanyaan, POS tagging, ekstraksi entitas & *answer type* | *(Belum diisi)* |
-| **Anggota 4** | `src/retrieval/` | Indexing & *passage retrieval* (TF-IDF / BM25 + ranking) | *(Belum diisi)* |
-| **Anggota 5** | `src/answer_processing/` & `src/pipeline/` | Ekstraksi jawaban, *source tracking*, integrasi & evaluasi | *(Belum diisi)* |
+| **Anggota 1** | `src/document_ingestion/` | Ekstraksi teks, tabel, dan visual/OCR dari PDF (`pdf_page` & `doc_page`) | *(Belum diisi)* |
+| **Anggota 2** | `src/preprocessing/` | Pembersihan teks, tokenisasi, stopword selektif, stemming Sastrawi, *passage* & *Knowledge Triples* | *(Belum diisi)* |
+| **Anggota 3** | `src/question_processing/` | POS tagging, Hybrid Question Classifier, *Answer Type* (Li & Roth), *Focus*, entitas/relasi, & *Query Expansion* | *(Belum diisi)* |
+| **Anggota 4** | `src/retrieval/` | Indexing (TF-IDF / BM25 + KB Triples), *passage & relation retrieval*, serta *Passage Reranking* (6 fitur PBA14) | *(Belum diisi)* |
+| **Anggota 5** | `src/answer_processing/` & `src/pipeline/` | Answer-type NER & Pattern Extraction, *Candidate Ranking* (8 fitur + *Confidence Merging*), integrasi & evaluasi (**Accuracy + MRR**) | *(Belum diisi)* |
 
 ---
 

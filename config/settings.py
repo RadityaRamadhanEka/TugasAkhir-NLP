@@ -17,12 +17,14 @@ EVALUATION_DATA_DIR = DATA_DIR / "evaluation"
 REPORTS_DIR = BASE_DIR / "reports"
 SCREENSHOTS_DIR = REPORTS_DIR / "screenshots"
 
-# Nama file default yang disepakati tim (dapat disesuaikan bersama)
-DEFAULT_RAW_PDF = RAW_DATA_DIR / "pedoman_kurikulum_2024_tif.pdf"
+# Nama file default yang disepakati tim (sesuai berkas aktual di data/raw/)
+DEFAULT_RAW_PDF = RAW_DATA_DIR / "Buku-Pedoman-Pelaksanaan-Kurikulum-2024-TIF-V.1.0.pdf"
 DEFAULT_CORPUS_FILE = PROCESSED_DATA_DIR / "passages.jsonl"
+DEFAULT_KB_FILE = PROCESSED_DATA_DIR / "knowledge_triples.jsonl"
 DEFAULT_EVALUATION_FILE = EVALUATION_DATA_DIR / "questions.json"
 DEFAULT_EVAL_RESULTS_FILE = REPORTS_DIR / "evaluation_results.csv"
 
-# Parameter default retrieval & fallback
+# Parameter default retrieval, candidate ranking (MRR), & fallback
 DEFAULT_TOP_K = 5
+DEFAULT_ANSWER_TOP_M = 5
 MIN_CONFIDENCE_THRESHOLD = 0.2

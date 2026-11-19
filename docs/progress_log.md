@@ -19,7 +19,8 @@ Gunakan dokumen ini sebagai papan kontrol progres kelompok agar setiap anggota d
 ## 2. Checklist Milestone (M1 – M9)
 
 - [x] **M1 (Setup Awal)** — Struktur repository, kontrak interface (`src/contracts.py`), dan template evaluasi dibuat.
-- [ ] **M1 (Lanjutan)** — Pembagian 5 anggota disepakati, PDF korpus tersedia di `data/raw/`, library di `requirements.txt` disepakati.
+- [x] **M1 (Audit PBA14 & Korpus)** — PDF korpus tersedia di `data/raw/`, arsitektur diselaraskan dengan materi PBA14 (Hybrid IR + KB-QA, Li & Roth answer type, Focus/POS/Query Expansion, 6 fitur Passage Reranking, 8 fitur Candidate Ranking, & metrik MRR), dan `requirements.txt` diperbarui.
+- [ ] **M1 (Finalisasi Tim)** — Pembagian nama/NIM 5 anggota disepakati dan environment lokal terpasang di tiap anggota.
 - [ ] **M2 — Corpus extraction** (`Anggota 1`): Teks, tabel, dan inventarisasi visual berhasil diekstrak ke `data/extracted/`.
 - [ ] **M3 — Processed corpus** (`Anggota 2`): Korpus bersih, passage, dan metadata tersedia di `data/processed/`.
 - [ ] **M4 — Question processing** (`Anggota 3`): Klasifikasi pertanyaan, entitas, dan answer type berjalan.
@@ -39,3 +40,4 @@ Gunakan dokumen ini sebagai papan kontrol progres kelompok agar setiap anggota d
 |---|---|---|---|
 | 2026-11-18 | Initializer | Repository Setup | Membuat struktur folder, kontrak JSON (`src/contracts.py`), kerangka modul, unit test dasar, dan dokumentasi panduan. |
 | 2026-11-18 | Initializer | Eksplorasi Korpus | Mendokumentasikan peta 100 halaman PDF, inventarisasi 16 visual, dan temuan *edge case* di `docs/corpus_exploration.md`. |
+| 2026-11-19 | Initializer | Audit Materi PBA14 | Menyelaraskan `src/contracts.py`, arsitektur Hybrid IR+KB QA, modul `query_formulator.py`, pipeline reranking, `config/settings.py`, dan metrik evaluasi **Accuracy + MRR** sesuai slide PBA14. |
