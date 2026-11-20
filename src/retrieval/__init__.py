@@ -1,1 +1,1 @@
-"""Modul Passage Retrieval & Ranking (Owner: Anggota 4)."""
+"""Modul Passage Retrieval & Ranking (Owner: Anggota 4 — Azza Arsyada)."""

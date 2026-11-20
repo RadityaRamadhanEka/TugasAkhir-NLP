@@ -71,8 +71,8 @@ Hal-hal berikut ditemukan langsung pada korpus dan perlu ditangani saat *preproc
 
 ## 5. Implikasi Praktis per Modul (Tanpa Mengubah Pembagian Tugas)
 
-* **Anggota 1 (Ingestion):** Prioritaskan `pdfplumber` / `PyMuPDF` untuk tabel terstruktur + transkripsi terstruktur untuk Gambar 7.1–7.11. Simpan `pdf_page` dan `doc_page`.
-* **Anggota 2 (Preprocessing):** Gabungkan tabel/silabus yang terpotong lintas halaman, ubah simbol `✓` menjadi teks eksplisit (mis. `"Praktikum: Ya"` atau daftar kode CPL yang dicentang), bersihkan artefak seperti `CPMK-1 (%):`, dan pertahankan kode MK (`CIF...`, `COM...`, `MPK...`, `UBU...`).
-* **Anggota 3 (Question Processing):** Kenali pola entitas kode MK (`[A-Z]{3}\d{5}(-5)?`), nomor semester (`1–8`, `antara`), angka SKS, nama *learning path*, dan kode CPL (`IF_CPL_...`).
-* **Anggota 4 (Retrieval):** Pastikan tokenizer tidak menghapus atau memecah kode MK dan angka semester/SKS, serta pertimbangkan *boosting* bila kode MK atau nama MK cocok persis.
-* **Anggota 5 (Answer Extraction & Evaluasi):** Selalu tampilkan halaman sumber (`doc_page` / `pdf_page`) dan nama bagian/tabel, serta catat ketidakkonsistenan dokumen asli jika memengaruhi hasil evaluasi.
+* **Anggota 1 — Mas Syafiq (Ingestion):** Prioritaskan `pdfplumber` / `PyMuPDF` untuk tabel terstruktur + transkripsi terstruktur untuk Gambar 7.1–7.11. Simpan `pdf_page` dan `doc_page`.
+* **Anggota 2 — Radit (Preprocessing):** Gabungkan tabel/silabus yang terpotong lintas halaman, ubah simbol `✓` menjadi teks eksplisit (mis. `"Praktikum: Ya"` atau daftar kode CPL yang dicentang), bersihkan artefak seperti `CPMK-1 (%):`, dan pertahankan kode MK (`CIF...`, `COM...`, `MPK...`, `UBU...`).
+* **Anggota 3 — Yusuf (Question Processing):** Kenali pola entitas kode MK (`[A-Z]{3}\d{5}(-5)?`), nomor semester (`1–8`, `antara`), angka SKS, nama *learning path*, dan kode CPL (`IF_CPL_...`).
+* **Anggota 4 — Azza Arsyada (Retrieval):** Pastikan tokenizer tidak menghapus atau memecah kode MK dan angka semester/SKS, serta pertimbangkan *boosting* bila kode MK atau nama MK cocok persis.
+* **Anggota 5 — Zulfan (Answer Extraction & Evaluasi):** Selalu tampilkan halaman sumber (`doc_page` / `pdf_page`) dan nama bagian/tabel, serta catat ketidakkonsistenan dokumen asli jika memengaruhi hasil evaluasi.

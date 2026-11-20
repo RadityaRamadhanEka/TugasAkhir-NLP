@@ -101,9 +101,17 @@ Answer + Source (pdf_page, doc_page, section, table_title)
 
 ## 4. Pembagian Tanggung Jawab Lima Anggota
 
-Nama anggota dapat diisi setelah kelompok menyepakati pembagian. Setiap anggota menjadi *owner* untuk satu modul utama dan bertanggung jawab menulis dokumentasi modul tersebut.
+Setiap anggota menjadi *owner* untuk satu modul utama dan bertanggung jawab menulis dokumentasi modul tersebut:
 
-### Anggota 1 — Document Ingestion & PDF Extraction
+| Peran | Nama Anggota | Modul Utama |
+|---|---|---|
+| **Anggota 1** | **Mas Syafiq** | `src/document_ingestion/` (Document Ingestion & PDF Extraction) |
+| **Anggota 2** | **Radit** | `src/preprocessing/` (Text Preprocessing, Structuring & Passage Dataset) |
+| **Anggota 3** | **Yusuf** | `src/question_processing/` (Question Processing & NLP Analysis) |
+| **Anggota 4** | **Azza Arsyada** | `src/retrieval/` (Passage Retrieval & Ranking) |
+| **Anggota 5** | **Zulfan** | `src/answer_processing/` & `src/pipeline/` (Answer Extraction, System Integration & Evaluation) |
+
+### Anggota 1 — Document Ingestion & PDF Extraction (Mas Syafiq)
 
 **Fokus:** Mengubah PDF menjadi data digital terstruktur yang dapat diproses modul selanjutnya.
 
@@ -131,7 +139,7 @@ Nama anggota dapat diisi setelah kelompok menyepakati pembagian. Setiap anggota 
 
 ---
 
-### Anggota 2 — Text Preprocessing, Structuring & Passage Dataset
+### Anggota 2 — Text Preprocessing, Structuring & Passage Dataset (Radit)
 
 **Fokus:** Membersihkan dan mengubah hasil ekstraksi menjadi korpus/passage yang siap diindeks.
 
@@ -157,7 +165,7 @@ Nama anggota dapat diisi setelah kelompok menyepakati pembagian. Setiap anggota 
 
 ---
 
-### Anggota 3 — Question Processing & NLP Analysis
+### Anggota 3 — Question Processing & NLP Analysis (Yusuf)
 
 **Fokus:** Memproses pertanyaan pengguna agar sistem mengetahui maksud pertanyaan dan tipe jawaban yang diharapkan.
 
@@ -192,7 +200,7 @@ Nama anggota dapat diisi setelah kelompok menyepakati pembagian. Setiap anggota 
 
 ---
 
-### Anggota 4 — Passage Retrieval & Ranking
+### Anggota 4 — Passage Retrieval & Ranking (Azza Arsyada)
 
 **Fokus:** Menemukan passage yang paling relevan terhadap pertanyaan pengguna.
 
@@ -219,7 +227,7 @@ Nama anggota dapat diisi setelah kelompok menyepakati pembagian. Setiap anggota 
 
 ---
 
-### Anggota 5 — Answer Extraction, System Integration & Evaluation
+### Anggota 5 — Answer Extraction, System Integration & Evaluation (Zulfan)
 
 **Fokus:** Mengambil jawaban dari passage terpilih, mengintegrasikan modul, dan menguji sistem secara menyeluruh.
 
@@ -435,12 +443,12 @@ Format tersebut hanya contoh awal. Kelompok boleh mengubah skema selama disepaka
 | Milestone | Target keluaran | Owner utama |
 |---|---|---|
 | M1 — Project setup | Struktur repository, environment, pembagian modul, format data disepakati | Semua anggota |
-| M2 — Corpus extraction | Teks, tabel, dan inventarisasi visual berhasil diekstrak | Anggota 1 |
-| M3 — Processed corpus | Korpus bersih, passage, dan metadata tersedia | Anggota 2 |
-| M4 — Question processing | Klasifikasi pertanyaan, entity, dan answer type berjalan | Anggota 3 |
-| M5 — Retrieval | Indeks dan top-k passage retrieval berjalan | Anggota 4 |
-| M6 — Answer extraction | Kandidat jawaban dan source tracking berjalan | Anggota 5 |
-| M7 — End-to-end integration | Pertanyaan dapat diproses sampai jawaban dan sumber ditampilkan | Semua anggota; Anggota 5 mengoordinasikan |
+| M2 — Corpus extraction | Teks, tabel, dan inventarisasi visual berhasil diekstrak | Anggota 1 (Mas Syafiq) |
+| M3 — Processed corpus | Korpus bersih, passage, dan metadata tersedia | Anggota 2 (Radit) |
+| M4 — Question processing | Klasifikasi pertanyaan, entity, dan answer type berjalan | Anggota 3 (Yusuf) |
+| M5 — Retrieval | Indeks dan top-k passage retrieval berjalan | Anggota 4 (Azza Arsyada) |
+| M6 — Answer extraction | Kandidat jawaban dan source tracking berjalan | Anggota 5 (Zulfan) |
+| M7 — End-to-end integration | Pertanyaan dapat diproses sampai jawaban dan sumber ditampilkan | Semua anggota; Anggota 5 (Zulfan) mengoordinasikan |
 | M8 — Evaluation | 20 pertanyaan, ground truth, hasil benar/salah, dan analisis tersedia | Semua anggota |
 | M9 — Report finalization | Laporan, source code, korpus, dan berkas pendukung siap dikumpulkan | Semua anggota |
 

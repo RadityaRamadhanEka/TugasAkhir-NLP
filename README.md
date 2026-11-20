@@ -8,15 +8,15 @@ Dokumen pembagian tugas lengkap dapat dibaca di [brief-task-delegation-qa-kuriku
 
 ## Pembagian Modul & Owner
 
-Isi nama anggota kelompok pada tabel berikut (dan di `docs/progress_log.md`) setelah disepakati:
+Daftar pembagian tanggung jawab anggota kelompok (tercatat juga di [docs/progress_log.md](docs/progress_log.md)):
 
 | Peran | Modul / Folder | Tanggung Jawab Utama | Nama Anggota |
 |---|---|---|---|
-| **Anggota 1** | `src/document_ingestion/` | Ekstraksi teks, tabel, dan visual/OCR dari PDF (`pdf_page` & `doc_page`) | *(Belum diisi)* |
-| **Anggota 2** | `src/preprocessing/` | Pembersihan teks, tokenisasi, stopword selektif, stemming Sastrawi, *passage* & *Knowledge Triples* | *(Belum diisi)* |
-| **Anggota 3** | `src/question_processing/` | POS tagging, Hybrid Question Classifier, *Answer Type* (Li & Roth), *Focus*, entitas/relasi, & *Query Expansion* | *(Belum diisi)* |
-| **Anggota 4** | `src/retrieval/` | Indexing (TF-IDF / BM25 + KB Triples), *passage & relation retrieval*, serta *Passage Reranking* (6 fitur PBA14) | *(Belum diisi)* |
-| **Anggota 5** | `src/answer_processing/` & `src/pipeline/` | Answer-type NER & Pattern Extraction, *Candidate Ranking* (8 fitur + *Confidence Merging*), integrasi & evaluasi (**Accuracy + MRR**) | *(Belum diisi)* |
+| **Anggota 1** | `src/document_ingestion/` | Ekstraksi teks, tabel, dan visual/OCR dari PDF (`pdf_page` & `doc_page`) | **Mas Syafiq** |
+| **Anggota 2** | `src/preprocessing/` | Pembersihan teks, tokenisasi, stopword selektif, stemming Sastrawi, *passage* & *Knowledge Triples* | **Radit** |
+| **Anggota 3** | `src/question_processing/` | POS tagging, Hybrid Question Classifier, *Answer Type* (Li & Roth), *Focus*, entitas/relasi, & *Query Expansion* | **Yusuf** |
+| **Anggota 4** | `src/retrieval/` | Indexing (TF-IDF / BM25 + KB Triples), *passage & relation retrieval*, serta *Passage Reranking* (6 fitur PBA14) | **Azza Arsyada** |
+| **Anggota 5** | `src/answer_processing/` & `src/pipeline/` | Answer-type NER & Pattern Extraction, *Candidate Ranking* (8 fitur + *Confidence Merging*), integrasi & evaluasi (**Accuracy + MRR**) | **Zulfan** |
 
 ---
 
