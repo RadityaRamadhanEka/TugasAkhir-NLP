@@ -1,0 +1,84 @@
+[
+  {
+    "id": "Q09",
+    "author": "Yusuf (Anggota 3)",
+    "question": "Apa saja mata kuliah prasyarat dan nilai minimumnya untuk mengambil mata kuliah Jaringan Saraf Tiruan?",
+    "speech_act": "wh",
+    "question_category": "factoid",
+    "expected_answer_type_coarse": "ENTITY",
+    "expected_answer_type": "ENTITY:prerequisite",
+    "ground_truth": "Kecerdasan Artifisial Lanjut (CIF64311) dengan nilai minimum C.",
+    "acceptable_variants": [
+      "CIF64311 Kecerdasan Artifisial Lanjut dengan nilai minimum C",
+      "Kecerdasan Artifisial Lanjut minimal C"
+    ],
+    "source_pdf_page": 21,
+    "source_doc_page": "13",
+    "source_section": "6. Struktur Kurikulum (Tabel Semester 5)",
+    "content_type": "table",
+    "question_type": "course_prerequisite",
+    "acceptance_criteria": "Menyebutkan mata kuliah prasyarat Kecerdasan Artifisial Lanjut (atau kode CIF64311) beserta nilai minimum C.",
+    "validated_by": ""
+  },
+  {
+    "id": "Q10",
+    "author": "Yusuf (Anggota 3)",
+    "question": "Mata kuliah wajib pilihan apa saja yang tercantum pada Learning Path NLP Engineer beserta SKS masing-masing?",
+    "speech_act": "wh",
+    "question_category": "list",
+    "expected_answer_type_coarse": "ENTITY",
+    "expected_answer_type": "ENTITY:course_list",
+    "ground_truth": "Pemrosesan Bahasa Alami (3 SKS) dan Pemerolehan Informasi dan Penambangan Teks (4 SKS).",
+    "acceptable_variants": [
+      "CIF61341 Pemrosesan Bahasa Alami (3 SKS) dan CIF62340 Pemerolehan Informasi dan Penambangan Teks (4 SKS)",
+      "Pemrosesan Bahasa Alami 3 sks, Pemerolehan Informasi dan Penambangan Teks 4 sks"
+    ],
+    "source_pdf_page": 34,
+    "source_doc_page": "26",
+    "source_section": "7.1 Learning path (Gambar 7.10 MK Learning Path NLP Engineer)",
+    "content_type": "visual",
+    "question_type": "learning_path",
+    "acceptance_criteria": "Menyebutkan kedua mata kuliah pada Gambar 7.10 yaitu Pemrosesan Bahasa Alami (3 SKS) dan Pemerolehan Informasi dan Penambangan Teks (4 SKS).",
+    "validated_by": ""
+  },
+  {
+    "id": "Q11",
+    "author": "Yusuf (Anggota 3)",
+    "question": "Bagaimana aturan peralihan bagi mahasiswa yang mendapatkan nilai D pada mata kuliah berkode Kurikulum 2024 yang menjadi prasyarat nilai minimum C?",
+    "speech_act": "wh",
+    "question_category": "narrative",
+    "expected_answer_type_coarse": "DESCRIPTION",
+    "expected_answer_type": "DESCRIPTION:manner",
+    "ground_truth": "Mahasiswa yang mendapatkan nilai D pada mata kuliah dengan kode Kurikulum 2024 diwajibkan melakukan perbaikan, sedangkan mahasiswa yang menempuh MK pada Kurikulum 2020 dan 2018 tetap dapat menggunakan MK tersebut dengan prasyarat nilai D.",
+    "acceptable_variants": [
+      "Wajib melakukan perbaikan nilai untuk kode Kurikulum 2024; kode Kurikulum 2020/2018 tetap boleh dengan nilai D."
+    ],
+    "source_pdf_page": 45,
+    "source_doc_page": "37",
+    "source_section": "9.2 Aturan Peralihan pada Kurikulum 2024 (Poin 6)",
+    "content_type": "text",
+    "question_type": "curriculum_transition",
+    "acceptance_criteria": "Menjelaskan bahwa nilai D pada MK berkode Kurikulum 2024 wajib diperbaiki (sedangkan MK Kurikulum 2020/2018 masih dapat memakai nilai D).",
+    "validated_by": ""
+  },
+  {
+    "id": "Q12",
+    "author": "Yusuf (Anggota 3)",
+    "question": "Apa isi capaian pembelajaran lulusan IF_CPL_KK1 pada Program Studi Teknik Informatika?",
+    "speech_act": "wh",
+    "question_category": "definition",
+    "expected_answer_type_coarse": "DESCRIPTION",
+    "expected_answer_type": "DESCRIPTION:definition",
+    "ground_truth": "Mampu menerapkan prinsip-prinsip rekayasa dalam pengembangan perangkat lunak sebagai solusi berbasis komputasi yang berkualitas pada berbagai platform.",
+    "acceptable_variants": [
+      "Mampu menerapkan prinsip rekayasa dalam pengembangan perangkat lunak sebagai solusi komputasi berkualitas pada berbagai platform."
+    ],
+    "source_pdf_page": 13,
+    "source_doc_page": "6",
+    "source_section": "3. Capaian Pembelajaran Program Studi (Tabel 3.1)",
+    "content_type": "table",
+    "question_type": "cpl",
+    "acceptance_criteria": "Menyebutkan inti kemampuan rekayasa pengembangan perangkat lunak berkualitas pada berbagai platform sesuai Tabel 3.1.",
+    "validated_by": ""
+  }
+]
