@@ -1,0 +1,169 @@
+<kalimat id=1>
+apa	WH
+prasyarat	NN
+kecerdasan	NNP
+artifisial	NNP
+lanjut	NNP
+</kalimat>
+<kalimat id=2>
+berapa	WH
+sks	NN
+mata	NN
+kuliah	NN
+basis	NNP
+data	NNP
+</kalimat>
+<kalimat id=3>
+sebutkan	VB
+mata	NN
+kuliah	NN
+pada	IN
+semester	NN
+3	CD
+</kalimat>
+<kalimat id=4>
+apakah	WH
+sistem	NNP
+operasi	NNP
+memiliki	VB
+praktikum	NN
+</kalimat>
+<kalimat id=5>
+tolong	VB
+jelaskan	VB
+aturan	NN
+peralihan	NN
+untuk	SC
+mahasiswa	NN
+semester	NN
+5	CD
+</kalimat>
+<kalimat id=6>
+apa	WH
+kode	NN
+mk	NN
+untuk	SC
+jaringan	NNP
+komputer	NNP
+</kalimat>
+<kalimat id=7>
+mata	NN
+kuliah	NN
+apa	WH
+yang	SC
+berkode	VB
+cif63110	NNP
+</kalimat>
+<kalimat id=8>
+berapa	WH
+nilai	NN
+minimum	JJ
+prasyarat	NN
+jaringan	NNP
+saraf	NNP
+tiruan	NNP
+</kalimat>
+<kalimat id=9>
+sistem	NNP
+operasi	NNP
+diambil	VB
+pada	IN
+semester	NN
+berapa	WH
+</kalimat>
+<kalimat id=10>
+apa	WH
+isi	NN
+capaian	NN
+pembelajaran	NN
+if_cpl_kk1	NNP
+</kalimat>
+<kalimat id=11>
+mata	NN
+kuliah	NN
+apa	WH
+saja	RB
+pada	IN
+learning	NNP
+path	NNP
+nlp	NNP
+engineer	NNP
+</kalimat>
+<kalimat id=12>
+mk	NN
+pilihan	NN
+apa	WH
+saja	RB
+di	IN
+kelompok	NN
+perekayasa	NNP
+komputasi	NNP
+cerdas	NNP
+</kalimat>
+<kalimat id=13>
+apa	WH
+kepanjangan	NN
+dari	IN
+mbkm	NNP
+</kalimat>
+<kalimat id=14>
+berapa	WH
+total	NN
+sks	NN
+mata	NN
+kuliah	NN
+muatan	NN
+program	NN
+studi	NN
+</kalimat>
+<kalimat id=15>
+apa	WH
+visi	NN
+program	NN
+studi	NN
+teknik	NNP
+informatika	NNP
+</kalimat>
+<kalimat id=16>
+apa	WH
+saja	RB
+profil	NN
+lulusan	NN
+teknik	NNP
+informatika	NNP
+</kalimat>
+<kalimat id=17>
+apa	WH
+yang	SC
+dipelajari	VB
+di	IN
+mk	NN
+komputer	NNP
+grafis	NNP
+</kalimat>
+<kalimat id=18>
+mk	NN
+kurikulum	NN
+2024	CD
+apa	WH
+yang	SC
+setara	JJ
+dengan	IN
+cif61011	NNP
+</kalimat>
+<kalimat id=19>
+apa	WH
+saja	RB
+bentuk	NN
+kegiatan	NN
+merdeka	NNP
+belajar	NNP
+</kalimat>
+<kalimat id=20>
+adakah	WH
+praktikum	NN
+pada	IN
+rekayasa	NNP
+perangkat	NNP
+lunak	NNP
+</kalimat>

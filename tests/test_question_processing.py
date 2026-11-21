@@ -152,4 +152,49 @@ def test_detect_speech_act_rules_and_traps() -> None:
     assert detect_speech_act("brp sks apb?") == "wh"
 
 
+def test_idn_corpus_multiword_splitter() -> None:
+    from src.question_processing.train_pos_tagger import parse_idn_tsv
+
+    sample_tsv = "<kalimat id=1>\npesta olahraga\tNN\n.\tZ\n</kalimat>\n"
+    sentences = parse_idn_tsv(sample_tsv)
+    assert sentences == [[("pesta", "NN"), ("olahraga", "NN"), (".", "Z")]]
+
+
+def test_pos_tag_question_domain_overrides() -> None:
+    from src.question_processing.query_formulator import pos_tag_question
+
+    tagged = pos_tag_question(["apa", "prasyarat", "kecerdasan", "artifisial", "lanjut"])
+    assert tagged == [
+        ("apa", "WH"),
+        ("prasyarat", "NN"),
+        ("kecerdasan", "NNP"),
+        ("artifisial", "NNP"),
+        ("lanjut", "NNP"),
+    ]
+    tagged_code = pos_tag_question(["sebutkan", "sks", "cif63110", "semester", "3", "if_cpl_kk1"])
+    tag_map = dict(tagged_code)
+    assert tag_map["sebutkan"] == "VB"
+    assert tag_map["cif63110"] == "NNP"
+    assert tag_map["3"] == "CD"
+    assert tag_map["if_cpl_kk1"] == "NNP"
+
+
+def test_pos_tag_question_fallback_without_model(monkeypatch, tmp_path) -> None:
+    import pytest
+    from src.question_processing import query_formulator
+
+    query_formulator._load_crf_tagger.cache_clear()
+    monkeypatch.setattr(query_formulator, "_POS_MODEL_PATH", tmp_path / "missing.crfsuite")
+    try:
+        with pytest.warns(UserWarning):
+            tagged = query_formulator.pos_tag_question(["apa", "sks", "basis", "data"])
+        assert len(tagged) == 4
+        assert tagged[0] == ("apa", "WH")
+        assert tagged[2] == ("basis", "NNP")
+        assert tagged[3] == ("data", "NNP")
+    finally:
+        query_formulator._load_crf_tagger.cache_clear()
+
+
+
 
