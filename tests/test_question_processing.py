@@ -82,3 +82,35 @@ def test_eval_q09_q12_draft_schema() -> None:
         assert isinstance(it["source_pdf_page"], int)
         assert it["ground_truth"]
 
+
+def test_course_lexicon_coverage_and_inconsistencies() -> None:
+    from src.question_processing.resources import load_course_lexicon
+
+    lex = load_course_lexicon()
+    courses_2024 = lex["courses_2024"]
+    courses_2020 = lex["courses_2020"]
+    code_aliases = lex["code_aliases"]
+
+    total_unique_codes = len(courses_2024) + len(courses_2020) + len(code_aliases)
+    assert total_unique_codes >= 120
+    assert courses_2024["CIF64311"]["name"] == "Kecerdasan Artifisial Lanjut"
+    assert courses_2024["CIF63110"]["name"] == "Kecerdasan Artifisial"
+    assert code_aliases["CIF63107"] == "CIF63106"
+    assert courses_2024["CIF63106"]["name"] == "Analisis dan Perancangan Sistem"
+    assert code_aliases["CIF60050"] == "CIF60048"
+    assert courses_2024["CIF60048"]["name"] == "Machine Learning Operations (MLOps)"
+    assert courses_2024["CIF61235"]["name"] == "Forensik Digital"
+    assert courses_2020["CIF61011"]["equivalent_2024_code"] == "CIF63110"
+
+
+def test_domain_lexicon_structure() -> None:
+    from src.question_processing.resources import load_domain_lexicon
+
+    dom = load_domain_lexicon()
+    assert len(dom["learning_paths"]) == 11
+    assert len(dom["cpl_codes"]) == 11
+    assert len(dom["elective_groups"]) == 3
+    for key in ("abbreviations", "synonyms", "wh_words", "command_words", "question_stopwords"):
+        assert key in dom and len(dom[key]) > 0
+
+

@@ -1,0 +1,239 @@
+{
+  "learning_paths": {
+    "Frontend Developer": [
+      "frontend developer",
+      "front end developer",
+      "frontend",
+      "front end"
+    ],
+    "Backend Developer": [
+      "backend developer",
+      "back end developer",
+      "backend",
+      "back end"
+    ],
+    "Game Developer": [
+      "game developer",
+      "pengembang gim",
+      "game dev"
+    ],
+    "Cloud Engineer": [
+      "cloud engineer",
+      "cloud computing",
+      "cloud"
+    ],
+    "Security Engineer": [
+      "security engineer",
+      "keamanan siber",
+      "cyber security",
+      "cybersecurity"
+    ],
+    "Network Engineer": [
+      "network engineer",
+      "jaringan"
+    ],
+    "AI/ML Engineer": [
+      "ai/ml engineer",
+      "ai/ ml engineer",
+      "ai ml engineer",
+      "aiml engineer",
+      "machine learning engineer",
+      "ai/ml"
+    ],
+    "Computer Vision Engineer": [
+      "computer vision engineer",
+      "visi komputer",
+      "cv engineer"
+    ],
+    "Data Scientist": [
+      "data scientist",
+      "data science",
+      "sains data"
+    ],
+    "NLP Engineer": [
+      "nlp engineer",
+      "pemrosesan bahasa alami engineer"
+    ],
+    "AI Research Scientist": [
+      "ai research scientist",
+      "peneliti ai",
+      "research scientist"
+    ]
+  },
+  "elective_groups": {
+    "Pengembang Perekayasa Perangkat Lunak": [
+      "pengembang perekayasa perangkat lunak",
+      "perekayasa perangkat lunak",
+      "rekayasa perangkat lunak pilihan",
+      "kelompok perangkat lunak"
+    ],
+    "Perekayasa Infrastruktur Komputasi": [
+      "perekayasa infrastruktur komputasi",
+      "infrastruktur komputasi",
+      "kelompok infrastruktur"
+    ],
+    "Perekayasa Komputasi Cerdas": [
+      "perekayasa komputasi cerdas",
+      "komputasi cerdas",
+      "kelompok komputasi cerdas"
+    ]
+  },
+  "cpl_codes": [
+    "IF_CPL_S1",
+    "IF_CPL_S2",
+    "IF_CPL_P1",
+    "IF_CPL_P2",
+    "IF_CPL_KU1",
+    "IF_CPL_KU2",
+    "IF_CPL_KU3",
+    "IF_CPL_KK1",
+    "IF_CPL_KK2",
+    "IF_CPL_KK3",
+    "IF_CPL_KP2"
+  ],
+  "abbreviations": {
+    "MBKM": "Merdeka Belajar Kampus Merdeka",
+    "SKS": "Satuan Kredit Semester",
+    "CPL": "Capaian Pembelajaran Lulusan",
+    "CPMK": "Capaian Pembelajaran Mata Kuliah",
+    "MK": "Mata Kuliah",
+    "MKU": "Mata Kuliah Muatan Nasional",
+    "MKWK": "Mata Kuliah Wajib Kurikulum",
+    "MKLP": "Mata Kuliah Lintas Prodi",
+    "PKM": "Pengabdian kepada Masyarakat",
+    "PKL": "Praktik Kerja Lapangan",
+    "BK": "Bahan Kajian",
+    "OBE": "Outcome Based Education",
+    "SA": "Semester Antara",
+    "NLP": "Pemrosesan Bahasa Alami",
+    "AI": "Kecerdasan Artifisial",
+    "TIF": "Teknik Informatika",
+    "UB": "Universitas Brawijaya"
+  },
+  "synonyms": {
+    "mk": ["mata kuliah", "matakuliah", "matkul"],
+    "mata kuliah": ["mk"],
+    "prasyarat": ["syarat", "syarat ambil", "mk prasyarat"],
+    "syarat": ["prasyarat"],
+    "sks": ["satuan kredit semester", "bobot sks", "jumlah sks"],
+    "nilai minimum": ["nilai minimal", "syarat nilai"],
+    "nilai minimal": ["nilai minimum"],
+    "ai": ["kecerdasan artifisial", "kecerdasan buatan"],
+    "ka": ["kecerdasan artifisial"],
+    "nlp": ["pemrosesan bahasa alami"],
+    "mbkm": ["merdeka belajar", "merdeka belajar kampus merdeka", "kampus merdeka"],
+    "cpl": ["capaian pembelajaran lulusan", "capaian pembelajaran"],
+    "setara": ["ekuivalen", "pengganti", "penyetaraan"],
+    "aturan peralihan": ["ketentuan peralihan", "transisi kurikulum"],
+    "praktikum": ["praktik", "modul praktikum"],
+    "pilihan": ["elektif"]
+  },
+  "wh_words": [
+    "apa",
+    "apakah",
+    "siapa",
+    "siapakah",
+    "berapa",
+    "berapakah",
+    "kapan",
+    "kapankah",
+    "dimana",
+    "mana",
+    "manakah",
+    "mengapa",
+    "kenapa",
+    "bagaimana",
+    "bagaimanakah",
+    "adakah",
+    "wajibkah",
+    "bisakah",
+    "bolehkah",
+    "benarkah",
+    "brp",
+    "gmna",
+    "gmn"
+  ],
+  "command_words": [
+    "sebutkan",
+    "jelaskan",
+    "tampilkan",
+    "tuliskan",
+    "berikan",
+    "uraikan",
+    "daftarkan",
+    "daftar",
+    "tunjukkan",
+    "carikan",
+    "cari"
+  ],
+  "question_stopwords": [
+    "apa",
+    "apakah",
+    "siapa",
+    "siapakah",
+    "berapa",
+    "berapakah",
+    "kapan",
+    "dimana",
+    "mana",
+    "manakah",
+    "mengapa",
+    "kenapa",
+    "bagaimana",
+    "bagaimanakah",
+    "saja",
+    "yang",
+    "itu",
+    "ini",
+    "adalah",
+    "merupakan",
+    "dari",
+    "di",
+    "ke",
+    "pada",
+    "untuk",
+    "bagi",
+    "tentang",
+    "mengenai",
+    "terkait",
+    "dengan",
+    "dan",
+    "atau",
+    "dalam",
+    "oleh",
+    "sebagai",
+    "tolong",
+    "mohon",
+    "saya",
+    "ingin",
+    "tahu",
+    "mengetahui",
+    "boleh",
+    "bolehkah",
+    "bisa",
+    "bisakah",
+    "anda",
+    "kamu",
+    "sebutkan",
+    "jelaskan",
+    "tampilkan",
+    "tuliskan",
+    "berikan",
+    "uraikan",
+    "daftarkan",
+    "memiliki",
+    "punya",
+    "ada",
+    "adakah",
+    "terdapat",
+    "diambil",
+    "mengambil",
+    "ambil",
+    "termasuk",
+    "berkode",
+    "brp",
+    "ya",
+    "dong",
+    "kah"
+  ]
+}
