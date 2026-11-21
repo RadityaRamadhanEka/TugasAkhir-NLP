@@ -114,3 +114,42 @@ def test_domain_lexicon_structure() -> None:
         assert key in dom and len(dom[key]) > 0
 
 
+def test_normalize_and_tokenize_question() -> None:
+    import pytest
+    from src.question_processing.text_utils import normalize_question, tokenize_question
+
+    assert normalize_question("  Apa prasyarat KA Lanjut??  ") == "apa prasyarat ka lanjut"
+    assert normalize_question("Apa isi IF_CPL_KK1?") == "apa isi if_cpl_kk1"
+    assert tokenize_question("apa isi if_cpl_kk1") == ["apa", "isi", "if_cpl_kk1"]
+    assert tokenize_question("kode mpk60001-5 dan cif63110") == [
+        "kode",
+        "mpk60001-5",
+        "dan",
+        "cif63110",
+    ]
+    assert tokenize_question("learning path ai/ml engineer") == [
+        "learning",
+        "path",
+        "ai/ml",
+        "engineer",
+    ]
+    assert tokenize_question("apa mk-nya di semester 3") == ["apa", "mk", "di", "semester", "3"]
+    with pytest.raises(ValueError):
+        normalize_question("   ")
+
+
+def test_detect_speech_act_rules_and_traps() -> None:
+    from src.question_processing.question_classifier import detect_speech_act
+
+    assert detect_speech_act("Tolong jelaskan aturan peralihan semester 5!") == "indirect_request"
+    assert detect_speech_act("Bisakah Anda sebutkan MK semester 3?") == "indirect_request"
+    assert detect_speech_act("Bolehkah saya tahu prasyarat AI Lanjut?") == "indirect_request"
+    assert detect_speech_act("Sebutkan mata kuliah pada semester 3!") == "command"
+    assert detect_speech_act("Jelaskan isi IF_CPL_KK1") == "command"
+    assert detect_speech_act("Apakah Sistem Operasi memiliki praktikum?") == "yes_no"
+    assert detect_speech_act("Adakah praktikum pada Basis Data?") == "yes_no"
+    assert detect_speech_act("Apa prasyarat Kecerdasan Artifisial Lanjut?") == "wh"
+    assert detect_speech_act("brp sks apb?") == "wh"
+
+
+
