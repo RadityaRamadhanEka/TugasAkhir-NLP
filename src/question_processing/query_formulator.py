@@ -152,17 +152,142 @@ def pos_tag_question(tokens: list[str]) -> list[tuple[str, str]]:
     return apply_domain_pos_overrides(raw_tagged)
 
 
+@lru_cache(maxsize=1)
+def _course_name_to_code() -> dict[str, str]:
+    course_lex = load_course_lexicon()
+    mapping: dict[str, str] = {}
+    for code, info in course_lex["courses_2024"].items():
+        mapping[info["name"].lower()] = code
+    return mapping
+
+
+def _append_unique(target: list[str], seen: set[str], value: str) -> None:
+    clean = re.sub(r"\s+", " ", value).strip()
+    if clean and clean.lower() not in seen:
+        seen.add(clean.lower())
+        target.append(clean)
+
+
 def formulate_query(
     normalized_question: str,
     tokens: list[str],
     entities: list[ExtractedEntity],
     pos_tags: list[tuple[str, str]] | None = None,
+    intent: str | None = None,
 ) -> tuple[list[str], list[str]]:
     """Menghasilkan `(query_keywords, expanded_queries)` untuk modul Passage Retrieval.
 
     Mencakup:
-    - Seleksi query keywords (buang kata tanya & stopword yang tidak informatif)
-    - Query expansion dengan sinonim/singkatan domain (mis. MK <-> mata kuliah, AI <-> kecerdasan artifisial)
+    - Seleksi query keywords (tanpa stemming; buang kata tanya & stopword tidak informatif)
+    - Query expansion dengan sinonim/singkatan domain dan kode<->nama MK
     - Query reformulation ke pola deklaratif (ala Lin 2007, Slide 47)
     """
-    raise NotImplementedError("Anggota 3: implementasikan query formulation & expansion di sini.")
+    del pos_tags  # dipertahankan untuk kompatibilitas kontrak
+    domain_lex = load_domain_lexicon()
+    course_lex = load_course_lexicon()
+    stopwords = set(domain_lex["question_stopwords"])
+    synonyms: dict[str, list[str]] = domain_lex["synonyms"]
+    abbrevs: dict[str, str] = domain_lex["abbreviations"]
+    name_to_code = _course_name_to_code()
+
+    # Kumpulkan token yang sudah diwakili frasa entitas multi-kata agar tidak duplikat pecah
+    multi_ent_tokens: set[str] = set()
+    for ent in entities:
+        val_toks = ent.get("value", "").lower().split()
+        if len(val_toks) >= 2:
+            multi_ent_tokens.update(val_toks)
+
+    keywords: list[str] = []
+    seen_kw: set[str] = set()
+    for tok in tokens:
+        low = tok.lower()
+        if low in stopwords or low in multi_ent_tokens:
+            continue
+        _append_unique(keywords, seen_kw, tok)
+
+    course_name: str | None = None
+    course_code: str | None = None
+    semester_val: str | None = None
+    lp_val: str | None = None
+    eg_val: str | None = None
+    cpl_val: str | None = None
+    abbr_val: str | None = None
+
+    for ent in entities:
+        etype = ent["type"]
+        norm_val = ent["normalized_value"]
+        _append_unique(keywords, seen_kw, norm_val)
+        if etype == "course_name":
+            course_name = norm_val
+            resolved = name_to_code.get(norm_val.lower())
+            if resolved and intent != "course_code":
+                course_code = resolved
+                _append_unique(keywords, seen_kw, resolved)
+        elif etype == "course_code":
+            canon_code = course_lex["code_aliases"].get(norm_val, norm_val)
+            course_code = norm_val
+            if canon_code != norm_val:
+                _append_unique(keywords, seen_kw, canon_code)
+            if canon_code in course_lex["courses_2024"] and intent != "course_name":
+                course_name = course_lex["courses_2024"][canon_code]["name"]
+                _append_unique(keywords, seen_kw, course_name)
+        elif etype == "semester":
+            semester_val = norm_val
+        elif etype == "learning_path":
+            lp_val = norm_val
+        elif etype == "elective_group":
+            eg_val = norm_val
+        elif etype == "cpl_code":
+            cpl_val = norm_val
+        elif etype == "abbreviation":
+            abbr_val = norm_val
+
+    expanded: list[str] = []
+    seen_exp: set[str] = set()
+    seen_exp.add(normalized_question.lower())
+
+    # 1. Ekspansi sinonim/singkatan pada query dasar
+    base_phrase = " ".join(keywords)
+    for term, repls in synonyms.items():
+        if re.search(rf"\b{re.escape(term)}\b", normalized_question):
+            for rep in repls[:1]:
+                candidate = re.sub(rf"\b{re.escape(term)}\b", rep, base_phrase or normalized_question)
+                _append_unique(expanded, seen_exp, candidate)
+                if course_name and term in {"prasyarat", "syarat"}:
+                    _append_unique(expanded, seen_exp, f"{rep} {course_name}")
+
+    if abbr_val and abbr_val in abbrevs:
+        _append_unique(expanded, seen_exp, f"{abbrevs[abbr_val]} {abbr_val}")
+
+    # 2. Reformulasi deklaratif ala Lin (2007) per intent
+    if intent == "course_prerequisite" and course_name:
+        _append_unique(expanded, seen_exp, f"prasyarat {course_name} adalah")
+        if course_code:
+            _append_unique(expanded, seen_exp, f"{course_code} {course_name} prasyarat")
+    elif intent == "course_min_grade" and course_name:
+        _append_unique(expanded, seen_exp, f"{course_name} prasyarat nilai minimum")
+    elif intent == "course_sks" and course_name:
+        if course_code:
+            _append_unique(expanded, seen_exp, f"{course_code} {course_name} sks")
+        _append_unique(expanded, seen_exp, f"satuan kredit semester {course_name}")
+    elif intent == "course_semester" and course_name:
+        _append_unique(expanded, seen_exp, f"{course_name} diambil pada semester")
+    elif intent == "course_code" and course_name:
+        _append_unique(expanded, seen_exp, f"kode mata kuliah {course_name}")
+    elif intent == "course_practicum" and course_name:
+        _append_unique(expanded, seen_exp, f"{course_name} praktikum ya tidak")
+    elif intent == "course_list_semester" and semester_val:
+        _append_unique(expanded, seen_exp, f"semester {semester_val} kode mk nama mk sks")
+    elif intent == "learning_path" and lp_val:
+        _append_unique(expanded, seen_exp, f"learning path {lp_val} mata kuliah pilihan")
+    elif intent == "elective_group" and eg_val:
+        _append_unique(expanded, seen_exp, f"mk pilihan {eg_val}")
+    elif intent == "cpl" and cpl_val:
+        _append_unique(expanded, seen_exp, f"{cpl_val} capaian pembelajaran lulusan")
+    elif intent == "curriculum_transition":
+        sem_part = f" semester {semester_val}" if semester_val else ""
+        _append_unique(expanded, seen_exp, f"aturan peralihan kurikulum 2024{sem_part}")
+    elif intent == "abbreviation" and abbr_val:
+        _append_unique(expanded, seen_exp, f"singkatan {abbr_val} adalah")
+
+    return keywords, expanded[:5]

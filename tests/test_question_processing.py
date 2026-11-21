@@ -376,6 +376,74 @@ def test_hybrid_classifier_and_answer_type() -> None:
         assert fine.startswith(f"{coarse}:")
 
 
+def test_formulate_query_rules() -> None:
+    from src.question_processing.entity_extractor import extract_entities
+    from src.question_processing.query_formulator import formulate_query, pos_tag_question
+    from src.question_processing.text_utils import normalize_question, tokenize_question
+
+    q = "Apa prasyarat Kecerdasan Artifisial Lanjut?"
+    norm = normalize_question(q)
+    toks = tokenize_question(norm)
+    tags = pos_tag_question(toks)
+    ents = extract_entities(q)
+
+    keywords, expanded = formulate_query(norm, toks, ents, pos_tags=tags, intent="course_prerequisite")
+    assert "apa" not in keywords
+    assert "prasyarat" in keywords  # tidak di-stem menjadi "syarat"
+    assert "Kecerdasan Artifisial Lanjut" in keywords
+    assert "CIF64311" in keywords
+    assert len(expanded) <= 5
+    assert len(expanded) == len(set(expanded))
+    assert any("syarat" in ex.lower() for ex in expanded)
+
+    # Negasi "tidak" harus dipertahankan dalam query_keywords
+    norm_neg = normalize_question("Bagaimana jika belum atau tidak lulus prasyarat?")
+    toks_neg = tokenize_question(norm_neg)
+    kw_neg, _ = formulate_query(norm_neg, toks_neg, [])
+    assert "tidak" in kw_neg
+
+
+def test_process_question_end_to_end_and_edge_cases() -> None:
+    import pytest
+    from src.question_processing.question_processor import process_question
+
+    with pytest.raises(ValueError):
+        process_question("")
+    with pytest.raises(ValueError):
+        process_question("   \n\t ")
+
+    ood = process_question("Siapa rektor Universitas Brawijaya saat ini?")
+    assert ood["intent"] == "other"
+    assert ood["answer_type_coarse"] == "HUMAN"
+    assert ood["answer_type"] == "HUMAN:individual"
+
+    no_ent = process_question("Apa visi Program Studi Teknik Informatika?")
+    assert no_ent["intent"] == "vision_mission"
+    assert no_ent["entities"] == []
+    assert no_ent["relations"] == []
+
+    # Verifikasi konsistensi terhadap semua 12 fixture resmi
+    samples = json.loads(FIXTURE_PATH.read_text(encoding="utf-8"))
+    for sample in samples:
+        res = process_question(sample["original_question"])
+        assert REQUIRED_QA_KEYS.issubset(res.keys())
+        assert res["normalized_question"] == sample["normalized_question"]
+        assert res["tokens"] == sample["tokens"]
+        assert len(res["pos_tags"]) == len(res["tokens"])
+        assert res["speech_act"] == sample["speech_act"]
+        assert res["question_category"] == sample["question_category"]
+        assert res["intent"] == sample["intent"]
+        assert res["answer_type_coarse"] == sample["answer_type_coarse"]
+        assert res["answer_type"] == sample["answer_type"]
+        assert res["focus"] == sample["focus"]
+        assert [(e["type"], e["normalized_value"]) for e in res["entities"]] == [
+            (e["type"], e["normalized_value"]) for e in sample["entities"]
+        ]
+        assert res["relations"] == sample["relations"]
+        assert len(res["expanded_queries"]) <= 5
+
+
+
 
 
 
