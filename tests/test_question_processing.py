@@ -305,6 +305,78 @@ def test_extract_relations_cases() -> None:
     ]
 
 
+def test_no_train_test_data_leakage() -> None:
+    from src.question_processing.resources import load_test_questions, load_training_questions
+    from src.question_processing.text_utils import normalize_question
+
+    train = load_training_questions()
+    test = load_test_questions()
+    assert 200 <= len(train) <= 320
+    assert 50 <= len(test) <= 80
+
+    train_norm = {normalize_question(item["question"]) for item in train}
+    test_norm = {normalize_question(item["question"]) for item in test}
+    assert train_norm.isdisjoint(test_norm)
+
+    # Pastikan tiap intent memiliki >= 10 sampel latih dan >= 2 sampel uji
+    from collections import Counter
+
+    train_counts = Counter(item["intent"] for item in train)
+    test_counts = Counter(item["intent"] for item in test)
+    assert len(train_counts) >= 20
+    assert min(train_counts.values()) >= 10
+    assert min(test_counts.values()) >= 2
+
+
+def test_hybrid_classifier_and_answer_type() -> None:
+    from src.question_processing.answer_type_detector import detect_answer_type
+    from src.question_processing.question_classifier import (
+        classify_question,
+        detect_speech_act,
+        train_question_classifier,
+    )
+    from src.question_processing.resources import load_training_questions
+
+    samples = load_training_questions()
+    model = train_question_classifier(samples)
+    assert model is not None
+
+    cases = [
+        ("Apa prasyarat Kecerdasan Artifisial Lanjut?", "course_prerequisite", "factoid", "ENTITY", "ENTITY:prerequisite"),
+        ("brp sks papb?", "course_sks", "factoid", "NUMERIC", "NUMERIC:count"),
+        ("Basis Data diambil semester berapa?", "course_semester", "factoid", "NUMERIC", "NUMERIC:order"),
+        ("Berapa nilai minimum prasyarat Jaringan Saraf Tiruan?", "course_min_grade", "factoid", "NUMERIC", "NUMERIC:grade"),
+        ("Apa kode MK Basis Data?", "course_code", "factoid", "NUMERIC", "NUMERIC:code"),
+        ("Mata kuliah apa yang berkode CIF63110?", "course_name", "factoid", "ENTITY", "ENTITY:course_name"),
+        ("Apakah Sistem Operasi memiliki praktikum?", "course_practicum", "yes_no", "DESCRIPTION", "DESCRIPTION:yes_no"),
+        ("Sebutkan mata kuliah pada semester 3!", "course_list_semester", "list", "ENTITY", "ENTITY:course_list"),
+        ("MK pilihan kelompok Perekayasa Komputasi Cerdas apa saja?", "elective_group", "list", "ENTITY", "ENTITY:course_list"),
+        ("MK apa saja di learning path NLP Engineer?", "learning_path", "list", "ENTITY", "ENTITY:course_list"),
+        ("Learning path apa saja yang tersedia?", "learning_path_list", "list", "ENTITY", "ENTITY:learning_path"),
+        ("Berapa total SKS mata kuliah muatan program studi?", "total_sks", "factoid", "NUMERIC", "NUMERIC:count"),
+        ("Bagaimana aturan peralihan untuk mahasiswa semester 5?", "curriculum_transition", "narrative", "DESCRIPTION", "DESCRIPTION:manner"),
+        ("MK 2024 apa yang setara dengan CIF61011?", "course_equivalence", "factoid", "ENTITY", "ENTITY:course_name"),
+        ("Apa isi IF_CPL_KK1?", "cpl", "definition", "DESCRIPTION", "DESCRIPTION:definition"),
+        ("Apa saja profil lulusan Teknik Informatika?", "graduate_profile", "list", "HUMAN", "HUMAN:title"),
+        ("Apa visi program studi Teknik Informatika?", "vision_mission", "definition", "DESCRIPTION", "DESCRIPTION:definition"),
+        ("Apa yang dipelajari pada mata kuliah Komputer Grafis?", "course_description", "definition", "DESCRIPTION", "DESCRIPTION:definition"),
+        ("Apa saja bentuk kegiatan Merdeka Belajar?", "mbkm", "list", "ENTITY", "ENTITY:other"),
+        ("Apa kepanjangan MBKM?", "abbreviation", "definition", "ABBREVIATION", "ABBREVIATION:expansion"),
+        ("Siapa rektor Universitas Brawijaya saat ini?", "other", "factoid", "HUMAN", "HUMAN:individual"),
+    ]
+
+    for q, exp_intent, exp_cat, exp_coarse, exp_fine in cases:
+        sa = detect_speech_act(q)
+        intent, cat = classify_question(q, speech_act=sa, classifier_model=model)
+        assert intent == exp_intent, f"Intent salah untuk {q}: dapat {intent}"
+        assert cat == exp_cat, f"Kategori salah untuk {q}: dapat {cat}"
+        coarse, fine = detect_answer_type(q, intent)
+        assert coarse == exp_coarse, f"Coarse salah untuk {q}: dapat {coarse}"
+        assert fine == exp_fine, f"Fine salah untuk {q}: dapat {fine}"
+        assert fine.startswith(f"{coarse}:")
+
+
+
 
 
 
