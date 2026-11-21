@@ -61,6 +61,13 @@ def _domain_proper_noun_phrases() -> tuple[tuple[str, ...], ...]:
             a_toks = tuple(alias.lower().split())
             if len(a_toks) >= 2:
                 phrases.add(a_toks)
+    for org_phrase in (
+        ("teknik", "informatika"),
+        ("merdeka", "belajar"),
+        ("kampus", "merdeka"),
+        ("universitas", "brawijaya"),
+    ):
+        phrases.add(org_phrase)
     return tuple(sorted(phrases, key=len, reverse=True))
 
 

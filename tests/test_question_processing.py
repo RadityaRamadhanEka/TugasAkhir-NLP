@@ -196,5 +196,115 @@ def test_pos_tag_question_fallback_without_model(monkeypatch, tmp_path) -> None:
         query_formulator._load_crf_tagger.cache_clear()
 
 
+def test_extract_entities_all_types_and_longest_match() -> None:
+    from src.question_processing.entity_extractor import extract_entities
+
+    # Longest match: Kecerdasan Artifisial Lanjut must NOT also emit Kecerdasan Artifisial
+    ents_kal = extract_entities("Apa prasyarat Kecerdasan Artifisial Lanjut?")
+    assert [(e["type"], e["normalized_value"]) for e in ents_kal] == [
+        ("course_name", "Kecerdasan Artifisial Lanjut")
+    ]
+
+    # Alias + code normalization
+    assert [(e["type"], e["normalized_value"]) for e in extract_entities("prasyarat ka lanjut")] == [
+        ("course_name", "Kecerdasan Artifisial Lanjut")
+    ]
+    assert extract_entities("kode cif63110 dan mpk60001-5") == [
+        {"type": "course_code", "value": "cif63110", "normalized_value": "CIF63110"},
+        {"type": "course_code", "value": "mpk60001-5", "normalized_value": "MPK60001-5"},
+    ]
+
+    # Semester variants (digit, Indonesian word, Roman numeral, antara)
+    assert extract_entities("semester tiga")[0]["normalized_value"] == "3"
+    assert extract_entities("semester iv")[0]["normalized_value"] == "4"
+    assert extract_entities("semester antara")[0]["normalized_value"] == "antara"
+
+    # SKS, CPL, learning path, elective group, grade, curriculum_year, abbreviation
+    assert [(e["type"], e["normalized_value"]) for e in extract_entities("minimal 3 sks")] == [
+        ("sks_value", "3")
+    ]
+    assert [(e["type"], e["normalized_value"]) for e in extract_entities("isi cpl kk1")] == [
+        ("cpl_code", "IF_CPL_KK1")
+    ]
+    assert [(e["type"], e["normalized_value"]) for e in extract_entities("learning path data science")] == [
+        ("learning_path", "Data Scientist")
+    ]
+    assert [(e["type"], e["normalized_value"]) for e in extract_entities("front end developer")] == [
+        ("learning_path", "Frontend Developer")
+    ]
+    assert [(e["type"], e["normalized_value"]) for e in extract_entities("kelompok perekayasa komputasi cerdas")] == [
+        ("elective_group", "Perekayasa Komputasi Cerdas")
+    ]
+    assert [(e["type"], e["normalized_value"]) for e in extract_entities("nilai minimal c kurikulum 2020 dan 2024")] == [
+        ("grade", "C"),
+        ("curriculum_year", "2020"),
+        ("curriculum_year", "2024"),
+    ]
+    assert [(e["type"], e["normalized_value"]) for e in extract_entities("kepanjangan mbkm")] == [
+        ("abbreviation", "MBKM")
+    ]
+
+
+def test_detect_focus_four_patterns_and_fallback() -> None:
+    from src.question_processing.entity_extractor import detect_focus
+    from src.question_processing.query_formulator import pos_tag_question
+    from src.question_processing.text_utils import normalize_question, tokenize_question
+
+    def focus_of(q: str) -> str | None:
+        toks = tokenize_question(normalize_question(q))
+        tags = pos_tag_question(toks)
+        return detect_focus(toks, tags)
+
+    assert focus_of("Apa prasyarat Kecerdasan Artifisial Lanjut?") == "prasyarat"
+    assert focus_of("Berapa SKS mata kuliah Basis Data?") == "sks"
+    assert focus_of("Berapa nilai minimum prasyarat Jaringan Saraf Tiruan?") == "nilai minimum prasyarat"
+    assert focus_of("Apa kode MK untuk Kecerdasan Artifisial?") == "kode mk"
+    assert focus_of("Apa isi capaian pembelajaran IF_CPL_KK1?") == "isi capaian pembelajaran"
+    assert focus_of("Mata kuliah apa saja pada learning path NLP Engineer?") == "mata kuliah"
+    assert focus_of("Sebutkan mata kuliah pada semester 3!") == "mata kuliah"
+    assert focus_of("Tolong jelaskan aturan peralihan untuk mahasiswa semester 3!") == "aturan peralihan"
+    assert focus_of("Apakah Sistem Operasi memiliki praktikum?") == "praktikum"
+    assert focus_of("Learning path apa saja yang tersedia?") == "learning path"
+    assert focus_of("Apa visi program studi Teknik Informatika?") == "visi program studi"
+    assert focus_of("Bagaimana kalau tidak lulus?") is None
+
+
+def test_extract_relations_cases() -> None:
+    from src.question_processing.entity_extractor import extract_entities, extract_relations
+
+    def rels_of(q: str):
+        ents = extract_entities(q)
+        return extract_relations(q, ents)
+
+    assert rels_of("Apa prasyarat Kecerdasan Artifisial Lanjut?") == [
+        {"predicate": "prerequisite_of", "subject": "Kecerdasan Artifisial Lanjut", "object": None}
+    ]
+    assert rels_of("Berapa SKS Basis Data?") == [
+        {"predicate": "sks", "subject": "Basis Data", "object": None}
+    ]
+    assert rels_of("Mata kuliah Sistem Operasi diambil pada semester berapa?") == [
+        {"predicate": "semester", "subject": "Sistem Operasi", "object": None}
+    ]
+    assert rels_of("Sebutkan mata kuliah pada semester 3!") == [
+        {"predicate": "semester", "subject": None, "object": "3"}
+    ]
+    assert rels_of("Apakah Sistem Operasi memiliki praktikum?") == [
+        {"predicate": "has_practicum", "subject": "Sistem Operasi", "object": None}
+    ]
+    assert rels_of("Mata kuliah apa saja pada learning path NLP Engineer?") == [
+        {"predicate": "learning_path_member", "subject": None, "object": "NLP Engineer"}
+    ]
+    assert rels_of("MK pilihan kelompok Perekayasa Komputasi Cerdas") == [
+        {"predicate": "elective_group_member", "subject": None, "object": "Perekayasa Komputasi Cerdas"}
+    ]
+    assert rels_of("MK 2024 apa yang setara dengan CIF61011?") == [
+        {"predicate": "equivalent_to", "subject": "CIF61011", "object": None}
+    ]
+    assert rels_of("Apa kode MK untuk Kecerdasan Artifisial?") == [
+        {"predicate": "course_code", "subject": "Kecerdasan Artifisial", "object": None}
+    ]
+
+
+
 
 

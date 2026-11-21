@@ -3,7 +3,7 @@ Train sentences: 9027 | Held-out test sentences: 1003
 IDN Held-out Token Accuracy: 0.9715
 Domain Gold Sentences: 20
 Domain Gold Accuracy (CRF Raw): 0.6744
-Domain Gold Accuracy (CRF + Domain Override): 0.8992
+Domain Gold Accuracy (CRF + Domain Override): 0.9457
 
 ## Classification Report (IDN 10% Held-out)
               precision    recall  f1-score   support
