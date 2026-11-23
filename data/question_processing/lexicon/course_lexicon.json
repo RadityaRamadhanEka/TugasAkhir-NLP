@@ -1,0 +1,1500 @@
+{
+  "courses_2024": {
+    "CIF60038": {
+      "name": "DevSecOps",
+      "sks": 4,
+      "alt_codes": [],
+      "aliases": [],
+      "sources": [
+        23,
+        43,
+        91,
+        92
+      ]
+    },
+    "CIF60048": {
+      "name": "Machine Learning Operations (MLOps)",
+      "sks": 4,
+      "alt_codes": [
+        "CIF60050"
+      ],
+      "aliases": [
+        "machine learning operations",
+        "mlops"
+      ],
+      "sources": [
+        24,
+        43
+      ]
+    },
+    "CIF61101": {
+      "name": "Rekayasa Perangkat Lunak",
+      "sks": 4,
+      "alt_codes": [],
+      "aliases": [
+        "rpl"
+      ],
+      "sources": [
+        19,
+        20,
+        42,
+        52,
+        53
+      ]
+    },
+    "CIF61121": {
+      "name": "Pola Perancangan",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "design pattern"
+      ],
+      "sources": [
+        23,
+        79,
+        80
+      ]
+    },
+    "CIF61124": {
+      "name": "Arsitektur Berbasis Layanan",
+      "sks": 4,
+      "alt_codes": [],
+      "aliases": [
+        "soa"
+      ],
+      "sources": [
+        23,
+        42,
+        81,
+        82
+      ]
+    },
+    "CIF61125": {
+      "name": "Pemrograman Gim",
+      "sks": 4,
+      "alt_codes": [],
+      "aliases": [
+        "pemrograman game"
+      ],
+      "sources": [
+        23,
+        41,
+        82
+      ]
+    },
+    "CIF61126": {
+      "name": "Realitas terkembang",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "ar vr",
+        "extended reality"
+      ],
+      "sources": [
+        23,
+        42,
+        82,
+        83
+      ]
+    },
+    "CIF61230": {
+      "name": "Jaringan komputer lanjut",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "jarkom lanjut"
+      ],
+      "sources": [
+        23,
+        86
+      ]
+    },
+    "CIF61233": {
+      "name": "Administrasi sistem server",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "admin server"
+      ],
+      "sources": [
+        23,
+        40
+      ]
+    },
+    "CIF61235": {
+      "name": "Forensik Digital",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "digital forensics"
+      ],
+      "sources": [
+        23,
+        40,
+        88,
+        89,
+        90
+      ]
+    },
+    "CIF61236": {
+      "name": "Keamanan Jaringan",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "kamjar"
+      ],
+      "sources": [
+        23,
+        40,
+        90,
+        91
+      ]
+    },
+    "CIF61302": {
+      "name": "Statistika dan Teori Peluang",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [
+        "statpel"
+      ],
+      "sources": [
+        19,
+        20,
+        42,
+        58
+      ]
+    },
+    "CIF61339": {
+      "name": "Pengolahan Citra Digital dan Visi Komputer",
+      "sks": 4,
+      "alt_codes": [],
+      "aliases": [
+        "computer vision",
+        "pcd",
+        "pengolahan citra dan visi komputer digital"
+      ],
+      "sources": [
+        24,
+        41,
+        42,
+        92,
+        93
+      ]
+    },
+    "CIF61341": {
+      "name": "Pemrosesan Bahasa Alami",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "nlp",
+        "pba"
+      ],
+      "sources": [
+        24,
+        40,
+        94
+      ]
+    },
+    "CIF61346": {
+      "name": "Deep Learning",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "dl"
+      ],
+      "sources": [
+        24,
+        41,
+        42,
+        98
+      ]
+    },
+    "CIF61347": {
+      "name": "Penerapan Kecerdasan Artifisial",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "penerapan ai",
+        "penerapan ka"
+      ],
+      "sources": [
+        24,
+        43,
+        98,
+        99
+      ]
+    },
+    "CIF62104": {
+      "name": "Basis Data",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "basdat"
+      ],
+      "sources": [
+        19,
+        20,
+        42,
+        60
+      ]
+    },
+    "CIF62120": {
+      "name": "Penjaminan Kualitas Perangkat Lunak",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "pkpl",
+        "sqa",
+        "penjaminan kualitas pl"
+      ],
+      "sources": [
+        23,
+        40,
+        78,
+        79
+      ]
+    },
+    "CIF62122": {
+      "name": "Enterprise Application Integration",
+      "sks": 4,
+      "alt_codes": [],
+      "aliases": [
+        "eai"
+      ],
+      "sources": [
+        23,
+        43,
+        80
+      ]
+    },
+    "CIF62123": {
+      "name": "Perancangan Pengalaman Pengguna",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "ui ux",
+        "ux design"
+      ],
+      "sources": [
+        23,
+        40,
+        80,
+        81
+      ]
+    },
+    "CIF62127": {
+      "name": "Pemrograman Sistem Interaktif",
+      "sks": 4,
+      "alt_codes": [],
+      "aliases": [
+        "psi"
+      ],
+      "sources": [
+        23,
+        43,
+        83,
+        84
+      ]
+    },
+    "CIF62128": {
+      "name": "Pengujian Perangkat Lunak",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "ppl",
+        "software testing"
+      ],
+      "sources": [
+        23,
+        40,
+        84
+      ]
+    },
+    "CIF62203": {
+      "name": "Sistem Operasi",
+      "sks": 5,
+      "alt_codes": [],
+      "aliases": [
+        "sisop",
+        "so"
+      ],
+      "sources": [
+        19,
+        20,
+        42,
+        59,
+        60
+      ]
+    },
+    "CIF62229": {
+      "name": "Sistem Komputasi Terdistribusi",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "sistem terdistribusi",
+        "skt"
+      ],
+      "sources": [
+        23,
+        40,
+        84,
+        85
+      ]
+    },
+    "CIF62231": {
+      "name": "Penyediaan dan Automasi Layanan",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "automasi layanan",
+        "penyediaan dan otomasi layanan"
+      ],
+      "sources": [
+        23,
+        42,
+        86,
+        87
+      ]
+    },
+    "CIF62232": {
+      "name": "Arsitektur jaringan modern",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "ajm",
+        "arsitektur jaringan moderen"
+      ],
+      "sources": [
+        23,
+        41,
+        87,
+        88
+      ]
+    },
+    "CIF62234": {
+      "name": "Jaringan Sensor Nirkabel",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "jsn",
+        "wsn"
+      ],
+      "sources": [
+        23,
+        43,
+        89
+      ]
+    },
+    "CIF62237": {
+      "name": "Keamanan aplikasi berbasis web",
+      "sks": 4,
+      "alt_codes": [],
+      "aliases": [
+        "keamanan web"
+      ],
+      "sources": [
+        23,
+        41,
+        91
+      ]
+    },
+    "CIF62305": {
+      "name": "Aljabar Linear",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [
+        "aljabar linier",
+        "aljin"
+      ],
+      "sources": [
+        19,
+        20,
+        40,
+        61
+      ]
+    },
+    "CIF62340": {
+      "name": "Pemerolehan Informasi dan Penambangan Teks",
+      "sks": 4,
+      "alt_codes": [],
+      "aliases": [
+        "ir",
+        "pipt"
+      ],
+      "sources": [
+        24,
+        41,
+        42,
+        93,
+        94
+      ]
+    },
+    "CIF62342": {
+      "name": "Algoritma Evolusi dan Kecerdasan Berkoloni",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "algoritma evolusi"
+      ],
+      "sources": [
+        24,
+        41,
+        95
+      ]
+    },
+    "CIF62343": {
+      "name": "Sistem Berbasis Pengetahuan",
+      "sks": 4,
+      "alt_codes": [],
+      "aliases": [
+        "knowledge based system",
+        "sbp"
+      ],
+      "sources": [
+        24,
+        41,
+        95,
+        96
+      ]
+    },
+    "CIF62344": {
+      "name": "Analitik Big Data",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "abd",
+        "big data",
+        "big data analytics"
+      ],
+      "sources": [
+        24,
+        41,
+        42,
+        96,
+        97
+      ]
+    },
+    "CIF62345": {
+      "name": "Rekayasa Data dan Visualisasi",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "data engineering",
+        "rdv"
+      ],
+      "sources": [
+        24,
+        41,
+        42,
+        97,
+        98
+      ]
+    },
+    "CIF63106": {
+      "name": "Analisis dan Perancangan Sistem",
+      "sks": 5,
+      "alt_codes": [
+        "CIF63107"
+      ],
+      "aliases": [
+        "adpl",
+        "aps"
+      ],
+      "sources": [
+        19,
+        20,
+        40
+      ]
+    },
+    "CIF63108": {
+      "name": "Interaksi Manusia dan Komputer",
+      "sks": 2,
+      "alt_codes": [
+        "CIF63109"
+      ],
+      "aliases": [
+        "imk"
+      ],
+      "sources": [
+        19,
+        20,
+        40,
+        42
+      ]
+    },
+    "CIF63110": {
+      "name": "Kecerdasan Artifisial",
+      "sks": 2,
+      "alt_codes": [
+        "CIF63310"
+      ],
+      "aliases": [
+        "ai",
+        "ka",
+        "kecerdasan buatan"
+      ],
+      "sources": [
+        19,
+        20,
+        41
+      ]
+    },
+    "CIF63207": {
+      "name": "Jaringan Komputer",
+      "sks": 5,
+      "alt_codes": [],
+      "aliases": [
+        "jarkom"
+      ],
+      "sources": [
+        19,
+        20,
+        42,
+        64,
+        65
+      ]
+    },
+    "CIF63309": {
+      "name": "Metode Numerik",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "metnum"
+      ],
+      "sources": [
+        19,
+        20,
+        40,
+        65,
+        66
+      ]
+    },
+    "CIF64112": {
+      "name": "Desain dan Analisis Algoritma",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [
+        "daa"
+      ],
+      "sources": [
+        19,
+        21,
+        42,
+        70,
+        71
+      ]
+    },
+    "CIF64114": {
+      "name": "Pengembangan Aplikasi Web",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "paw",
+        "pemrograman web"
+      ],
+      "sources": [
+        19,
+        21,
+        41,
+        72
+      ]
+    },
+    "CIF64213": {
+      "name": "Keamanan Informasi",
+      "sks": 5,
+      "alt_codes": [],
+      "aliases": [
+        "kamin"
+      ],
+      "sources": [
+        19,
+        21,
+        42,
+        71,
+        72
+      ]
+    },
+    "CIF64311": {
+      "name": "Kecerdasan Artifisial Lanjut",
+      "sks": 5,
+      "alt_codes": [],
+      "aliases": [
+        "ai lanjut",
+        "ka lanjut",
+        "kal"
+      ],
+      "sources": [
+        19,
+        21,
+        41,
+        69,
+        70
+      ]
+    },
+    "CIF65115": {
+      "name": "Pemrograman Aplikasi Perangkat Bergerak",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "papb"
+      ],
+      "sources": [
+        19,
+        21,
+        43,
+        74,
+        75
+      ]
+    },
+    "CIF65116": {
+      "name": "Komputer Grafis",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [
+        "komgraf"
+      ],
+      "sources": [
+        19,
+        21,
+        41,
+        43,
+        75
+      ]
+    },
+    "CIF65217": {
+      "name": "Jaringan Nirkabel",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "jarnik"
+      ],
+      "sources": [
+        19,
+        21,
+        40,
+        43,
+        75,
+        76
+      ]
+    },
+    "CIF65318": {
+      "name": "Jaringan Saraf Tiruan",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "jaringan syaraf tiruan",
+        "jst"
+      ],
+      "sources": [
+        19,
+        21,
+        40,
+        42,
+        76,
+        77
+      ]
+    },
+    "CIF65319": {
+      "name": "Statistika inferensi",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [
+        "statinf"
+      ],
+      "sources": [
+        19,
+        21,
+        43,
+        77,
+        78
+      ]
+    },
+    "COM60004": {
+      "name": "Algoritma dan Struktur Data",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "asd"
+      ],
+      "sources": [
+        19,
+        20,
+        42,
+        43,
+        63
+      ]
+    },
+    "COM60011": {
+      "name": "Arsitektur dan Organisasi Komputer",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [
+        "aok",
+        "arkom"
+      ],
+      "sources": [
+        19,
+        20,
+        42,
+        43,
+        51,
+        52
+      ]
+    },
+    "COM60014": {
+      "name": "Pemrograman Dasar",
+      "sks": 5,
+      "alt_codes": [],
+      "aliases": [
+        "pemdas",
+        "progdass"
+      ],
+      "sources": [
+        18,
+        20,
+        41,
+        50,
+        51
+      ]
+    },
+    "COM60015": {
+      "name": "Matematika Diskrit",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [
+        "matdis",
+        "matematika diskret"
+      ],
+      "sources": [
+        19,
+        20,
+        41,
+        58,
+        59
+      ]
+    },
+    "COM60016": {
+      "name": "Pengenalan Keilmuan Komputer",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [
+        "pengantar keilmuan komputer",
+        "pkk"
+      ],
+      "sources": [
+        18,
+        20,
+        40,
+        50
+      ]
+    },
+    "COM60024": {
+      "name": "Pemrograman Lanjut",
+      "sks": 5,
+      "alt_codes": [],
+      "aliases": [
+        "pemlan"
+      ],
+      "sources": [
+        19,
+        20,
+        41,
+        61,
+        62
+      ]
+    },
+    "COM60025": {
+      "name": "Kalkulus",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [],
+      "sources": [
+        19,
+        20,
+        42,
+        43,
+        53
+      ]
+    },
+    "COM60051": {
+      "name": "Metodologi Penelitian & Penulisan Ilmiah",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "metodologi penelitian dan penulisan ilmiah",
+        "metpen",
+        "mppi"
+      ],
+      "sources": [
+        18,
+        21,
+        40,
+        72,
+        73
+      ]
+    },
+    "COM60052": {
+      "name": "Etika Profesi",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [
+        "etprof"
+      ],
+      "sources": [
+        18,
+        20,
+        40,
+        62,
+        63
+      ]
+    },
+    "COM60061": {
+      "name": "Capstone Project",
+      "sks": 3,
+      "alt_codes": [],
+      "aliases": [
+        "capstone"
+      ],
+      "sources": [
+        18,
+        22,
+        41,
+        78
+      ]
+    },
+    "MPK60001": {
+      "name": "Agama Islam",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [],
+      "sources": [
+        54
+      ]
+    },
+    "MPK60001-5": {
+      "name": "Agama",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [],
+      "sources": [
+        18,
+        20
+      ]
+    },
+    "MPK60002": {
+      "name": "Agama Katholik",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [
+        "agama katolik"
+      ],
+      "sources": [
+        54,
+        55
+      ]
+    },
+    "MPK60003": {
+      "name": "Agama Kristen",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [
+        "agama protestan"
+      ],
+      "sources": [
+        55,
+        56
+      ]
+    },
+    "MPK60004": {
+      "name": "Agama Hindu",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [],
+      "sources": [
+        56,
+        57
+      ]
+    },
+    "MPK60005": {
+      "name": "Agama Budha",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [
+        "agama buddha"
+      ],
+      "sources": [
+        57
+      ]
+    },
+    "MPK60006": {
+      "name": "Kewarganegaraan",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [
+        "pkn"
+      ],
+      "sources": [
+        18,
+        21,
+        67
+      ]
+    },
+    "MPK60007": {
+      "name": "Bahasa Indonesia",
+      "sks": 2,
+      "alt_codes": [
+        "UBU60007"
+      ],
+      "aliases": [
+        "bindo"
+      ],
+      "sources": [
+        18,
+        21,
+        73,
+        74
+      ]
+    },
+    "MPK60008": {
+      "name": "Pancasila",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [],
+      "sources": [
+        18,
+        21,
+        68
+      ]
+    },
+    "UBU60001": {
+      "name": "Skripsi",
+      "sks": 6,
+      "alt_codes": [],
+      "aliases": [
+        "ta",
+        "tugas akhir",
+        "tugas akhir/skripsi",
+        "tugas akhir skripsi"
+      ],
+      "sources": [
+        18,
+        22
+      ]
+    },
+    "UBU60002": {
+      "name": "Praktik Kerja Lapangan",
+      "sks": 4,
+      "alt_codes": [],
+      "aliases": [
+        "pkl"
+      ],
+      "sources": [
+        18,
+        22
+      ]
+    },
+    "UBU60003": {
+      "name": "Kewirausahaan",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [
+        "kwu"
+      ],
+      "sources": [
+        18,
+        21,
+        69
+      ]
+    },
+    "UBU60004": {
+      "name": "Bahasa Inggris",
+      "sks": 2,
+      "alt_codes": [],
+      "aliases": [
+        "bing"
+      ],
+      "sources": [
+        18,
+        20
+      ]
+    },
+    "UBU60005": {
+      "name": "Pengabdian kepada Masyarakat",
+      "sks": 4,
+      "alt_codes": [],
+      "aliases": [
+        "pkm",
+        "pengabdian kepada masyarakat pkm"
+      ],
+      "sources": [
+        18,
+        21
+      ]
+    }
+  },
+  "courses_2020": {
+    "CIF61001": {
+      "name": "Kalkulus",
+      "equivalent_2024_code": "COM60025",
+      "equivalent_2024_name": "Kalkulus",
+      "sources": [
+        42
+      ]
+    },
+    "CIF61007": {
+      "name": "Jaringan Komputer",
+      "equivalent_2024_code": "CIF63207",
+      "equivalent_2024_name": "Jaringan Komputer",
+      "sources": [
+        42
+      ]
+    },
+    "CIF61008": {
+      "name": "Desain dan Analisis Algoritma",
+      "equivalent_2024_code": "CIF64112",
+      "equivalent_2024_name": "Desain dan Analisis Algoritma",
+      "sources": [
+        42
+      ]
+    },
+    "CIF61009": {
+      "name": "Basis Data",
+      "equivalent_2024_code": "CIF62104",
+      "equivalent_2024_name": "Basis Data",
+      "sources": [
+        42
+      ]
+    },
+    "CIF61010": {
+      "name": "Metode Numerik",
+      "equivalent_2024_code": "CIF63309",
+      "equivalent_2024_name": "Metode Numerik",
+      "sources": [
+        40
+      ]
+    },
+    "CIF61011": {
+      "name": "Kecerdasan Buatan",
+      "equivalent_2024_code": "CIF63110",
+      "equivalent_2024_name": "Kecerdasan Artifisial",
+      "sources": [
+        41
+      ]
+    },
+    "CIF61012": {
+      "name": "Interaksi Manusia dan Komputer",
+      "equivalent_2024_code": "CIF63108",
+      "equivalent_2024_name": "Interaksi Manusia dan Komputer",
+      "sources": [
+        42
+      ]
+    },
+    "CIF61018": {
+      "name": "Pemrograman Sistem Interaktif",
+      "equivalent_2024_code": "CIF62127",
+      "equivalent_2024_name": "Pemrograman Sistem Interaktif",
+      "sources": [
+        43
+      ]
+    },
+    "CIF61019": {
+      "name": "Rekayasa Perangkat Lunak",
+      "equivalent_2024_code": "CIF61101",
+      "equivalent_2024_name": "Rekayasa Perangkat Lunak",
+      "sources": [
+        42
+      ]
+    },
+    "CIF61020": {
+      "name": "Jaringan Saraf Tiruan",
+      "equivalent_2024_code": "CIF65318",
+      "equivalent_2024_name": "Jaringan Saraf Tiruan",
+      "sources": [
+        42
+      ]
+    },
+    "CIF61022": {
+      "name": "Administrasi Sistem Server",
+      "equivalent_2024_code": "CIF61233",
+      "equivalent_2024_name": "Administrasi sistem server",
+      "sources": [
+        40
+      ]
+    },
+    "CIF61024": {
+      "name": "Jaringan Nirkabel",
+      "equivalent_2024_code": "CIF65217",
+      "equivalent_2024_name": "Jaringan Nirkabel",
+      "sources": [
+        43
+      ]
+    },
+    "CIF61026": {
+      "name": "Sistem Komputasi Terdistribusi",
+      "equivalent_2024_code": "CIF62229",
+      "equivalent_2024_name": "Sistem Komputasi Terdistribusi",
+      "sources": [
+        40
+      ]
+    },
+    "CIF61028": {
+      "name": "Keamanan Jaringan",
+      "equivalent_2024_code": "CIF61236",
+      "equivalent_2024_name": "Keamanan Jaringan",
+      "sources": [
+        40
+      ]
+    },
+    "CIF61032": {
+      "name": "Manajemen Proyek Perangkat Lunak",
+      "equivalent_2024_code": "COM60061",
+      "equivalent_2024_name": "Capstone Project",
+      "sources": [
+        41
+      ]
+    },
+    "CIF61039": {
+      "name": "Grafika Komputer",
+      "equivalent_2024_code": "CIF65116",
+      "equivalent_2024_name": "Komputer Grafis",
+      "sources": [
+        43
+      ]
+    },
+    "CIF61040": {
+      "name": "Perancangan Pengalaman Pengguna",
+      "equivalent_2024_code": "CIF62123",
+      "equivalent_2024_name": "Perancangan Pengalaman Pengguna",
+      "sources": [
+        40
+      ]
+    },
+    "CIF61048": {
+      "name": "Pengolahan Citra Digital",
+      "equivalent_2024_code": "CIF61339",
+      "equivalent_2024_name": "Pengolahan Citra Digital dan Visi Komputer",
+      "sources": [
+        42
+      ]
+    },
+    "CIF61049": {
+      "name": "Text Mining",
+      "equivalent_2024_code": "CIF62340",
+      "equivalent_2024_name": "Pemerolehan Informasi dan Penambangan Teks",
+      "sources": [
+        41
+      ]
+    },
+    "CIF61052": {
+      "name": "Algoritma Evolusi",
+      "equivalent_2024_code": "CIF62342",
+      "equivalent_2024_name": "Algoritma Evolusi dan Kecerdasan Berkoloni",
+      "sources": [
+        41
+      ]
+    },
+    "CIF61057": {
+      "name": "Sistem Pakar",
+      "equivalent_2024_code": "CIF62343",
+      "equivalent_2024_name": "Sistem Berbasis Pengetahuan",
+      "sources": [
+        41
+      ]
+    },
+    "CIF61059": {
+      "name": "Pengantar Sains Data",
+      "equivalent_2024_code": "CIF62344",
+      "equivalent_2024_name": "Analitik Big Data",
+      "sources": [
+        42
+      ]
+    },
+    "CIF61062": {
+      "name": "Data Engineering",
+      "equivalent_2024_code": "CIF62345",
+      "equivalent_2024_name": "Rekayasa Data dan Visualisasi",
+      "sources": [
+        42
+      ]
+    },
+    "CIF61063": {
+      "name": "Pembelajaran Mesin Lanjut",
+      "equivalent_2024_code": "CIF61346",
+      "equivalent_2024_name": "Deep Learning",
+      "sources": [
+        42
+      ]
+    },
+    "CIF62002": {
+      "name": "Sistem Operasi",
+      "equivalent_2024_code": "CIF62203",
+      "equivalent_2024_name": "Sistem Operasi",
+      "sources": [
+        42
+      ]
+    },
+    "CIF62003": {
+      "name": "Pemrograman Berorientasi Obyek",
+      "equivalent_2024_code": "COM60024",
+      "equivalent_2024_name": "Pemrograman Lanjut",
+      "sources": [
+        41
+      ]
+    },
+    "CIF62004": {
+      "name": "Algoritma dan Struktur Data",
+      "equivalent_2024_code": "COM60004",
+      "equivalent_2024_name": "Algoritma dan Struktur Data",
+      "sources": [
+        42
+      ]
+    },
+    "CIF62005": {
+      "name": "Aljabar Linear",
+      "equivalent_2024_code": "CIF62305",
+      "equivalent_2024_name": "Aljabar Linear",
+      "sources": [
+        40
+      ]
+    },
+    "CIF62006": {
+      "name": "Statistika dan Teori Peluang",
+      "equivalent_2024_code": "CIF61302",
+      "equivalent_2024_name": "Statistika dan Teori Peluang",
+      "sources": [
+        42
+      ]
+    },
+    "CIF62013": {
+      "name": "Keamanan Informasi",
+      "equivalent_2024_code": "CIF64213",
+      "equivalent_2024_name": "Keamanan Informasi",
+      "sources": [
+        42
+      ]
+    },
+    "CIF62014": {
+      "name": "Sistem Multimedia",
+      "equivalent_2024_code": "CIF65116",
+      "equivalent_2024_name": "Komputer Grafis",
+      "sources": [
+        41
+      ]
+    },
+    "CIF62015": {
+      "name": "Pemrograman Web",
+      "equivalent_2024_code": "CIF64114",
+      "equivalent_2024_name": "Pengembangan Aplikasi Web",
+      "sources": [
+        41
+      ]
+    },
+    "CIF62016": {
+      "name": "Analisis dan Perancangan Sistem",
+      "equivalent_2024_code": "CIF63106",
+      "equivalent_2024_name": "Analisis dan Perancangan Sistem",
+      "sources": [
+        40
+      ]
+    },
+    "CIF62017": {
+      "name": "Pengantar Pembelajaran Mesin",
+      "equivalent_2024_code": "CIF64311",
+      "equivalent_2024_name": "Kecerdasan Artifisial Lanjut",
+      "sources": [
+        41
+      ]
+    },
+    "CIF62023": {
+      "name": "Arsitektur Jaringan Terkini",
+      "equivalent_2024_code": "CIF62232",
+      "equivalent_2024_name": "Arsitektur jaringan modern",
+      "sources": [
+        41
+      ]
+    },
+    "CIF62025": {
+      "name": "Otomasi Infrastruktur dan Layanan Jaringan",
+      "equivalent_2024_code": "CIF62231",
+      "equivalent_2024_name": "Penyediaan dan Automasi Layanan",
+      "sources": [
+        42
+      ]
+    },
+    "CIF62027": {
+      "name": "Forensik Digital",
+      "equivalent_2024_code": "CIF61235",
+      "equivalent_2024_name": "Forensik Digital",
+      "sources": [
+        40
+      ]
+    },
+    "CIF62029": {
+      "name": "Keamanan Pengguna",
+      "equivalent_2024_code": "CIF62237",
+      "equivalent_2024_name": "Keamanan aplikasi berbasis web",
+      "sources": [
+        41
+      ]
+    },
+    "CIF62035": {
+      "name": "Jaminan Kualitas Perangkat Lunak",
+      "equivalent_2024_code": "CIF62120",
+      "equivalent_2024_name": "Penjaminan Kualitas Perangkat Lunak",
+      "sources": [
+        40
+      ]
+    },
+    "CIF62036": {
+      "name": "Arsitektur Berbasis Layanan",
+      "equivalent_2024_code": "CIF61124",
+      "equivalent_2024_name": "Arsitektur Berbasis Layanan",
+      "sources": [
+        42
+      ]
+    },
+    "CIF62038": {
+      "name": "Pengujian Perangkat Lunak",
+      "equivalent_2024_code": "CIF62128",
+      "equivalent_2024_name": "Pengujian Perangkat Lunak",
+      "sources": [
+        40
+      ]
+    },
+    "CIF62041": {
+      "name": "Pemrograman Aplikasi Perangkat Bergerak",
+      "equivalent_2024_code": "CIF65115",
+      "equivalent_2024_name": "Pemrograman Aplikasi Perangkat Bergerak",
+      "sources": [
+        43
+      ]
+    },
+    "CIF62042": {
+      "name": "Pemrograman Gim",
+      "equivalent_2024_code": "CIF61125",
+      "equivalent_2024_name": "Pemrograman Gim",
+      "sources": [
+        41
+      ]
+    },
+    "CIF62043": {
+      "name": "Realitas Berimbuh dan Maya",
+      "equivalent_2024_code": "CIF61126",
+      "equivalent_2024_name": "Realitas terkembang",
+      "sources": [
+        42
+      ]
+    },
+    "CIF62051": {
+      "name": "Visi Komputer",
+      "equivalent_2024_code": "CIF61339",
+      "equivalent_2024_name": "Pengolahan Citra Digital dan Visi Komputer",
+      "sources": [
+        41
+      ]
+    },
+    "CIF62054": {
+      "name": "Pemerolehan Informasi",
+      "equivalent_2024_code": "CIF62340",
+      "equivalent_2024_name": "Pemerolehan Informasi dan Penambangan Teks",
+      "sources": [
+        42
+      ]
+    },
+    "CIF62055": {
+      "name": "Pemrosesan Bahasa Alami",
+      "equivalent_2024_code": "CIF61341",
+      "equivalent_2024_name": "Pemrosesan Bahasa Alami",
+      "sources": [
+        40
+      ]
+    },
+    "CIF62058": {
+      "name": "Sistem Pendukung Keputusan",
+      "equivalent_2024_code": "CIF62343",
+      "equivalent_2024_name": "Sistem Berbasis Pengetahuan",
+      "sources": [
+        41
+      ]
+    },
+    "CIF62060": {
+      "name": "Statistika Inferensi",
+      "equivalent_2024_code": "CIF65319",
+      "equivalent_2024_name": "Statistika inferensi",
+      "sources": [
+        43
+      ]
+    },
+    "CIF62061": {
+      "name": "Analisis Big Data",
+      "equivalent_2024_code": "CIF62344",
+      "equivalent_2024_name": "Analitik Big Data",
+      "sources": [
+        41
+      ]
+    },
+    "CIF62064": {
+      "name": "Visualisasi Data",
+      "equivalent_2024_code": "CIF62345",
+      "equivalent_2024_name": "Rekayasa Data dan Visualisasi",
+      "sources": [
+        41
+      ]
+    },
+    "COM60011": {
+      "name": "Arsitektur dan Organisasi Komputer",
+      "equivalent_2024_code": "COM60011",
+      "equivalent_2024_name": "Arsitektur dan Organisasi Komputer",
+      "sources": [
+        42
+      ]
+    },
+    "COM60014": {
+      "name": "Pemrograman Dasar",
+      "equivalent_2024_code": "COM60014",
+      "equivalent_2024_name": "Pemrograman Dasar",
+      "sources": [
+        41
+      ]
+    },
+    "COM60015": {
+      "name": "Matematika Komputasi",
+      "equivalent_2024_code": "COM60015",
+      "equivalent_2024_name": "Matematika Diskrit",
+      "sources": [
+        41
+      ]
+    },
+    "COM60016": {
+      "name": "Pengantar Keilmuan Komputer",
+      "equivalent_2024_code": "COM60016",
+      "equivalent_2024_name": "Pengenalan Keilmuan Komputer",
+      "sources": [
+        40
+      ]
+    },
+    "COM60051": {
+      "name": "Metodologi Penelitian dan Penulisan Ilmiah",
+      "equivalent_2024_code": "COM60051",
+      "equivalent_2024_name": "Metodologi Penelitian & Penulisan Ilmiah",
+      "sources": [
+        40
+      ]
+    },
+    "COM60052": {
+      "name": "Etika Profesi",
+      "equivalent_2024_code": "COM60052",
+      "equivalent_2024_name": "Etika Profesi",
+      "sources": [
+        40
+      ]
+    }
+  },
+  "code_aliases": {
+    "CIF60050": "CIF60048",
+    "CIF63107": "CIF63106",
+    "CIF63109": "CIF63108",
+    "CIF63310": "CIF63110",
+    "UBU60007": "MPK60007"
+  }
+}

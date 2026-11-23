@@ -1,0 +1,85 @@
+[
+  {"question": "Apa saja syarat mata kuliah untuk memprogram Pemrograman Aplikasi Perangkat Bergerak?", "intent": "course_prerequisite", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Adakah prasyarat sebelum mengambil Komputer Grafis?", "intent": "course_prerequisite", "speech_act": "yes_no", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Mata kuliah prasyarat Keamanan Informasi itu apa?", "intent": "course_prerequisite", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Berapa nilai minimum yang disyaratkan pada prasyarat Metode Numerik?", "intent": "course_min_grade", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Minimal dapat nilai berapa pada prasyarat Komputer Grafis?", "intent": "course_min_grade", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Berapa nilai minimal prasyarat mata kuliah Pengembangan Aplikasi Web?", "intent": "course_min_grade", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Berapa SKS mata kuliah Pengolahan Citra Digital dan Visi Komputer?", "intent": "course_sks", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "brp sks mata kuliah Algoritma dan Struktur Data?", "intent": "course_sks", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Berapa jumlah SKS dari mata kuliah Analitik Big Data?", "intent": "course_sks", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Mata kuliah Desain dan Analisis Algoritma diambil di semester berapa?", "intent": "course_semester", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Semester berapa mata kuliah Aljabar Linear dijadwalkan?", "intent": "course_semester", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Pada semester berapa mahasiswa memprogram Kewirausahaan?", "intent": "course_semester", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Apa kode mata kuliah Analitik Big Data?", "intent": "course_code", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Sebutkan kode MK untuk Pengembangan Aplikasi Web!", "intent": "course_code", "speech_act": "command", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Apa kode MK mata kuliah Arsitektur dan Organisasi Komputer?", "intent": "course_code", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Mata kuliah apa yang memiliki kode CIF65115?", "intent": "course_name", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Nama mata kuliah untuk kode CIF62344 adalah apa?", "intent": "course_name", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Kode CIF61339 merujuk ke mata kuliah apa?", "intent": "course_name", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Apakah Analisis dan Perancangan Sistem memiliki praktikum?", "intent": "course_practicum", "speech_act": "yes_no", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Adakah praktikum pada mata kuliah Pemrograman Aplikasi Perangkat Bergerak?", "intent": "course_practicum", "speech_act": "yes_no", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Apakah Statistika dan Teori Peluang ada praktikumnya?", "intent": "course_practicum", "speech_act": "yes_no", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Apa saja mata kuliah wajib pada semester lima?", "intent": "course_list_semester", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Sebutkan mata kuliah yang ada di semester 4!", "intent": "course_list_semester", "speech_act": "command", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Tolong tampilkan daftar mata kuliah semester 2.", "intent": "course_list_semester", "speech_act": "indirect_request", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Mata kuliah pilihan apa saja di kelompok Perekayasa Infrastruktur Komputasi?", "intent": "elective_group", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Sebutkan daftar MK pilihan dalam kelompok Pengembang Perekayasa Perangkat Lunak!", "intent": "elective_group", "speech_act": "command", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Apa saja MK pilihan pada Tabel 7.3 kelompok Perekayasa Komputasi Cerdas?", "intent": "elective_group", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Mata kuliah apa saja pada learning path Backend Developer?", "intent": "learning_path", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Sebutkan MK pilihan yang sesuai dengan learning path Security Engineer!", "intent": "learning_path", "speech_act": "command", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Apa saja mata kuliah untuk learning path Computer Vision Engineer?", "intent": "learning_path", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Apa saja daftar lengkap learning path di kurikulum 2024?", "intent": "learning_path_list", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Sebutkan semua learning path yang dijelaskan pada subbab 7.1!", "intent": "learning_path_list", "speech_act": "command", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Tolong daftarkan seluruh jalur learning path untuk mahasiswa TIF.", "intent": "learning_path_list", "speech_act": "indirect_request", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Berapa total SKS pada semester 5?", "intent": "total_sks", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Berapa jumlah total SKS mata kuliah semester 6?", "intent": "total_sks", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Berapa total SKS yang harus diselesaikan mahasiswa TIF sampai lulus?", "intent": "total_sks", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Bagaimana aturan peralihan untuk mahasiswa semester 4 dan 6 yang ingin mengambil MK pilihan?", "intent": "curriculum_transition", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Jelaskan ketentuan peralihan bagi mahasiswa yang sudah lulus MK lama tanpa praktikum!", "intent": "curriculum_transition", "speech_act": "command", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Bagaimana aturan peralihan apabila mata kuliah di kurikulum lama dihapus pada kurikulum 2024?", "intent": "curriculum_transition", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "MK kurikulum 2024 apa yang setara dengan CIF61048 Pengolahan Citra Digital?", "intent": "course_equivalence", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Mata kuliah apa yang menggantikan Grafika Komputer di kurikulum 2024?", "intent": "course_equivalence", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Apa penyetaraan untuk CIF62029 Keamanan Pengguna pada kurikulum baru?", "intent": "course_equivalence", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Apa isi capaian pembelajaran lulusan IF_CPL_KU1?", "intent": "cpl", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Jelaskan rumusan CPL dengan kode IF_CPL_KK2!", "intent": "cpl", "speech_act": "command", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Apa isi dari kode CPL IF_CPL_S1?", "intent": "cpl", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Sebutkan rumusan profil lulusan Program Studi Teknik Informatika!", "intent": "graduate_profile", "speech_act": "command", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Bagaimana profil lulusan sarjana Informatika menurut Bab 2?", "intent": "graduate_profile", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Apa saja kompetensi dalam profil lulusan prodi TIF UB?", "intent": "graduate_profile", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Apa misi dan tujuan Program Studi Sarjana Teknik Informatika?", "intent": "vision_mission", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Tolong tampilkan rumusan visi Program Studi Teknik Informatika.", "intent": "vision_mission", "speech_act": "indirect_request", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Apa saja poin tujuan lulusan pada Bab 1 deskripsi program studi?", "intent": "vision_mission", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Apa yang dipelajari pada mata kuliah Jaringan Komputer?", "intent": "course_description", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Jelaskan bahan kajian dalam silabus Rekayasa Perangkat Lunak!", "intent": "course_description", "speech_act": "command", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Apa isi deskripsi mata kuliah Statistika dan Teori Peluang?", "intent": "course_description", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Apa saja kegiatan Merdeka Belajar selain pertukaran mahasiswa dan magang?", "intent": "mbkm", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Jelaskan kegiatan asistensi mengajar atau asisten riset pada program MBKM!", "intent": "mbkm", "speech_act": "command", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Bagaimana aturan program studi independen dalam kegiatan Merdeka Belajar?", "intent": "mbkm", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Apa kepanjangan dari singkatan CPMK?", "intent": "abbreviation", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Kepanjangan dari singkatan MKLP itu apa?", "intent": "abbreviation", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Apa kepanjangan dari IABEE dan APTIKOM dalam buku pedoman?", "intent": "abbreviation", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+
+  {"question": "Siapa ketua BEM FILKOM UB tahun ini?", "intent": "other", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Berapa biaya sewa kos di sekitar Jalan Veteran Malang?", "intent": "other", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"},
+  {"question": "Kapan libur semester genap berakhir di kalender akademik nasional?", "intent": "other", "speech_act": "wh", "checked_by": "AI-audited (pending Yusuf sign-off)"}
+]

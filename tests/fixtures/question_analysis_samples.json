@@ -1,0 +1,670 @@
+[
+  {
+    "original_question": "Apa prasyarat Kecerdasan Artifisial Lanjut?",
+    "normalized_question": "apa prasyarat kecerdasan artifisial lanjut",
+    "tokens": ["apa", "prasyarat", "kecerdasan", "artifisial", "lanjut"],
+    "pos_tags": [
+      ["apa", "WH"],
+      ["prasyarat", "NN"],
+      ["kecerdasan", "NNP"],
+      ["artifisial", "NNP"],
+      ["lanjut", "NNP"]
+    ],
+    "speech_act": "wh",
+    "question_category": "factoid",
+    "intent": "course_prerequisite",
+    "answer_type_coarse": "ENTITY",
+    "answer_type": "ENTITY:prerequisite",
+    "focus": "prasyarat",
+    "query_keywords": ["prasyarat", "Kecerdasan Artifisial Lanjut", "CIF64311"],
+    "expanded_queries": [
+      "syarat Kecerdasan Artifisial Lanjut",
+      "prasyarat Kecerdasan Artifisial Lanjut adalah",
+      "CIF64311 Kecerdasan Artifisial Lanjut prasyarat"
+    ],
+    "entities": [
+      {
+        "type": "course_name",
+        "value": "kecerdasan artifisial lanjut",
+        "normalized_value": "Kecerdasan Artifisial Lanjut"
+      }
+    ],
+    "relations": [
+      {
+        "predicate": "prerequisite_of",
+        "subject": "Kecerdasan Artifisial Lanjut",
+        "object": null
+      }
+    ]
+  },
+  {
+    "original_question": "Berapa nilai minimum prasyarat Jaringan Saraf Tiruan?",
+    "normalized_question": "berapa nilai minimum prasyarat jaringan saraf tiruan",
+    "tokens": ["berapa", "nilai", "minimum", "prasyarat", "jaringan", "saraf", "tiruan"],
+    "pos_tags": [
+      ["berapa", "WH"],
+      ["nilai", "NN"],
+      ["minimum", "JJ"],
+      ["prasyarat", "NN"],
+      ["jaringan", "NNP"],
+      ["saraf", "NNP"],
+      ["tiruan", "NNP"]
+    ],
+    "speech_act": "wh",
+    "question_category": "factoid",
+    "intent": "course_min_grade",
+    "answer_type_coarse": "NUMERIC",
+    "answer_type": "NUMERIC:grade",
+    "focus": "nilai minimum prasyarat",
+    "query_keywords": ["nilai", "minimum", "prasyarat", "Jaringan Saraf Tiruan", "CIF65318"],
+    "expanded_queries": [
+      "nilai minimal prasyarat Jaringan Saraf Tiruan",
+      "CIF65318 Jaringan Saraf Tiruan nilai prasyarat"
+    ],
+    "entities": [
+      {
+        "type": "course_name",
+        "value": "jaringan saraf tiruan",
+        "normalized_value": "Jaringan Saraf Tiruan"
+      }
+    ],
+    "relations": [
+      {
+        "predicate": "min_grade",
+        "subject": "Jaringan Saraf Tiruan",
+        "object": null
+      }
+    ]
+  },
+  {
+    "original_question": "Berapa SKS mata kuliah Basis Data?",
+    "normalized_question": "berapa sks mata kuliah basis data",
+    "tokens": ["berapa", "sks", "mata", "kuliah", "basis", "data"],
+    "pos_tags": [
+      ["berapa", "WH"],
+      ["sks", "NN"],
+      ["mata", "NN"],
+      ["kuliah", "NN"],
+      ["basis", "NNP"],
+      ["data", "NNP"]
+    ],
+    "speech_act": "wh",
+    "question_category": "factoid",
+    "intent": "course_sks",
+    "answer_type_coarse": "NUMERIC",
+    "answer_type": "NUMERIC:count",
+    "focus": "sks",
+    "query_keywords": ["sks", "Basis Data", "CIF62104"],
+    "expanded_queries": [
+      "satuan kredit semester Basis Data",
+      "CIF62104 Basis Data sks"
+    ],
+    "entities": [
+      {
+        "type": "abbreviation",
+        "value": "sks",
+        "normalized_value": "SKS"
+      },
+      {
+        "type": "course_name",
+        "value": "basis data",
+        "normalized_value": "Basis Data"
+      }
+    ],
+    "relations": [
+      {
+        "predicate": "sks",
+        "subject": "Basis Data",
+        "object": null
+      }
+    ]
+  },
+  {
+    "original_question": "Mata kuliah Sistem Operasi diambil pada semester berapa?",
+    "normalized_question": "mata kuliah sistem operasi diambil pada semester berapa",
+    "tokens": ["mata", "kuliah", "sistem", "operasi", "diambil", "pada", "semester", "berapa"],
+    "pos_tags": [
+      ["mata", "NN"],
+      ["kuliah", "NN"],
+      ["sistem", "NNP"],
+      ["operasi", "NNP"],
+      ["diambil", "VB"],
+      ["pada", "IN"],
+      ["semester", "NN"],
+      ["berapa", "WH"]
+    ],
+    "speech_act": "wh",
+    "question_category": "factoid",
+    "intent": "course_semester",
+    "answer_type_coarse": "NUMERIC",
+    "answer_type": "NUMERIC:order",
+    "focus": "semester",
+    "query_keywords": ["semester", "Sistem Operasi", "CIF62203"],
+    "expanded_queries": [
+      "Sistem Operasi diambil pada semester",
+      "CIF62203 Sistem Operasi semester"
+    ],
+    "entities": [
+      {
+        "type": "course_name",
+        "value": "sistem operasi",
+        "normalized_value": "Sistem Operasi"
+      }
+    ],
+    "relations": [
+      {
+        "predicate": "semester",
+        "subject": "Sistem Operasi",
+        "object": null
+      }
+    ]
+  },
+  {
+    "original_question": "Apa kode MK untuk Kecerdasan Artifisial?",
+    "normalized_question": "apa kode mk untuk kecerdasan artifisial",
+    "tokens": ["apa", "kode", "mk", "untuk", "kecerdasan", "artifisial"],
+    "pos_tags": [
+      ["apa", "WH"],
+      ["kode", "NN"],
+      ["mk", "NN"],
+      ["untuk", "SC"],
+      ["kecerdasan", "NNP"],
+      ["artifisial", "NNP"]
+    ],
+    "speech_act": "wh",
+    "question_category": "factoid",
+    "intent": "course_code",
+    "answer_type_coarse": "NUMERIC",
+    "answer_type": "NUMERIC:code",
+    "focus": "kode mk",
+    "query_keywords": ["kode", "mk", "Kecerdasan Artifisial"],
+    "expanded_queries": [
+      "kode mata kuliah Kecerdasan Artifisial",
+      "kode mk Kecerdasan Artifisial adalah"
+    ],
+    "entities": [
+      {
+        "type": "abbreviation",
+        "value": "mk",
+        "normalized_value": "MK"
+      },
+      {
+        "type": "course_name",
+        "value": "kecerdasan artifisial",
+        "normalized_value": "Kecerdasan Artifisial"
+      }
+    ],
+    "relations": [
+      {
+        "predicate": "course_code",
+        "subject": "Kecerdasan Artifisial",
+        "object": null
+      }
+    ]
+  },
+  {
+    "original_question": "Apakah Sistem Operasi memiliki praktikum?",
+    "normalized_question": "apakah sistem operasi memiliki praktikum",
+    "tokens": ["apakah", "sistem", "operasi", "memiliki", "praktikum"],
+    "pos_tags": [
+      ["apakah", "WH"],
+      ["sistem", "NNP"],
+      ["operasi", "NNP"],
+      ["memiliki", "VB"],
+      ["praktikum", "NN"]
+    ],
+    "speech_act": "yes_no",
+    "question_category": "yes_no",
+    "intent": "course_practicum",
+    "answer_type_coarse": "DESCRIPTION",
+    "answer_type": "DESCRIPTION:yes_no",
+    "focus": "praktikum",
+    "query_keywords": ["praktikum", "Sistem Operasi", "CIF62203"],
+    "expanded_queries": [
+      "CIF62203 Sistem Operasi praktikum",
+      "Sistem Operasi praktikum ya tidak"
+    ],
+    "entities": [
+      {
+        "type": "course_name",
+        "value": "sistem operasi",
+        "normalized_value": "Sistem Operasi"
+      }
+    ],
+    "relations": [
+      {
+        "predicate": "has_practicum",
+        "subject": "Sistem Operasi",
+        "object": null
+      }
+    ]
+  },
+  {
+    "original_question": "Sebutkan mata kuliah pada semester 3!",
+    "normalized_question": "sebutkan mata kuliah pada semester 3",
+    "tokens": ["sebutkan", "mata", "kuliah", "pada", "semester", "3"],
+    "pos_tags": [
+      ["sebutkan", "VB"],
+      ["mata", "NN"],
+      ["kuliah", "NN"],
+      ["pada", "IN"],
+      ["semester", "NN"],
+      ["3", "CD"]
+    ],
+    "speech_act": "command",
+    "question_category": "list",
+    "intent": "course_list_semester",
+    "answer_type_coarse": "ENTITY",
+    "answer_type": "ENTITY:course_list",
+    "focus": "mata kuliah",
+    "query_keywords": ["mata", "kuliah", "semester", "3"],
+    "expanded_queries": [
+      "mk semester 3",
+      "semester 3 kode mk nama mk sks"
+    ],
+    "entities": [
+      {
+        "type": "semester",
+        "value": "semester 3",
+        "normalized_value": "3"
+      }
+    ],
+    "relations": [
+      {
+        "predicate": "semester",
+        "subject": null,
+        "object": "3"
+      }
+    ]
+  },
+  {
+    "original_question": "Mata kuliah pilihan apa saja yang termasuk kelompok Perekayasa Komputasi Cerdas?",
+    "normalized_question": "mata kuliah pilihan apa saja yang termasuk kelompok perekayasa komputasi cerdas",
+    "tokens": ["mata", "kuliah", "pilihan", "apa", "saja", "yang", "termasuk", "kelompok", "perekayasa", "komputasi", "cerdas"],
+    "pos_tags": [
+      ["mata", "NN"],
+      ["kuliah", "NN"],
+      ["pilihan", "NN"],
+      ["apa", "WH"],
+      ["saja", "RB"],
+      ["yang", "SC"],
+      ["termasuk", "VB"],
+      ["kelompok", "NN"],
+      ["perekayasa", "NNP"],
+      ["komputasi", "NNP"],
+      ["cerdas", "NNP"]
+    ],
+    "speech_act": "wh",
+    "question_category": "list",
+    "intent": "elective_group",
+    "answer_type_coarse": "ENTITY",
+    "answer_type": "ENTITY:course_list",
+    "focus": "mata kuliah pilihan",
+    "query_keywords": ["mata", "kuliah", "pilihan", "Perekayasa Komputasi Cerdas"],
+    "expanded_queries": [
+      "mk pilihan Perekayasa Komputasi Cerdas",
+      "Tabel 7.3 MK Pilihan Perekayasa Komputasi Cerdas"
+    ],
+    "entities": [
+      {
+        "type": "elective_group",
+        "value": "perekayasa komputasi cerdas",
+        "normalized_value": "Perekayasa Komputasi Cerdas"
+      }
+    ],
+    "relations": [
+      {
+        "predicate": "elective_group_member",
+        "subject": null,
+        "object": "Perekayasa Komputasi Cerdas"
+      }
+    ]
+  },
+  {
+    "original_question": "Mata kuliah apa saja pada learning path NLP Engineer?",
+    "normalized_question": "mata kuliah apa saja pada learning path nlp engineer",
+    "tokens": ["mata", "kuliah", "apa", "saja", "pada", "learning", "path", "nlp", "engineer"],
+    "pos_tags": [
+      ["mata", "NN"],
+      ["kuliah", "NN"],
+      ["apa", "WH"],
+      ["saja", "RB"],
+      ["pada", "IN"],
+      ["learning", "NNP"],
+      ["path", "NNP"],
+      ["nlp", "NNP"],
+      ["engineer", "NNP"]
+    ],
+    "speech_act": "wh",
+    "question_category": "list",
+    "intent": "learning_path",
+    "answer_type_coarse": "ENTITY",
+    "answer_type": "ENTITY:course_list",
+    "focus": "mata kuliah",
+    "query_keywords": ["mata", "kuliah", "learning", "path", "NLP Engineer"],
+    "expanded_queries": [
+      "learning path NLP Engineer mata kuliah pilihan",
+      "mk learning path NLP Engineer"
+    ],
+    "entities": [
+      {
+        "type": "learning_path",
+        "value": "nlp engineer",
+        "normalized_value": "NLP Engineer"
+      }
+    ],
+    "relations": [
+      {
+        "predicate": "learning_path_member",
+        "subject": null,
+        "object": "NLP Engineer"
+      }
+    ]
+  },
+  {
+    "original_question": "Tolong jelaskan aturan peralihan untuk mahasiswa semester 3!",
+    "normalized_question": "tolong jelaskan aturan peralihan untuk mahasiswa semester 3",
+    "tokens": ["tolong", "jelaskan", "aturan", "peralihan", "untuk", "mahasiswa", "semester", "3"],
+    "pos_tags": [
+      ["tolong", "VB"],
+      ["jelaskan", "VB"],
+      ["aturan", "NN"],
+      ["peralihan", "NN"],
+      ["untuk", "SC"],
+      ["mahasiswa", "NN"],
+      ["semester", "NN"],
+      ["3", "CD"]
+    ],
+    "speech_act": "indirect_request",
+    "question_category": "narrative",
+    "intent": "curriculum_transition",
+    "answer_type_coarse": "DESCRIPTION",
+    "answer_type": "DESCRIPTION:manner",
+    "focus": "aturan peralihan",
+    "query_keywords": ["aturan", "peralihan", "mahasiswa", "semester", "3"],
+    "expanded_queries": [
+      "aturan peralihan kurikulum 2024 semester 3",
+      "rekomendasi tambahan mata kuliah mahasiswa semester 3"
+    ],
+    "entities": [
+      {
+        "type": "semester",
+        "value": "semester 3",
+        "normalized_value": "3"
+      }
+    ],
+    "relations": []
+  },
+  {
+    "original_question": "Apa isi capaian pembelajaran IF_CPL_KK1?",
+    "normalized_question": "apa isi capaian pembelajaran if_cpl_kk1",
+    "tokens": ["apa", "isi", "capaian", "pembelajaran", "if_cpl_kk1"],
+    "pos_tags": [
+      ["apa", "WH"],
+      ["isi", "NN"],
+      ["capaian", "NN"],
+      ["pembelajaran", "NN"],
+      ["if_cpl_kk1", "NNP"]
+    ],
+    "speech_act": "wh",
+    "question_category": "definition",
+    "intent": "cpl",
+    "answer_type_coarse": "DESCRIPTION",
+    "answer_type": "DESCRIPTION:definition",
+    "focus": "isi capaian pembelajaran",
+    "query_keywords": ["capaian", "pembelajaran", "IF_CPL_KK1"],
+    "expanded_queries": [
+      "deskripsi IF_CPL_KK1",
+      "IF_CPL_KK1 capaian pembelajaran lulusan"
+    ],
+    "entities": [
+      {
+        "type": "cpl_code",
+        "value": "if_cpl_kk1",
+        "normalized_value": "IF_CPL_KK1"
+      }
+    ],
+    "relations": [
+      {
+        "predicate": "cpl_description",
+        "subject": "IF_CPL_KK1",
+        "object": null
+      }
+    ]
+  },
+  {
+    "original_question": "Apa kepanjangan dari MBKM?",
+    "normalized_question": "apa kepanjangan dari mbkm",
+    "tokens": ["apa", "kepanjangan", "dari", "mbkm"],
+    "pos_tags": [
+      ["apa", "WH"],
+      ["kepanjangan", "NN"],
+      ["dari", "IN"],
+      ["mbkm", "NNP"]
+    ],
+    "speech_act": "wh",
+    "question_category": "definition",
+    "intent": "abbreviation",
+    "answer_type_coarse": "ABBREVIATION",
+    "answer_type": "ABBREVIATION:expansion",
+    "focus": "kepanjangan",
+    "query_keywords": ["kepanjangan", "MBKM"],
+    "expanded_queries": [
+      "singkatan MBKM adalah",
+      "Merdeka Belajar Kampus Merdeka MBKM"
+    ],
+    "entities": [
+      {
+        "type": "abbreviation",
+        "value": "mbkm",
+        "normalized_value": "MBKM"
+      }
+    ],
+    "relations": []
+  },
+  {
+    "original_question": "Mata kuliah pilihan apa saja yang termasuk kelompok Perekayasa Perangkat Lunak?",
+    "normalized_question": "mata kuliah pilihan apa saja yang termasuk kelompok perekayasa perangkat lunak",
+    "tokens": [
+      "mata",
+      "kuliah",
+      "pilihan",
+      "apa",
+      "saja",
+      "yang",
+      "termasuk",
+      "kelompok",
+      "perekayasa",
+      "perangkat",
+      "lunak"
+    ],
+    "pos_tags": [
+      ["mata", "NN"],
+      ["kuliah", "NN"],
+      ["pilihan", "NN"],
+      ["apa", "WH"],
+      ["saja", "WH"],
+      ["yang", "SC"],
+      ["termasuk", "VB"],
+      ["kelompok", "NN"],
+      ["perekayasa", "NNP"],
+      ["perangkat", "NNP"],
+      ["lunak", "NNP"]
+    ],
+    "speech_act": "wh",
+    "question_category": "list",
+    "intent": "elective_group",
+    "answer_type_coarse": "ENTITY",
+    "answer_type": "ENTITY:course_list",
+    "focus": "mata kuliah pilihan",
+    "query_keywords": [
+      "mata",
+      "kuliah",
+      "pilihan",
+      "kelompok",
+      "Perekayasa Perangkat Lunak"
+    ],
+    "expanded_queries": [
+      "mk pilihan kelompok Perekayasa Perangkat Lunak",
+      "mata kuliah elektif kelompok Perekayasa Perangkat Lunak",
+      "mk pilihan Perekayasa Perangkat Lunak"
+    ],
+    "entities": [
+      {
+        "type": "elective_group",
+        "value": "perekayasa perangkat lunak",
+        "normalized_value": "Perekayasa Perangkat Lunak"
+      }
+    ],
+    "relations": [
+      {
+        "predicate": "elective_group_member",
+        "subject": null,
+        "object": "Perekayasa Perangkat Lunak"
+      }
+    ]
+  },
+  {
+    "original_question": "CPL apa saja yang didukung oleh bahan kajian Intelligent Systems?",
+    "normalized_question": "cpl apa saja yang didukung oleh bahan kajian intelligent systems",
+    "tokens": [
+      "cpl",
+      "apa",
+      "saja",
+      "yang",
+      "didukung",
+      "oleh",
+      "bahan",
+      "kajian",
+      "intelligent",
+      "systems"
+    ],
+    "pos_tags": [
+      ["cpl", "NNP"],
+      ["apa", "WH"],
+      ["saja", "WH"],
+      ["yang", "SC"],
+      ["didukung", "VB"],
+      ["oleh", "IN"],
+      ["bahan", "NN"],
+      ["kajian", "NN"],
+      ["intelligent", "NNP"],
+      ["systems", "NNP"]
+    ],
+    "speech_act": "wh",
+    "question_category": "definition",
+    "intent": "cpl",
+    "answer_type_coarse": "DESCRIPTION",
+    "answer_type": "DESCRIPTION:definition",
+    "focus": null,
+    "query_keywords": [
+      "cpl",
+      "didukung",
+      "bahan",
+      "kajian",
+      "Intelligent Systems (AI) (CC2020)"
+    ],
+    "expanded_queries": [
+      "capaian pembelajaran lulusan didukung bahan kajian Intelligent Systems (AI) (CC2020)",
+      "Capaian Pembelajaran Lulusan CPL"
+    ],
+    "entities": [
+      {
+        "type": "abbreviation",
+        "value": "cpl",
+        "normalized_value": "CPL"
+      },
+      {
+        "type": "knowledge_area",
+        "value": "intelligent systems",
+        "normalized_value": "Intelligent Systems (AI) (CC2020)"
+      }
+    ],
+    "relations": [
+      {
+        "predicate": "supports_cpl",
+        "subject": "Intelligent Systems (AI) (CC2020)",
+        "object": null
+      }
+    ]
+  },
+  {
+    "original_question": "Apa saja mata kuliah prasyarat dan nilai minimumnya untuk mengambil mata kuliah Jaringan Saraf Tiruan?",
+    "normalized_question": "apa saja mata kuliah prasyarat dan nilai minimumnya untuk mengambil mata kuliah jaringan saraf tiruan",
+    "tokens": [
+      "apa",
+      "saja",
+      "mata",
+      "kuliah",
+      "prasyarat",
+      "dan",
+      "nilai",
+      "minimumnya",
+      "untuk",
+      "mengambil",
+      "mata",
+      "kuliah",
+      "jaringan",
+      "saraf",
+      "tiruan"
+    ],
+    "pos_tags": [
+      ["apa", "WH"],
+      ["saja", "WH"],
+      ["mata", "NN"],
+      ["kuliah", "NN"],
+      ["prasyarat", "NN"],
+      ["dan", "CC"],
+      ["nilai", "NN"],
+      ["minimumnya", "NN"],
+      ["untuk", "SC"],
+      ["mengambil", "VB"],
+      ["mata", "VB"],
+      ["kuliah", "NN"],
+      ["jaringan", "NNP"],
+      ["saraf", "NNP"],
+      ["tiruan", "NNP"]
+    ],
+    "speech_act": "wh",
+    "question_category": "factoid",
+    "intent": "course_prerequisite",
+    "answer_type_coarse": "ENTITY",
+    "answer_type": "ENTITY:prerequisite",
+    "focus": "mata kuliah prasyarat",
+    "query_keywords": [
+      "mata",
+      "kuliah",
+      "prasyarat",
+      "nilai",
+      "minimumnya",
+      "Jaringan Saraf Tiruan",
+      "CIF65318"
+    ],
+    "expanded_queries": [
+      "mk prasyarat nilai minimumnya Jaringan Saraf Tiruan CIF65318",
+      "mata kuliah syarat nilai minimumnya Jaringan Saraf Tiruan CIF65318",
+      "syarat Jaringan Saraf Tiruan",
+      "prasyarat Jaringan Saraf Tiruan adalah",
+      "CIF65318 Jaringan Saraf Tiruan prasyarat"
+    ],
+    "entities": [
+      {
+        "type": "course_name",
+        "value": "jaringan saraf tiruan",
+        "normalized_value": "Jaringan Saraf Tiruan"
+      }
+    ],
+    "relations": [
+      {
+        "predicate": "prerequisite_of",
+        "subject": "Jaringan Saraf Tiruan",
+        "object": null
+      },
+      {
+        "predicate": "min_grade",
+        "subject": "Jaringan Saraf Tiruan",
+        "object": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,37 @@
+# Evaluasi POS Tagger CRF (IDN Tagged Corpus + Domain Gold)
+Train sentences: 9027 | Held-out test sentences: 1003
+IDN Held-out Token Accuracy: 0.9715
+Domain Gold Sentences: 20
+Domain Gold Accuracy (CRF Raw): 0.6744
+Domain Gold Accuracy (CRF + Domain Override): 0.9457
+
+## Classification Report (IDN 10% Held-out)
+              precision    recall  f1-score   support
+
+          CC     0.9843    0.9869    0.9856       763
+          CD     0.9933    0.9944    0.9939      1789
+          DT     0.9744    1.0000    0.9870        38
+          FW     0.8598    0.8070    0.8326       228
+          IN     0.9625    0.9709    0.9667      2168
+          JJ     0.9523    0.9214    0.9366      1018
+          MD     0.9945    0.9890    0.9917       544
+         NEG     0.9884    0.9942    0.9913       171
+          NN     0.9640    0.9742    0.9691      6544
+         NND     0.9704    0.9225    0.9458       142
+         NNP     0.9563    0.9566    0.9564      3616
+          OD     0.8611    0.8611    0.8611        72
+          PR     0.9926    0.9945    0.9935       542
+         PRP     0.9962    0.9949    0.9956       788
+          RB     0.9541    0.9522    0.9531       502
+          RP     0.8636    1.0000    0.9268        19
+          SC     0.9602    0.9483    0.9542      1296
+         SYM     1.0000    0.9955    0.9977       220
+          UH     1.0000    0.8333    0.9091         6
+          VB     0.9836    0.9830    0.9833      3227
+          WH     0.7941    0.7500    0.7714        36
+           X     0.7692    0.3125    0.4444        32
+           Z     0.9977    0.9981    0.9979      2606
+
+    accuracy                         0.9715     26367
+   macro avg     0.9466    0.9191    0.9280     26367
+weighted avg     0.9713    0.9715    0.9712     26367
