@@ -61,6 +61,11 @@ def _domain_proper_noun_phrases() -> tuple[tuple[str, ...], ...]:
             a_toks = tuple(alias.lower().split())
             if len(a_toks) >= 2:
                 phrases.add(a_toks)
+    for canon, aliases in domain_lex.get("knowledge_areas", {}).items():
+        for alias in aliases:
+            a_toks = tuple(alias.lower().split())
+            if len(a_toks) >= 2:
+                phrases.add(a_toks)
     for org_phrase in (
         ("teknik", "informatika"),
         ("merdeka", "belajar"),
@@ -248,11 +253,16 @@ def formulate_query(
 
     # 1. Ekspansi sinonim/singkatan pada query dasar
     base_phrase = " ".join(keywords)
+    if base_phrase:
+        seen_exp.add(base_phrase.lower())
+    source_phrase = base_phrase or normalized_question
     for term, repls in synonyms.items():
         if re.search(rf"\b{re.escape(term)}\b", normalized_question):
             for rep in repls[:1]:
-                candidate = re.sub(rf"\b{re.escape(term)}\b", rep, base_phrase or normalized_question)
-                _append_unique(expanded, seen_exp, candidate)
+                if re.search(rf"\b{re.escape(term)}\b", source_phrase):
+                    candidate = re.sub(rf"\b{re.escape(term)}\b", rep, source_phrase)
+                    if candidate.lower() != source_phrase.lower():
+                        _append_unique(expanded, seen_exp, candidate)
                 if course_name and term in {"prasyarat", "syarat"}:
                     _append_unique(expanded, seen_exp, f"{rep} {course_name}")
 

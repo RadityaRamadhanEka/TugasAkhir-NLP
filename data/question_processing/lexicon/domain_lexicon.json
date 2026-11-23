@@ -61,9 +61,9 @@
     ]
   },
   "elective_groups": {
-    "Pengembang Perekayasa Perangkat Lunak": [
-      "pengembang perekayasa perangkat lunak",
+    "Perekayasa Perangkat Lunak": [
       "perekayasa perangkat lunak",
+      "pengembang perekayasa perangkat lunak",
       "rekayasa perangkat lunak pilihan",
       "kelompok perangkat lunak"
     ],
@@ -76,6 +76,135 @@
       "perekayasa komputasi cerdas",
       "komputasi cerdas",
       "kelompok komputasi cerdas"
+    ]
+  },
+  "knowledge_areas": {
+    "Architecture and Organization (CC2020)": [
+      "architecture and organization cc2020",
+      "architecture and organization"
+    ],
+    "Computer networks (CC2020)": [
+      "computer networks cc2020",
+      "computer networks"
+    ],
+    "Computing System Fundamentals (CC2020)": [
+      "computing system fundamentals cc2020",
+      "computing system fundamentals"
+    ],
+    "Data Management (CS2023)": [
+      "data management cs2023",
+      "data management"
+    ],
+    "Data Structures, Algorithms and Complexity (CC2020)": [
+      "data structures algorithms and complexity cc2020",
+      "data structures algorithms and complexity"
+    ],
+    "Discrete Structures (CC2020) / Mathematical and Statistical Foundations (CC2023)": [
+      "discrete structures cc2020/mathematical and statistical foundations cs2023",
+      "discrete structures",
+      "mathematical and statistical foundations"
+    ],
+    "Enterprise Architecture (CC2020)": [
+      "enterprise architecture cc2020",
+      "enterprise architecture"
+    ],
+    "Graphics and Visualization (CC2020)": [
+      "graphics and visualization cc2020",
+      "graphics and visualization"
+    ],
+    "Integration System Technology (CC2020)": [
+      "integration system technology cc2020",
+      "integration system technology"
+    ],
+    "Intelligent Systems (AI) (CC2020)": [
+      "intelligent systems ai cc2020",
+      "intelligent systems"
+    ],
+    "Internet of things (CC2020)": [
+      "internet of things cc2020",
+      "internet of things"
+    ],
+    "Operating Systems (CC2020)": [
+      "operating systems cc2020",
+      "operating systems"
+    ],
+    "Parallel and distributed computing (CC2020)": [
+      "parallel and distributed computing cc2020",
+      "parallel and distributed computing"
+    ],
+    "Platform Technology (CC2020)": [
+      "platform technology cc2020",
+      "platform technology"
+    ],
+    "Platform-Based Development (CC2020)": [
+      "platform-based development cc2020",
+      "platform-based development",
+      "platform based development"
+    ],
+    "Programming Fundamentals (CC2020)": [
+      "programming fundamentals cc2020",
+      "programming fundamentals"
+    ],
+    "Programming Language (CC2020)": [
+      "programming language cc2020",
+      "programming language"
+    ],
+    "Project Management (CC2020)": [
+      "project management cc2020",
+      "project management"
+    ],
+    "Requirement Analysis and Specification (CC2020)": [
+      "requirement analysis and specification cc2020",
+      "requirement analysis and specification"
+    ],
+    "Security Issues and Principles (CC2020)": [
+      "security issues and principles cc2020",
+      "security issues and principles"
+    ],
+    "Security Policy and Management (CC2020)": [
+      "security policy and management cc2020",
+      "security policy and management"
+    ],
+    "Security Technology and Implementation (CC2020)": [
+      "security technology and implementation cc2020",
+      "security technology and implementation"
+    ],
+    "Social Issues and Professional Practice (CC2020)": [
+      "social issues and professional practice cc2020",
+      "social issues and professional practice"
+    ],
+    "Software Architect (CC2020)": [
+      "software architect cc2020",
+      "software architect"
+    ],
+    "Software Design (CC2020)": [
+      "software design cc2020",
+      "software design"
+    ],
+    "Software Modeling and Analysis (CC2020)": [
+      "software modeling and analysis cc2020",
+      "software modeling and analysis"
+    ],
+    "Software Process (CC2020)": [
+      "software process cc2020",
+      "software process"
+    ],
+    "Software Quality, Verification and Validation (CC2020)": [
+      "software quality verification and validation cc2020",
+      "software quality verification and validation"
+    ],
+    "System Analysis & Design (CC2020)": [
+      "system analysis design cc2020",
+      "system analysis design",
+      "system analysis and design"
+    ],
+    "User Experience Design (CC2020)": [
+      "user experience design cc2020",
+      "user experience design"
+    ],
+    "Virtual system and services (CC2020)": [
+      "virtual system and services cc2020",
+      "virtual system and services"
     ]
   },
   "cpl_codes": [

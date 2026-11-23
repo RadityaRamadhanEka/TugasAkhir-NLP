@@ -143,17 +143,28 @@ def classify_question_rule_only(
     ):
         return "course_sks"
 
-    if re.search(r"\bsemester\s+(?:berapa|apa|mana|ganjil|genap)\b", norm) or (
-        re.search(r"\bsemester\b", norm)
-        and re.search(r"\b(?:diambil|ditempuh|dijadwalkan|ditawarkan|diprogram|masuk|berada)\b", norm)
-        and not re.search(r"\b(?:apa\s+saja|daftar|semua|seluruh)\b", norm)
-    ):
-        return "course_semester"
-
     if re.search(
-        r"\bsemester\s+(?:[1-8]|satu|dua|tiga|empat|lima|enam|tujuh|delapan|antara)\b", norm
+        r"\bsemester\s+(?:[1-8]|satu|dua|tiga|empat|lima|enam|tujuh|delapan|antara(?:\s+[ab])?|ganjil/genap|ganjil|genap)\b",
+        norm,
     ) and re.search(r"\b(?:mk|mata\s+kuliah|wajib|daftar|apa\s+saja|sebutkan|tampilkan|tuliskan)\b", norm):
         return "course_list_semester"
+
+    if (
+        re.search(r"\bsemester\s+(?:berapa|apa|mana)\b", norm)
+        or (
+            re.search(r"\bsemester\b", norm)
+            and re.search(r"\b(?:diambil|ditempuh|dijadwalkan|ditawarkan|diprogram|masuk|berada)\b", norm)
+            and not re.search(r"\b(?:apa\s+saja|daftar|semua|seluruh)\b", norm)
+        )
+        or (
+            re.search(r"\bsemester\s+(?:ganjil|genap)\b", norm)
+            and (
+                re.search(r"\b(?:mk|mata\s+kuliah)\b", norm)
+                or _COURSE_CODE_PATTERN.search(norm)
+            )
+        )
+    ):
+        return "course_semester"
 
     if re.search(r"\bif_cpl_[a-z0-9]+\b|\bcpl\b", norm):
         return "cpl"
@@ -325,6 +336,11 @@ def classify_question(
         if hasattr(model, "predict_proba"):
             probs = model.predict_proba([feat])[0]
             if float(max(probs)) < 0.12:
+                intent = "other"
+        elif hasattr(model, "decision_function"):
+            # Ambang -0.32 dikalibrasi dari 5-fold CV data latih untuk menolak kueri OOD berkeyakinan rendah
+            scores = model.decision_function([feat])[0]
+            if float(max(scores)) < -0.32:
                 intent = "other"
 
     category: QuestionCategory = "yes_no" if sa == "yes_no" else _INTENT_TO_CATEGORY.get(intent, "factoid")

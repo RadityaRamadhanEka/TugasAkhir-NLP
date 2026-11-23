@@ -11,7 +11,7 @@ from src.question_processing.text_utils import normalize_question
 _COURSE_CODE_RE = re.compile(r"\b([a-z]{3}\d{5}(?:-\d)?)\b")
 _CPL_CODE_RE = re.compile(r"\b(?:if_)?cpl[_\s-]?(s|p|ku|kk|kp)\s?(\d)\b")
 _SEMESTER_RE = re.compile(
-    r"\bsemester\s+(antara|[1-8]|viii|vii|vi|iv|iii|ii|i|v|satu|dua|tiga|empat|lima|enam|tujuh|delapan)\b"
+    r"\bsemester\s+(antara\s+[ab]|ganjil/genap|antara|ganjil|genap|[1-8]|viii|vii|vi|iv|iii|ii|i|v|satu|dua|tiga|empat|lima|enam|tujuh|delapan)\b"
 )
 _SKS_VALUE_RE = re.compile(r"\b(\d+)\s*sks\b")
 _GRADE_RE = re.compile(r"\bnilai\s+(?:(?:minimal|minimum)\s+)?([a-e])\b")
@@ -43,6 +43,11 @@ _SEMESTER_MAP = {
     "viii": "8",
     "delapan": "8",
     "antara": "antara",
+    "antara a": "Semester Antara (A)",
+    "antara b": "Semester Antara (B)",
+    "ganjil": "Ganjil",
+    "genap": "Genap",
+    "ganjil/genap": "Ganjil/Genap",
 }
 
 _INTENT_TO_PREDICATE: dict[str, str | None] = {
@@ -124,11 +129,22 @@ def _compiled_gazetteer() -> tuple[tuple[re.Pattern[str], str, str], ...]:
         if low not in seen_course_surface:
             entries.append((low, "course_name", info["name"]))
 
+    for canon, aliases in domain_lex.get("knowledge_areas", {}).items():
+        entries.append((canon.lower(), "knowledge_area", canon))
+        for alias in aliases:
+            entries.append((alias.lower(), "knowledge_area", canon))
+
     for abbr in domain_lex["abbreviations"]:
         entries.append((abbr.lower(), "abbreviation", abbr.upper()))
 
-    # Panjang terpanjang diutamakan; jika sama panjang, learning_path/elective_group/course_name > abbreviation
-    priority = {"learning_path": 0, "elective_group": 1, "course_name": 2, "abbreviation": 3}
+    # Panjang terpanjang diutamakan; jika sama panjang, learning_path/elective_group/course_name > knowledge_area > abbreviation
+    priority = {
+        "learning_path": 0,
+        "elective_group": 1,
+        "course_name": 2,
+        "knowledge_area": 3,
+        "abbreviation": 4,
+    }
     dedup: dict[str, tuple[str, str]] = {}
     for surface, etype, canon in sorted(entries, key=lambda x: (-len(x[0]), priority[x[1]])):
         if surface not in dedup:
@@ -304,7 +320,11 @@ def _infer_predicate_from_text(norm: str, entities: list[ExtractedEntity]) -> st
         return "sks"
     if "semester" in etypes or re.search(r"\bsemester\b", norm):
         return "semester"
+    if "knowledge_area" in etypes:
+        return "supports_cpl"
     if "cpl_code" in etypes:
+        if re.search(r"\b(?:bahan\s+kajian|mendukung|didukung|matriks|pemetaan)\b", norm):
+            return "supports_cpl"
         return "cpl_description"
     if re.search(r"\b(?:dipelajari|silabus|deskripsi|materi|membahas)\b", norm) and (
         "course_name" in etypes or "course_code" in etypes
@@ -355,9 +375,18 @@ def extract_relations(
         (e["normalized_value"] for e in entities if e["type"] == "cpl_code"),
         None,
     )
+    ka_target = next(
+        (e["normalized_value"] for e in entities if e["type"] == "knowledge_area"),
+        None,
+    )
 
     if predicate == "learning_path_member" and lp_target:
-        return [{"predicate": predicate, "subject": None, "object": lp_target}]
+        rels: list[ExtractedRelation] = [
+            {"predicate": "learning_path_member", "subject": None, "object": lp_target}
+        ]
+        if re.search(r"\b(?:sks|satuan\s+kredit\s+semester)\b", norm):
+            rels.append({"predicate": "learning_path_sks", "subject": course_target, "object": None})
+        return rels
     if predicate == "elective_group_member" and eg_target:
         return [{"predicate": predicate, "subject": None, "object": eg_target}]
     if predicate == "semester":
@@ -366,13 +395,36 @@ def extract_relations(
         if semester_target:
             return [{"predicate": "semester", "subject": None, "object": semester_target}]
         return []
-    if predicate == "cpl_description" and cpl_target:
-        return [{"predicate": predicate, "subject": cpl_target, "object": None}]
+    if predicate in {"cpl_description", "supports_cpl"}:
+        if ka_target:
+            return [{"predicate": "supports_cpl", "subject": ka_target, "object": None}]
+        if cpl_target and re.search(r"\b(?:bahan\s+kajian|mendukung|didukung|matriks|pemetaan)\b", norm):
+            return [{"predicate": "supports_cpl", "subject": None, "object": cpl_target}]
+        if cpl_target:
+            return [{"predicate": "cpl_description", "subject": cpl_target, "object": None}]
+        return []
     if predicate == "course_name" and code_target:
         return [{"predicate": predicate, "subject": code_target, "object": None}]
     if predicate == "total_sks":
-        subj = "muatan program studi" if "muatan program studi" in norm else None
+        subj: str | None = None
+        if re.search(r"\bmuatan\s+(?:program\s+studi|prodi)\b", norm):
+            subj = "muatan program studi"
+        elif "muatan nasional" in norm:
+            subj = "muatan nasional"
+        elif "muatan universitas" in norm:
+            subj = "muatan universitas"
+        elif "muatan fakultas" in norm:
+            subj = "muatan fakultas"
+        elif semester_target and (
+            semester_target.isdigit() or semester_target.startswith("Semester Antara")
+        ):
+            subj = f"semester {semester_target}"
         return [{"predicate": predicate, "subject": subj, "object": None}]
+    if predicate == "prerequisite_of" and course_target:
+        rels = [{"predicate": "prerequisite_of", "subject": course_target, "object": None}]
+        if re.search(r"\bnilai\s+(?:min|minimum|minimal)(?:nya)?\b", norm):
+            rels.append({"predicate": "min_grade", "subject": course_target, "object": None})
+        return rels
     if course_target:
         return [{"predicate": predicate, "subject": course_target, "object": None}]
     return []

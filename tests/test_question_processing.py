@@ -13,7 +13,9 @@ from src.question_processing import (
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 FIXTURE_PATH = BASE_DIR / "tests" / "fixtures" / "question_analysis_samples.json"
-EVAL_DRAFT_PATH = BASE_DIR / "data" / "question_processing" / "eval_q09_q12.json"
+EVAL_DRAFT_PATH = BASE_DIR / "data" / "evaluation" / "eval_q09_q12.json"
+EVAL_A2_PATH = BASE_DIR / "data" / "evaluation" / "eval_q05_q08.json"
+KB_TRIPLES_PATH = BASE_DIR / "data" / "processed" / "knowledge_triples.jsonl"
 
 VALID_SPEECH_ACTS = {"wh", "yes_no", "command", "indirect_request"}
 VALID_QUESTION_CATEGORIES = {"factoid", "definition", "list", "narrative", "yes_no"}
@@ -441,6 +443,213 @@ def test_process_question_end_to_end_and_edge_cases() -> None:
         ]
         assert res["relations"] == sample["relations"]
         assert len(res["expanded_queries"]) <= 5
+
+
+def _load_kb_triples() -> list[dict]:
+    return [
+        json.loads(line)
+        for line in KB_TRIPLES_PATH.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+
+
+def _kb_match_count(triples: list[dict], rel: dict) -> int:
+    pred = rel["predicate"]
+    subj = rel["subject"].lower() if rel["subject"] is not None else None
+    obj = str(rel["object"]).lower() if rel["object"] is not None else None
+    count = 0
+    for t in triples:
+        if t["predicate"] != pred:
+            continue
+        if subj is not None and str(t["subject"]).lower() != subj:
+            continue
+        if obj is not None and str(t["object"]).lower() != obj:
+            continue
+        count += 1
+    return count
+
+
+def test_a2_kb_alignment_lexicon_and_predicates() -> None:
+    from src.question_processing.entity_extractor import _INTENT_TO_PREDICATE
+    from src.question_processing.resources import load_domain_lexicon
+
+    triples = _load_kb_triples()
+    kb_predicates = {t["predicate"] for t in triples}
+    expected_15 = {p for p in _INTENT_TO_PREDICATE.values() if p} | {
+        "supports_cpl",
+        "learning_path_sks",
+    }
+    assert expected_15 == kb_predicates
+
+    dom = load_domain_lexicon()
+    kb_lps = {str(t["object"]) for t in triples if t["predicate"] == "learning_path_member"}
+    kb_egs = {str(t["object"]) for t in triples if t["predicate"] == "elective_group_member"}
+    kb_kas = {str(t["subject"]) for t in triples if t["predicate"] == "supports_cpl"}
+
+    assert set(dom["learning_paths"].keys()) == kb_lps
+    assert set(dom["elective_groups"].keys()) == kb_egs
+    assert set(dom["knowledge_areas"].keys()) == kb_kas
+
+
+def test_semester_elective_total_sks_and_a2_aliases() -> None:
+    from src.question_processing.entity_extractor import extract_entities, extract_relations
+    from src.question_processing.question_processor import process_question
+
+    # Canonical elective group harus cocok persis dengan KB Anggota 2
+    ents_eg = extract_entities("MK pilihan kelompok Perekayasa Perangkat Lunak apa saja?")
+    assert ("elective_group", "Perekayasa Perangkat Lunak") in [
+        (e["type"], e["normalized_value"]) for e in ents_eg
+    ]
+
+    # Semester Antara (A)/(B) dan Ganjil/Genap
+    assert ("semester", "Semester Antara (A)") in [
+        (e["type"], e["normalized_value"]) for e in extract_entities("Sebutkan MK Semester Antara (A)")
+    ]
+    assert ("semester", "Semester Antara (B)") in [
+        (e["type"], e["normalized_value"]) for e in extract_entities("MK semester antara b")
+    ]
+    assert ("semester", "Ganjil") in [
+        (e["type"], e["normalized_value"]) for e in extract_entities("daftar MK semester ganjil")
+    ]
+    assert ("semester", "Genap") in [
+        (e["type"], e["normalized_value"]) for e in extract_entities("daftar MK semester genap")
+    ]
+    assert ("semester", "Ganjil/Genap") in [
+        (e["type"], e["normalized_value"]) for e in extract_entities("MK semester ganjil/genap")
+    ]
+
+    # Variasi nama MK dari tabel & visual A1/A2
+    alias_cases = [
+        ("Berapa SKS Penjaminan Kualitas PL?", "Penjaminan Kualitas Perangkat Lunak"),
+        ("Apa prasyarat Big Data Analytics?", "Analitik Big Data"),
+        ("Berapa SKS Arsitektur Jaringan Moderen?", "Arsitektur jaringan modern"),
+        ("Berapa SKS Penyediaan dan Otomasi Layanan?", "Penyediaan dan Automasi Layanan"),
+        ("Berapa SKS Pengolahan Citra dan Visi Komputer Digital?", "Pengolahan Citra Digital dan Visi Komputer"),
+        ("Berapa SKS Tugas Akhir / Skripsi?", "Skripsi"),
+        ("Berapa SKS Capstone?", "Capstone Project"),
+    ]
+    for q, expected_canon in alias_cases:
+        ents = extract_entities(q)
+        assert ("course_name", expected_canon) in [
+            (e["type"], e["normalized_value"]) for e in ents
+        ], f"Alias gagal untuk {q}: {ents}"
+
+    # Seluruh subjek total_sks di KB Anggota 2
+    triples = _load_kb_triples()
+    total_sks_cases = [
+        ("Berapa total SKS mata kuliah muatan nasional?", "muatan nasional"),
+        ("Berapa total SKS mata kuliah muatan universitas?", "muatan universitas"),
+        ("Berapa total SKS mata kuliah muatan fakultas?", "muatan fakultas"),
+        ("Berapa total SKS mata kuliah muatan program studi?", "muatan program studi"),
+        ("Berapa total SKS pada semester 3?", "semester 3"),
+        ("Berapa total SKS pada Semester Antara (A)?", "semester Semester Antara (A)"),
+    ]
+    for q, exp_subj in total_sks_cases:
+        res = process_question(q)
+        assert res["intent"] == "total_sks"
+        assert res["relations"] == [{"predicate": "total_sks", "subject": exp_subj, "object": None}]
+        assert _kb_match_count(triples, res["relations"][0]) == 1
+
+
+def test_supports_cpl_learning_path_sks_and_multirelation() -> None:
+    from src.question_processing.question_processor import process_question
+
+    triples = _load_kb_triples()
+
+    # supports_cpl: Bahan Kajian -> CPL
+    q_bk = process_question("CPL apa saja yang didukung oleh bahan kajian Intelligent Systems?")
+    assert q_bk["intent"] == "cpl"
+    assert ("knowledge_area", "Intelligent Systems (AI) (CC2020)") in [
+        (e["type"], e["normalized_value"]) for e in q_bk["entities"]
+    ]
+    assert q_bk["relations"] == [
+        {"predicate": "supports_cpl", "subject": "Intelligent Systems (AI) (CC2020)", "object": None}
+    ]
+    assert _kb_match_count(triples, q_bk["relations"][0]) >= 1
+
+    # supports_cpl: CPL <- Bahan Kajian
+    q_cpl_bk = process_question("Bahan kajian apa saja yang mendukung IF_CPL_KK1?")
+    assert q_cpl_bk["intent"] == "cpl"
+    assert q_cpl_bk["relations"] == [
+        {"predicate": "supports_cpl", "subject": None, "object": "IF_CPL_KK1"}
+    ]
+    assert _kb_match_count(triples, q_cpl_bk["relations"][0]) >= 1
+
+    # Q09 multi-relasi: prerequisite_of + min_grade
+    q09 = process_question(
+        "Apa saja mata kuliah prasyarat dan nilai minimumnya untuk mengambil mata kuliah Jaringan Saraf Tiruan?"
+    )
+    assert q09["intent"] == "course_prerequisite"
+    assert q09["relations"] == [
+        {"predicate": "prerequisite_of", "subject": "Jaringan Saraf Tiruan", "object": None},
+        {"predicate": "min_grade", "subject": "Jaringan Saraf Tiruan", "object": None},
+    ]
+    assert all(_kb_match_count(triples, r) >= 1 for r in q09["relations"])
+
+    # Q10 multi-relasi: learning_path_member + learning_path_sks
+    q10 = process_question(
+        "Mata kuliah wajib pilihan apa saja yang tercantum pada Learning Path NLP Engineer beserta SKS masing-masing?"
+    )
+    assert q10["intent"] == "learning_path"
+    assert q10["relations"] == [
+        {"predicate": "learning_path_member", "subject": None, "object": "NLP Engineer"},
+        {"predicate": "learning_path_sks", "subject": None, "object": None},
+    ]
+    assert all(_kb_match_count(triples, r) >= 1 for r in q10["relations"])
+
+    # Specific course learning_path_sks
+    q_lp_sks = process_question(
+        "Berapa SKS Penjaminan Kualitas PL pada Learning Path Backend Developer?"
+    )
+    assert any(
+        r["predicate"] == "learning_path_sks" and r["subject"] == "Penjaminan Kualitas Perangkat Lunak"
+        for r in q_lp_sks["relations"]
+    )
+
+
+def test_query_formulator_no_noop_expansion_and_semester_classifier_fixes() -> None:
+    from src.question_processing.question_processor import process_question
+
+    # No-op guard: base_phrase tidak boleh muncul mentah di expanded_queries
+    for q in (
+        "Mata kuliah wajib pilihan apa saja yang tercantum pada Learning Path NLP Engineer beserta SKS masing-masing?",
+        "Bagaimana aturan peralihan bagi mahasiswa yang mendapatkan nilai D pada mata kuliah berkode Kurikulum 2024 yang menjadi prasyarat nilai minimum C?",
+    ):
+        res = process_question(q)
+        base_phrase = " ".join(res["query_keywords"]).lower()
+        assert all(ex.lower() != base_phrase for ex in res["expanded_queries"]), (
+            f"No-op expansion ditemukan untuk {q}: {res['expanded_queries']}"
+        )
+
+    # Semester ganjil list & out-of-domain semester genap fix
+    q_ganjil = process_question("Apa saja mata kuliah semester ganjil?")
+    assert q_ganjil["intent"] == "course_list_semester"
+    assert q_ganjil["question_category"] == "list"
+    assert q_ganjil["relations"] == [{"predicate": "semester", "subject": None, "object": "Ganjil"}]
+
+    q_ood = process_question("Kapan libur semester genap berakhir di kalender akademik nasional?")
+    assert q_ood["intent"] == "other"
+
+
+def test_eval_questions_q05_to_q12_end_to_end_and_kb_hits() -> None:
+    from src.question_processing.question_processor import process_question
+
+    triples = _load_kb_triples()
+    all_eval = json.loads(EVAL_A2_PATH.read_text(encoding="utf-8")) + json.loads(
+        EVAL_DRAFT_PATH.read_text(encoding="utf-8")
+    )
+    assert [it["id"] for it in all_eval] == ["Q05", "Q06", "Q07", "Q08", "Q09", "Q10", "Q11", "Q12"]
+
+    for item in all_eval:
+        res = process_question(item["question"])
+        assert res["speech_act"] == item["speech_act"], item["id"]
+        assert res["question_category"] == item["question_category"], item["id"]
+        assert res["intent"] == item["question_type"], item["id"]
+        assert res["answer_type_coarse"] == item["expected_answer_type_coarse"], item["id"]
+        assert res["answer_type"] == item["expected_answer_type"], item["id"]
+        for rel in res["relations"]:
+            assert _kb_match_count(triples, rel) >= 1, f"{item['id']} relasi tanpa KB hit: {rel}"
+
 
 
 
