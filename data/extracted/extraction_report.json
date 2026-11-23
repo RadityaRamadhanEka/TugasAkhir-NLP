@@ -1,0 +1,151 @@
+{
+  "pdf_file": "Buku-Pedoman-Pelaksanaan-Kurikulum-2024-TIF-V.1.0.pdf",
+  "generated_at": "2026-11-21T04:09:31.028853+00:00",
+  "summary": {
+    "total_pages": 100,
+    "pages_with_text_or_tables": 99,
+    "narrative_non_empty_pages": 41,
+    "cover_or_empty_pages": [
+      1
+    ],
+    "tables_extracted": 149,
+    "continuation_tables": 49,
+    "unique_syllabus_courses": 66,
+    "visuals_inventoried": 16,
+    "visuals_transcribed_for_qa": 11,
+    "warning_count": 15,
+    "failed_count": 0
+  },
+  "tables_by_type": {
+    "regular": 17,
+    "cpl_matrix": 3,
+    "semester_schedule": 11,
+    "transition_mapping": 9,
+    "syllabus_card": 109
+  },
+  "warnings": [
+    {
+      "category": "text_pagination",
+      "pdf_pages": [
+        13,
+        14
+      ],
+      "doc_page": "6",
+      "issue": "duplicate_doc_page",
+      "detail": "Nomor halaman tercetak '6' muncul ganda pada pdf_page [13, 14]."
+    },
+    {
+      "category": "table",
+      "item_id": "tbl_p051_01",
+      "pdf_page": 51,
+      "doc_page": "43",
+      "issue": "syllabus_template_artifact",
+      "detail": "Terdeteksi 'syllabus_template_artifact' pada 'Silabus COM60014 - Pemrograman Dasar'."
+    },
+    {
+      "category": "table",
+      "item_id": "tbl_p060_01",
+      "pdf_page": 60,
+      "doc_page": "52",
+      "issue": "syllabus_template_artifact",
+      "detail": "Terdeteksi 'syllabus_template_artifact' pada 'Silabus CIF62203 - Sistem Operasi'."
+    },
+    {
+      "category": "table",
+      "item_id": "tbl_p066_02",
+      "pdf_page": 66,
+      "doc_page": "58",
+      "issue": "empty_cpl_reference",
+      "detail": "Terdeteksi 'empty_cpl_reference' pada 'Silabus CIF63310 - Kecerdasan Artifisial'."
+    },
+    {
+      "category": "table",
+      "item_id": "tbl_p067_01",
+      "pdf_page": 67,
+      "doc_page": "59",
+      "issue": "syllabus_template_artifact",
+      "detail": "Terdeteksi 'syllabus_template_artifact' pada 'Silabus CIF63310 - Kecerdasan Artifisial'."
+    },
+    {
+      "category": "table",
+      "item_id": "tbl_p067_01",
+      "pdf_page": 67,
+      "doc_page": "59",
+      "issue": "empty_cpl_reference",
+      "detail": "Terdeteksi 'empty_cpl_reference' pada 'Silabus CIF63310 - Kecerdasan Artifisial'."
+    },
+    {
+      "category": "table",
+      "item_id": "tbl_p070_01",
+      "pdf_page": 70,
+      "doc_page": "62",
+      "issue": "empty_cpl_reference",
+      "detail": "Terdeteksi 'empty_cpl_reference' pada 'Silabus CIF64311 - Kecerdasan Artifisial Lanjut'."
+    },
+    {
+      "category": "table",
+      "item_id": "tbl_p076_01",
+      "pdf_page": 76,
+      "doc_page": "68",
+      "issue": "syllabus_template_artifact",
+      "detail": "Terdeteksi 'syllabus_template_artifact' pada 'Silabus CIF65217 - Jaringan Nirkabel'."
+    },
+    {
+      "category": "table",
+      "item_id": "tbl_p077_01",
+      "pdf_page": 77,
+      "doc_page": "69",
+      "issue": "empty_cpl_reference",
+      "detail": "Terdeteksi 'empty_cpl_reference' pada 'Silabus CIF65318 - Jaringan Saraf Tiruan'."
+    },
+    {
+      "category": "table",
+      "item_id": "tbl_p089_01",
+      "pdf_page": 89,
+      "doc_page": "81",
+      "issue": "syllabus_template_artifact",
+      "detail": "Terdeteksi 'syllabus_template_artifact' pada 'Silabus CIF62234 - Jaringan Sensor Nirkabel'."
+    },
+    {
+      "category": "table",
+      "item_id": "tbl_p097_01",
+      "pdf_page": 97,
+      "doc_page": "89",
+      "issue": "syllabus_template_artifact",
+      "detail": "Terdeteksi 'syllabus_template_artifact' pada 'Silabus CIF62344 - Analitik Big Data'."
+    },
+    {
+      "category": "visual",
+      "item_id": "vis_07_02",
+      "pdf_page": 26,
+      "doc_page": "18",
+      "issue": "visual_vs_table_sks_discrepancy",
+      "detail": "Penjaminan Kualitas PL: Pada Tabel 7.1 (hal. PDF 23) tertulis Penjaminan Kualitas Perangkat Lunak 3 SKS.; Capstone: Merujuk pada Capstone Project (COM60061, 3 SKS)."
+    },
+    {
+      "category": "visual",
+      "item_id": "vis_07_05",
+      "pdf_page": 29,
+      "doc_page": "21",
+      "issue": "visual_vs_table_sks_discrepancy",
+      "detail": "Keamanan aplikasi berbasis web: Pada Tabel 7.2 (hal. PDF 23) & Gambar 7.2 tertulis 4 SKS."
+    },
+    {
+      "category": "visual",
+      "item_id": "vis_07_09",
+      "pdf_page": 33,
+      "doc_page": "25",
+      "issue": "visual_vs_table_sks_discrepancy",
+      "detail": "Rekayasa Data dan Visualisasi: Pada Tabel 7.3 (hal. PDF 24) tertulis 3 SKS."
+    },
+    {
+      "category": "visual",
+      "item_id": "vis_07_11",
+      "pdf_page": 35,
+      "doc_page": "27",
+      "issue": "visual_vs_table_sks_discrepancy",
+      "detail": "Sistem Berbasis Pengetahuan: Pada Tabel 7.3 (hal. PDF 24) tertulis 4 SKS."
+    }
+  ],
+  "failed_items": []
+}

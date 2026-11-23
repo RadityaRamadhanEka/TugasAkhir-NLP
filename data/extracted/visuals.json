@@ -1,0 +1,721 @@
+[
+  {
+    "visual_id": "vis_03_01",
+    "figure_number": "Gambar 3.1",
+    "pdf_page": 11,
+    "doc_page": "4",
+    "section": "3. Capaian Pembelajaran Program Studi (CPL)",
+    "caption": "Gambar 3.1 Alur pembentukan CPL Pogram Studi Sarjana Teknik Informatika",
+    "content_type": "visual",
+    "relevant_for_qa": false,
+    "priority": "low",
+    "image_path": "data/extracted/visuals/page_011_gambar_3_1.png",
+    "image_info": {
+      "width_px": 2048,
+      "height_px": 865,
+      "format": "png",
+      "size_kb": 145.2
+    },
+    "extraction_method": "inventory_summary",
+    "ocr_raw_text": null,
+    "text": "Diagram alur pembentukan CPL Program Studi Sarjana Teknik Informatika (penjelasan rinci proses perumusan CPL sudah tersedia pada teks naratif Bab 3).",
+    "structured_records": [],
+    "metadata": {
+      "verified_manually": true,
+      "extraction_library": "pymupdf"
+    }
+  },
+  {
+    "visual_id": "vis_05_01",
+    "figure_number": "Gambar 5.1",
+    "pdf_page": 17,
+    "doc_page": "9",
+    "section": "5. Pembentukan Mata Kuliah",
+    "caption": "Gambar 5.1 Skema Pemetaan Bahan Kajian kepada Mata Kuliah",
+    "content_type": "visual",
+    "relevant_for_qa": false,
+    "priority": "low",
+    "image_path": "data/extracted/visuals/page_017_gambar_5_1.png",
+    "image_info": {
+      "width_px": 1600,
+      "height_px": 779,
+      "format": "png",
+      "size_kb": 202.5
+    },
+    "extraction_method": "inventory_summary",
+    "ocr_raw_text": null,
+    "text": "Diagram skema pemetaan tidak langsung dari Bahan Kajian ke Sub Bahan Kajian, CPMK, hingga Mata Kuliah (penjelasan rinci sudah tersedia pada teks Bab 5).",
+    "structured_records": [],
+    "metadata": {
+      "verified_manually": true,
+      "extraction_library": "pymupdf"
+    }
+  },
+  {
+    "visual_id": "vis_07_01",
+    "figure_number": "Gambar 7.1",
+    "pdf_page": 25,
+    "doc_page": "17",
+    "section": "7. Mata Kuliah Pilihan",
+    "caption": "Gambar 7.1 MK pilihan learning Path Frontend Developer",
+    "content_type": "visual",
+    "relevant_for_qa": true,
+    "priority": "high",
+    "image_path": "data/extracted/visuals/page_025_gambar_7_1.png",
+    "image_info": {
+      "width_px": 1965,
+      "height_px": 2034,
+      "format": "png",
+      "size_kb": 135.2
+    },
+    "extraction_method": "structured_transcription",
+    "ocr_raw_text": null,
+    "text": "Gambar 7.1 - Mata Kuliah Pilihan Learning Path Frontend Developer. Kelompok kompetensi: Perekayasa Perangkat Lunak. Setelah menempuh MK wajib, mahasiswa pada Learning Path Frontend Developer direkomendasikan mengambil mata kuliah pilihan: Perancangan Pengalaman Pengguna (3 SKS), Pengujian Perangkat Lunak (3 SKS), Pemrograman Sistem Interaktif (4 SKS), Arsitektur berbasis layanan (4 SKS).",
+    "structured_records": [
+      {
+        "learning_path": "Frontend Developer",
+        "group": "Perekayasa Perangkat Lunak",
+        "course_name": "Perancangan Pengalaman Pengguna",
+        "sks": 3,
+        "notes": null
+      },
+      {
+        "learning_path": "Frontend Developer",
+        "group": "Perekayasa Perangkat Lunak",
+        "course_name": "Pengujian Perangkat Lunak",
+        "sks": 3,
+        "notes": null
+      },
+      {
+        "learning_path": "Frontend Developer",
+        "group": "Perekayasa Perangkat Lunak",
+        "course_name": "Pemrograman Sistem Interaktif",
+        "sks": 4,
+        "notes": null
+      },
+      {
+        "learning_path": "Frontend Developer",
+        "group": "Perekayasa Perangkat Lunak",
+        "course_name": "Arsitektur berbasis layanan",
+        "sks": 4,
+        "notes": null
+      }
+    ],
+    "metadata": {
+      "verified_manually": true,
+      "extraction_library": "pymupdf",
+      "learning_path": "Frontend Developer",
+      "course_count": 4,
+      "has_sks_discrepancy_note": false
+    }
+  },
+  {
+    "visual_id": "vis_07_02",
+    "figure_number": "Gambar 7.2",
+    "pdf_page": 26,
+    "doc_page": "18",
+    "section": "7. Mata Kuliah Pilihan",
+    "caption": "Gambar 7.2 MK Learning Path Backend Developer",
+    "content_type": "visual",
+    "relevant_for_qa": true,
+    "priority": "high",
+    "image_path": "data/extracted/visuals/page_026_gambar_7_2.png",
+    "image_info": {
+      "width_px": 1538,
+      "height_px": 2048,
+      "format": "png",
+      "size_kb": 251.7
+    },
+    "extraction_method": "structured_transcription",
+    "ocr_raw_text": null,
+    "text": "Gambar 7.2 - Mata Kuliah Pilihan Learning Path Backend Developer. Kelompok kompetensi: Perekayasa Infrastruktur Komputasi, Perekayasa Perangkat Lunak. Setelah menempuh MK wajib, mahasiswa pada Learning Path Backend Developer direkomendasikan mengambil mata kuliah pilihan: Penjaminan Kualitas PL (4 SKS), Pengujian Perangkat Lunak (3 SKS), Arsitektur berbasis layanan (4 SKS), Capstone (3 SKS), Keamanan aplikasi berbasis web (4 SKS), Administrasi sistem server (3 SKS), Penyediaan dan otomasi layanan (3 SKS), DevSecOps (4 SKS).",
+    "structured_records": [
+      {
+        "learning_path": "Backend Developer",
+        "group": "Perekayasa Perangkat Lunak",
+        "course_name": "Penjaminan Kualitas PL",
+        "sks": 4,
+        "notes": "Pada Tabel 7.1 (hal. PDF 23) tertulis Penjaminan Kualitas Perangkat Lunak 3 SKS."
+      },
+      {
+        "learning_path": "Backend Developer",
+        "group": "Perekayasa Perangkat Lunak",
+        "course_name": "Pengujian Perangkat Lunak",
+        "sks": 3,
+        "notes": null
+      },
+      {
+        "learning_path": "Backend Developer",
+        "group": "Perekayasa Perangkat Lunak",
+        "course_name": "Arsitektur berbasis layanan",
+        "sks": 4,
+        "notes": null
+      },
+      {
+        "learning_path": "Backend Developer",
+        "group": "Perekayasa Perangkat Lunak",
+        "course_name": "Capstone",
+        "sks": 3,
+        "notes": "Merujuk pada Capstone Project (COM60061, 3 SKS)."
+      },
+      {
+        "learning_path": "Backend Developer",
+        "group": "Perekayasa Infrastruktur Komputasi",
+        "course_name": "Keamanan aplikasi berbasis web",
+        "sks": 4,
+        "notes": null
+      },
+      {
+        "learning_path": "Backend Developer",
+        "group": "Perekayasa Infrastruktur Komputasi",
+        "course_name": "Administrasi sistem server",
+        "sks": 3,
+        "notes": null
+      },
+      {
+        "learning_path": "Backend Developer",
+        "group": "Perekayasa Infrastruktur Komputasi",
+        "course_name": "Penyediaan dan otomasi layanan",
+        "sks": 3,
+        "notes": null
+      },
+      {
+        "learning_path": "Backend Developer",
+        "group": "Perekayasa Infrastruktur Komputasi",
+        "course_name": "DevSecOps",
+        "sks": 4,
+        "notes": null
+      }
+    ],
+    "metadata": {
+      "verified_manually": true,
+      "extraction_library": "pymupdf",
+      "learning_path": "Backend Developer",
+      "course_count": 8,
+      "has_sks_discrepancy_note": true
+    }
+  },
+  {
+    "visual_id": "vis_07_03",
+    "figure_number": "Gambar 7.3",
+    "pdf_page": 27,
+    "doc_page": "19",
+    "section": "7. Mata Kuliah Pilihan",
+    "caption": "Gambar 7.3 MK Learning Path Game Developer",
+    "content_type": "visual",
+    "relevant_for_qa": true,
+    "priority": "high",
+    "image_path": "data/extracted/visuals/page_027_gambar_7_3.png",
+    "image_info": {
+      "width_px": 2004,
+      "height_px": 1995,
+      "format": "png",
+      "size_kb": 135.0
+    },
+    "extraction_method": "structured_transcription",
+    "ocr_raw_text": null,
+    "text": "Gambar 7.3 - Mata Kuliah Pilihan Learning Path Game Developer. Kelompok kompetensi: Perekayasa Perangkat Lunak. Setelah menempuh MK wajib, mahasiswa pada Learning Path Game Developer direkomendasikan mengambil mata kuliah pilihan: Pengujian Perangkat Lunak (3 SKS), Perancangan Pengalaman Pengguna (3 SKS), Arsitektur berbasis layanan (4 SKS), Pemrograman Gim (4 SKS), Realitas terkembang (3 SKS).",
+    "structured_records": [
+      {
+        "learning_path": "Game Developer",
+        "group": "Perekayasa Perangkat Lunak",
+        "course_name": "Pengujian Perangkat Lunak",
+        "sks": 3,
+        "notes": null
+      },
+      {
+        "learning_path": "Game Developer",
+        "group": "Perekayasa Perangkat Lunak",
+        "course_name": "Perancangan Pengalaman Pengguna",
+        "sks": 3,
+        "notes": null
+      },
+      {
+        "learning_path": "Game Developer",
+        "group": "Perekayasa Perangkat Lunak",
+        "course_name": "Arsitektur berbasis layanan",
+        "sks": 4,
+        "notes": null
+      },
+      {
+        "learning_path": "Game Developer",
+        "group": "Perekayasa Perangkat Lunak",
+        "course_name": "Pemrograman Gim",
+        "sks": 4,
+        "notes": null
+      },
+      {
+        "learning_path": "Game Developer",
+        "group": "Perekayasa Perangkat Lunak",
+        "course_name": "Realitas terkembang",
+        "sks": 3,
+        "notes": null
+      }
+    ],
+    "metadata": {
+      "verified_manually": true,
+      "extraction_library": "pymupdf",
+      "learning_path": "Game Developer",
+      "course_count": 5,
+      "has_sks_discrepancy_note": false
+    }
+  },
+  {
+    "visual_id": "vis_07_04",
+    "figure_number": "Gambar 7.4",
+    "pdf_page": 28,
+    "doc_page": "20",
+    "section": "7. Mata Kuliah Pilihan",
+    "caption": "Gambar 7.4 MK Learning Path Cloud Engineer",
+    "content_type": "visual",
+    "relevant_for_qa": true,
+    "priority": "high",
+    "image_path": "data/extracted/visuals/page_028_gambar_7_4.png",
+    "image_info": {
+      "width_px": 2048,
+      "height_px": 961,
+      "format": "png",
+      "size_kb": 62.9
+    },
+    "extraction_method": "structured_transcription",
+    "ocr_raw_text": null,
+    "text": "Gambar 7.4 - Mata Kuliah Pilihan Learning Path Cloud Engineer. Kelompok kompetensi: Perekayasa Infrastruktur Komputasi. Setelah menempuh MK Wajib, mahasiswa pada Learning Path Cloud Engineer direkomendasikan mengambil mata kuliah pilihan: Administrasi sistem server (3 SKS), Penyediaan dan otomasi layanan (3 SKS), DevSecOps (4 SKS).",
+    "structured_records": [
+      {
+        "learning_path": "Cloud Engineer",
+        "group": "Perekayasa Infrastruktur Komputasi",
+        "course_name": "Administrasi sistem server",
+        "sks": 3,
+        "notes": null
+      },
+      {
+        "learning_path": "Cloud Engineer",
+        "group": "Perekayasa Infrastruktur Komputasi",
+        "course_name": "Penyediaan dan otomasi layanan",
+        "sks": 3,
+        "notes": null
+      },
+      {
+        "learning_path": "Cloud Engineer",
+        "group": "Perekayasa Infrastruktur Komputasi",
+        "course_name": "DevSecOps",
+        "sks": 4,
+        "notes": null
+      }
+    ],
+    "metadata": {
+      "verified_manually": true,
+      "extraction_library": "pymupdf",
+      "learning_path": "Cloud Engineer",
+      "course_count": 3,
+      "has_sks_discrepancy_note": false
+    }
+  },
+  {
+    "visual_id": "vis_07_05",
+    "figure_number": "Gambar 7.5",
+    "pdf_page": 29,
+    "doc_page": "21",
+    "section": "7. Mata Kuliah Pilihan",
+    "caption": "Gambar 7.5 MK Learning Path Security Engineer",
+    "content_type": "visual",
+    "relevant_for_qa": true,
+    "priority": "high",
+    "image_path": "data/extracted/visuals/page_029_gambar_7_5.png",
+    "image_info": {
+      "width_px": 2048,
+      "height_px": 1458,
+      "format": "png",
+      "size_kb": 105.5
+    },
+    "extraction_method": "structured_transcription",
+    "ocr_raw_text": null,
+    "text": "Gambar 7.5 - Mata Kuliah Pilihan Learning Path Security Engineer. Kelompok kompetensi: Perekayasa Infrastruktur Komputasi. Setelah menempuh MK Wajib, mahasiswa pada Learning Path Security Engineer direkomendasikan mengambil mata kuliah pilihan: Keamanan jaringan (3 SKS), Keamanan aplikasi berbasis web (3 SKS), Forensik digital (3 SKS).",
+    "structured_records": [
+      {
+        "learning_path": "Security Engineer",
+        "group": "Perekayasa Infrastruktur Komputasi",
+        "course_name": "Keamanan jaringan",
+        "sks": 3,
+        "notes": null
+      },
+      {
+        "learning_path": "Security Engineer",
+        "group": "Perekayasa Infrastruktur Komputasi",
+        "course_name": "Keamanan aplikasi berbasis web",
+        "sks": 3,
+        "notes": "Pada Tabel 7.2 (hal. PDF 23) & Gambar 7.2 tertulis 4 SKS."
+      },
+      {
+        "learning_path": "Security Engineer",
+        "group": "Perekayasa Infrastruktur Komputasi",
+        "course_name": "Forensik digital",
+        "sks": 3,
+        "notes": null
+      }
+    ],
+    "metadata": {
+      "verified_manually": true,
+      "extraction_library": "pymupdf",
+      "learning_path": "Security Engineer",
+      "course_count": 3,
+      "has_sks_discrepancy_note": true
+    }
+  },
+  {
+    "visual_id": "vis_07_06",
+    "figure_number": "Gambar 7.6",
+    "pdf_page": 30,
+    "doc_page": "22",
+    "section": "7. Mata Kuliah Pilihan",
+    "caption": "Gambar 7.6 MK Learning Path Network Engineer",
+    "content_type": "visual",
+    "relevant_for_qa": true,
+    "priority": "high",
+    "image_path": "data/extracted/visuals/page_030_gambar_7_6.png",
+    "image_info": {
+      "width_px": 2048,
+      "height_px": 1556,
+      "format": "png",
+      "size_kb": 117.0
+    },
+    "extraction_method": "structured_transcription",
+    "ocr_raw_text": null,
+    "text": "Gambar 7.6 - Mata Kuliah Pilihan Learning Path Network Engineer. Kelompok kompetensi: Perekayasa Infrastruktur Komputasi. Setelah menempuh MK Wajib, mahasiswa pada Learning Path Network Engineer direkomendasikan mengambil mata kuliah pilihan: Jaringan komputer lanjut (3 SKS), Jaringan sensor nirkabel (3 SKS), Arsitektur jaringan modern (3 SKS).",
+    "structured_records": [
+      {
+        "learning_path": "Network Engineer",
+        "group": "Perekayasa Infrastruktur Komputasi",
+        "course_name": "Jaringan komputer lanjut",
+        "sks": 3,
+        "notes": null
+      },
+      {
+        "learning_path": "Network Engineer",
+        "group": "Perekayasa Infrastruktur Komputasi",
+        "course_name": "Jaringan sensor nirkabel",
+        "sks": 3,
+        "notes": null
+      },
+      {
+        "learning_path": "Network Engineer",
+        "group": "Perekayasa Infrastruktur Komputasi",
+        "course_name": "Arsitektur jaringan modern",
+        "sks": 3,
+        "notes": null
+      }
+    ],
+    "metadata": {
+      "verified_manually": true,
+      "extraction_library": "pymupdf",
+      "learning_path": "Network Engineer",
+      "course_count": 3,
+      "has_sks_discrepancy_note": false
+    }
+  },
+  {
+    "visual_id": "vis_07_07",
+    "figure_number": "Gambar 7.7",
+    "pdf_page": 31,
+    "doc_page": "23",
+    "section": "7. Mata Kuliah Pilihan",
+    "caption": "Gambar 7.7 MK Learning Path AI/ML Engineer",
+    "content_type": "visual",
+    "relevant_for_qa": true,
+    "priority": "high",
+    "image_path": "data/extracted/visuals/page_031_gambar_7_7.png",
+    "image_info": {
+      "width_px": 2048,
+      "height_px": 1485,
+      "format": "png",
+      "size_kb": 90.6
+    },
+    "extraction_method": "structured_transcription",
+    "ocr_raw_text": null,
+    "text": "Gambar 7.7 - Mata Kuliah Pilihan Learning Path AI/ML Engineer. Kelompok kompetensi: Perekayasa Komputasi Cerdas. Setelah menempuh MK Wajib, mahasiswa pada Learning Path AI/ML Engineer direkomendasikan mengambil mata kuliah pilihan: Deep Learning (3 SKS), Big Data Analytics (3 SKS), MLOps (4 SKS).",
+    "structured_records": [
+      {
+        "learning_path": "AI/ML Engineer",
+        "group": "Perekayasa Komputasi Cerdas",
+        "course_name": "Deep Learning",
+        "sks": 3,
+        "notes": null
+      },
+      {
+        "learning_path": "AI/ML Engineer",
+        "group": "Perekayasa Komputasi Cerdas",
+        "course_name": "Big Data Analytics",
+        "sks": 3,
+        "notes": "Pada Tabel 7.3 tertulis Analitik Big Data (CIF62344)."
+      },
+      {
+        "learning_path": "AI/ML Engineer",
+        "group": "Perekayasa Komputasi Cerdas",
+        "course_name": "MLOps",
+        "sks": 4,
+        "notes": "Pada Tabel 7.3 tertulis Machine Learning Operations (MLOps)."
+      }
+    ],
+    "metadata": {
+      "verified_manually": true,
+      "extraction_library": "pymupdf",
+      "learning_path": "AI/ML Engineer",
+      "course_count": 3,
+      "has_sks_discrepancy_note": false
+    }
+  },
+  {
+    "visual_id": "vis_07_08",
+    "figure_number": "Gambar 7.8",
+    "pdf_page": 32,
+    "doc_page": "24",
+    "section": "7. Mata Kuliah Pilihan",
+    "caption": "Gambar 7.8 MK Learning Path Computer Vision Engineer",
+    "content_type": "visual",
+    "relevant_for_qa": true,
+    "priority": "high",
+    "image_path": "data/extracted/visuals/page_032_gambar_7_8.png",
+    "image_info": {
+      "width_px": 2048,
+      "height_px": 1134,
+      "format": "png",
+      "size_kb": 78.0
+    },
+    "extraction_method": "structured_transcription",
+    "ocr_raw_text": null,
+    "text": "Gambar 7.8 - Mata Kuliah Pilihan Learning Path Computer Vision Engineer. Kelompok kompetensi: Perekayasa Komputasi Cerdas. Setelah menempuh MK Wajib, mahasiswa pada Learning Path Computer Vision Engineer direkomendasikan mengambil mata kuliah pilihan: Deep Learning (3 SKS), Pengolahan Citra dan Visi Komputer Digital (4 SKS).",
+    "structured_records": [
+      {
+        "learning_path": "Computer Vision Engineer",
+        "group": "Perekayasa Komputasi Cerdas",
+        "course_name": "Deep Learning",
+        "sks": 3,
+        "notes": null
+      },
+      {
+        "learning_path": "Computer Vision Engineer",
+        "group": "Perekayasa Komputasi Cerdas",
+        "course_name": "Pengolahan Citra dan Visi Komputer Digital",
+        "sks": 4,
+        "notes": "Pada Tabel 7.3 tertulis Pengolahan Citra Digital (CIF61339)."
+      }
+    ],
+    "metadata": {
+      "verified_manually": true,
+      "extraction_library": "pymupdf",
+      "learning_path": "Computer Vision Engineer",
+      "course_count": 2,
+      "has_sks_discrepancy_note": false
+    }
+  },
+  {
+    "visual_id": "vis_07_09",
+    "figure_number": "Gambar 7.9",
+    "pdf_page": 33,
+    "doc_page": "25",
+    "section": "7. Mata Kuliah Pilihan",
+    "caption": "Gambar 7.9 MK Learning Path Data Scientist",
+    "content_type": "visual",
+    "relevant_for_qa": true,
+    "priority": "high",
+    "image_path": "data/extracted/visuals/page_033_gambar_7_9.png",
+    "image_info": {
+      "width_px": 2048,
+      "height_px": 952,
+      "format": "png",
+      "size_kb": 50.2
+    },
+    "extraction_method": "structured_transcription",
+    "ocr_raw_text": null,
+    "text": "Gambar 7.9 - Mata Kuliah Pilihan Learning Path Data Scientist. Kelompok kompetensi: Perekayasa Komputasi Cerdas. Setelah menempuh MK Wajib, mahasiswa pada Learning Path Data Scientist direkomendasikan mengambil mata kuliah pilihan: Big Data Analytics (3 SKS), Rekayasa Data dan Visualisasi (4 SKS).",
+    "structured_records": [
+      {
+        "learning_path": "Data Scientist",
+        "group": "Perekayasa Komputasi Cerdas",
+        "course_name": "Big Data Analytics",
+        "sks": 3,
+        "notes": "Pada Tabel 7.3 tertulis Analitik Big Data (CIF62344)."
+      },
+      {
+        "learning_path": "Data Scientist",
+        "group": "Perekayasa Komputasi Cerdas",
+        "course_name": "Rekayasa Data dan Visualisasi",
+        "sks": 4,
+        "notes": "Pada Tabel 7.3 (hal. PDF 24) tertulis 3 SKS."
+      }
+    ],
+    "metadata": {
+      "verified_manually": true,
+      "extraction_library": "pymupdf",
+      "learning_path": "Data Scientist",
+      "course_count": 2,
+      "has_sks_discrepancy_note": true
+    }
+  },
+  {
+    "visual_id": "vis_07_10",
+    "figure_number": "Gambar 7.10",
+    "pdf_page": 34,
+    "doc_page": "26",
+    "section": "7. Mata Kuliah Pilihan",
+    "caption": "Gambar 7.10 MK Learning Path NLP Engineer",
+    "content_type": "visual",
+    "relevant_for_qa": true,
+    "priority": "high",
+    "image_path": "data/extracted/visuals/page_034_gambar_7_10.png",
+    "image_info": {
+      "width_px": 2048,
+      "height_px": 1068,
+      "format": "png",
+      "size_kb": 86.5
+    },
+    "extraction_method": "structured_transcription",
+    "ocr_raw_text": null,
+    "text": "Gambar 7.10 - Mata Kuliah Pilihan Learning Path NLP Engineer. Kelompok kompetensi: Perekayasa Komputasi Cerdas. Setelah menempuh MK Wajib, mahasiswa pada Learning Path NLP Engineer direkomendasikan mengambil mata kuliah pilihan: Pemrosesan Bahasa Alami (3 SKS), Pemerolehan Informasi dan Penambangan Teks (4 SKS).",
+    "structured_records": [
+      {
+        "learning_path": "NLP Engineer",
+        "group": "Perekayasa Komputasi Cerdas",
+        "course_name": "Pemrosesan Bahasa Alami",
+        "sks": 3,
+        "notes": null
+      },
+      {
+        "learning_path": "NLP Engineer",
+        "group": "Perekayasa Komputasi Cerdas",
+        "course_name": "Pemerolehan Informasi dan Penambangan Teks",
+        "sks": 4,
+        "notes": null
+      }
+    ],
+    "metadata": {
+      "verified_manually": true,
+      "extraction_library": "pymupdf",
+      "learning_path": "NLP Engineer",
+      "course_count": 2,
+      "has_sks_discrepancy_note": false
+    }
+  },
+  {
+    "visual_id": "vis_07_11",
+    "figure_number": "Gambar 7.11",
+    "pdf_page": 35,
+    "doc_page": "27",
+    "section": "7. Mata Kuliah Pilihan",
+    "caption": "Gambar 7.11 MK Learning Path AI Research Scientist",
+    "content_type": "visual",
+    "relevant_for_qa": true,
+    "priority": "high",
+    "image_path": "data/extracted/visuals/page_035_gambar_7_11.png",
+    "image_info": {
+      "width_px": 2048,
+      "height_px": 1050,
+      "format": "png",
+      "size_kb": 87.4
+    },
+    "extraction_method": "structured_transcription",
+    "ocr_raw_text": null,
+    "text": "Gambar 7.11 - Mata Kuliah Pilihan Learning Path AI Research Scientist. Kelompok kompetensi: Perekayasa Komputasi Cerdas. Setelah menempuh MK Wajib, mahasiswa pada Learning Path AI Research Scientist direkomendasikan mengambil mata kuliah pilihan: Algoritma Evolusi dan Kecerdasan Berkoloni (3 SKS), Sistem Berbasis Pengetahuan (3 SKS).",
+    "structured_records": [
+      {
+        "learning_path": "AI Research Scientist",
+        "group": "Perekayasa Komputasi Cerdas",
+        "course_name": "Algoritma Evolusi dan Kecerdasan Berkoloni",
+        "sks": 3,
+        "notes": null
+      },
+      {
+        "learning_path": "AI Research Scientist",
+        "group": "Perekayasa Komputasi Cerdas",
+        "course_name": "Sistem Berbasis Pengetahuan",
+        "sks": 3,
+        "notes": "Pada Tabel 7.3 (hal. PDF 24) tertulis 4 SKS."
+      }
+    ],
+    "metadata": {
+      "verified_manually": true,
+      "extraction_library": "pymupdf",
+      "learning_path": "AI Research Scientist",
+      "course_count": 2,
+      "has_sks_discrepancy_note": true
+    }
+  },
+  {
+    "visual_id": "vis_08_01",
+    "figure_number": "Gambar 8.1",
+    "pdf_page": 37,
+    "doc_page": "29",
+    "section": "8. Diagram Alir Mata Kuliah",
+    "caption": "Gambar 8.1 Alur MK untuk Perkuliahan Reguler",
+    "content_type": "visual",
+    "relevant_for_qa": true,
+    "priority": "medium",
+    "image_path": "data/extracted/visuals/page_037_gambar_8_1.png",
+    "image_info": {
+      "width_px": 2048,
+      "height_px": 1770,
+      "format": "png",
+      "size_kb": 467.5
+    },
+    "extraction_method": "inventory_summary",
+    "ocr_raw_text": null,
+    "text": "Diagram alir mata kuliah untuk skema Perkuliahan Reguler (semester 1 hingga 8 beserta panah keterkaitan prasyarat antar mata kuliah).",
+    "structured_records": [],
+    "metadata": {
+      "verified_manually": true,
+      "extraction_library": "pymupdf"
+    }
+  },
+  {
+    "visual_id": "vis_08_02",
+    "figure_number": "Gambar 8.2",
+    "pdf_page": 38,
+    "doc_page": "30",
+    "section": "8. Diagram Alir Mata Kuliah",
+    "caption": "Gambar 8.2 Alur MK untuk Perkuliahan Reguler dan MBKM 1 Semester",
+    "content_type": "visual",
+    "relevant_for_qa": true,
+    "priority": "medium",
+    "image_path": "data/extracted/visuals/page_038_gambar_8_2.png",
+    "image_info": {
+      "width_px": 2048,
+      "height_px": 1706,
+      "format": "png",
+      "size_kb": 428.8
+    },
+    "extraction_method": "inventory_summary",
+    "ocr_raw_text": null,
+    "text": "Diagram alir mata kuliah untuk skema Perkuliahan Reguler dan MBKM 1 Semester di luar kampus pada semester 6 (konversi 10 hingga 20 SKS).",
+    "structured_records": [],
+    "metadata": {
+      "verified_manually": true,
+      "extraction_library": "pymupdf"
+    }
+  },
+  {
+    "visual_id": "vis_08_03",
+    "figure_number": "Gambar 8.3",
+    "pdf_page": 39,
+    "doc_page": "31",
+    "section": "8. Diagram Alir Mata Kuliah",
+    "caption": "Gambar 8.3 Alur MK untuk Perkuliahan Reguler dan MBKM 2 Semester",
+    "content_type": "visual",
+    "relevant_for_qa": true,
+    "priority": "medium",
+    "image_path": "data/extracted/visuals/page_039_gambar_8_3.png",
+    "image_info": {
+      "width_px": 2048,
+      "height_px": 1717,
+      "format": "png",
+      "size_kb": 414.1
+    },
+    "extraction_method": "inventory_summary",
+    "ocr_raw_text": null,
+    "text": "Diagram alir mata kuliah untuk skema Perkuliahan Reguler dan MBKM 2 Semester di luar kampus pada semester 7 dan 8.",
+    "structured_records": [],
+    "metadata": {
+      "verified_manually": true,
+      "extraction_library": "pymupdf"
+    }
+  }
+]

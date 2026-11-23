@@ -1,0 +1,40 @@
+{
+  "is_valid": true,
+  "total_passages": 392,
+  "unique_pdf_pages_covered": 94,
+  "content_type_distribution": {
+    "table": 332,
+    "text": 46,
+    "visual": 14
+  },
+  "empty_passages": [],
+  "empty_stemmed": [],
+  "empty_tokens": [],
+  "missing_metadata_passages": [],
+  "duplicate_passage_ids": [],
+  "duplicate_passage_texts": [],
+  "triples": {
+    "total_triples": 1177,
+    "invalid_triples": [],
+    "duplicate_triple_ids": [],
+    "duplicate_triples": [],
+    "missing_metadata_triples": [],
+    "predicate_distribution": {
+      "course_code": 88,
+      "course_description": 130,
+      "course_name": 88,
+      "cpl_description": 10,
+      "elective_group_member": 64,
+      "equivalent_to": 114,
+      "has_practicum": 77,
+      "learning_path_member": 37,
+      "learning_path_sks": 27,
+      "min_grade": 38,
+      "prerequisite_of": 42,
+      "semester": 135,
+      "sks": 160,
+      "supports_cpl": 153,
+      "total_sks": 14
+    }
+  }
+}
