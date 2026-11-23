@@ -1,0 +1,88 @@
+[
+  {
+    "id": "Q13",
+    "author": "Azza Arsyada (Anggota 4)",
+    "question": "Berapa SKS bobot mata kuliah Pemrograman Lanjut?",
+    "speech_act": "wh",
+    "question_category": "factoid",
+    "expected_answer_type_coarse": "NUMERIC",
+    "expected_answer_type": "NUMERIC:count",
+    "ground_truth": "5 SKS.",
+    "acceptable_variants": [
+      "5",
+      "5 sks",
+      "Bobot mata kuliah Pemrograman Lanjut adalah 5 SKS."
+    ],
+    "source_pdf_page": 20,
+    "source_doc_page": "12",
+    "source_section": "6. Struktur Kurikulum (Distribusi Mata Kuliah Semester 2)",
+    "content_type": "table",
+    "question_type": "course_sks",
+    "acceptance_criteria": "Menyebutkan angka 5 SKS untuk bobot mata kuliah Pemrograman Lanjut (COM60024).",
+    "validated_by": ""
+  },
+  {
+    "id": "Q14",
+    "author": "Azza Arsyada (Anggota 4)",
+    "question": "Mata kuliah pilihan apa saja yang termasuk dalam Learning Path Game Developer?",
+    "speech_act": "wh",
+    "question_category": "list",
+    "expected_answer_type_coarse": "ENTITY",
+    "expected_answer_type": "ENTITY:course_list",
+    "ground_truth": "Pengujian Perangkat Lunak, Perancangan Pengalaman Pengguna, Arsitektur berbasis layanan, Pemrograman Gim, dan Realitas terkembang.",
+    "acceptable_variants": [
+      "Pengujian Perangkat Lunak, Perancangan Pengalaman Pengguna, Arsitektur berbasis layanan, Pemrograman Gim, Realitas terkembang"
+    ],
+    "source_pdf_page": 27,
+    "source_doc_page": "19",
+    "source_section": "7. Mata Kuliah Pilihan",
+    "content_type": "visual",
+    "question_type": "learning_path",
+    "acceptance_criteria": "Menyebutkan kelima mata kuliah pilihan pada Gambar 7.3 untuk Learning Path Game Developer.",
+    "validated_by": ""
+  },
+  {
+    "id": "Q15",
+    "author": "Azza Arsyada (Anggota 4)",
+    "question": "Apa mata kuliah prasyarat dan nilai minimum untuk mengambil Pemrograman Lanjut?",
+    "speech_act": "wh",
+    "question_category": "factoid",
+    "expected_answer_type_coarse": "ENTITY",
+    "expected_answer_type": "ENTITY:prerequisite",
+    "ground_truth": "Pemrograman Dasar (COM60014) dengan nilai minimum D.",
+    "acceptable_variants": [
+      "COM60014 Pemrograman Dasar dengan nilai minimum D",
+      "Pemrograman Dasar minimal D",
+      "Pemrograman Dasar nilai min D"
+    ],
+    "source_pdf_page": 20,
+    "source_doc_page": "12",
+    "source_section": "6. Struktur Kurikulum (Distribusi Mata Kuliah Semester 2)",
+    "content_type": "table",
+    "question_type": "course_prerequisite",
+    "acceptance_criteria": "Menyebutkan mata kuliah prasyarat Pemrograman Dasar (atau kode COM60014) beserta nilai minimum D.",
+    "validated_by": ""
+  },
+  {
+    "id": "Q16",
+    "author": "Azza Arsyada (Anggota 4)",
+    "question": "Berapa lama masa berlaku aturan peralihan pada Kurikulum 2024?",
+    "speech_act": "wh",
+    "question_category": "narrative",
+    "expected_answer_type_coarse": "DESCRIPTION",
+    "expected_answer_type": "DESCRIPTION:manner",
+    "ground_truth": "Aturan peralihan berlaku selama setahun untuk semester Genap dan Ganjil tahun ajaran 2024/2025.",
+    "acceptable_variants": [
+      "Berlaku selama setahun untuk semester Genap dan Ganjil tahun ajaran 2024/2025",
+      "Satu tahun untuk semester Genap dan Ganjil tahun ajaran 2024/2025",
+      "1 tahun"
+    ],
+    "source_pdf_page": 44,
+    "source_doc_page": "36",
+    "source_section": "9. Perubahan Kurikulum, Penyetaraan, dan Aturan Peralihan (9.2 Aturan Peralihan pada Kurikulum 2024)",
+    "content_type": "text",
+    "question_type": "curriculum_transition",
+    "acceptance_criteria": "Menjelaskan bahwa aturan peralihan berlaku selama satu tahun untuk semester Genap dan Ganjil tahun ajaran 2024/2025 sesuai Bab 9.2.",
+    "validated_by": ""
+  }
+]
