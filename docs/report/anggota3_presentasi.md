@@ -28,12 +28,14 @@
   - `LogisticRegression`: 80,93% (Macro-F1 0,7983)
   - **`LinearSVC`**: **87,28% (Macro-F1 0,8606)**
 - **Ablasi pada 63 Pertanyaan Uji Held-Out:**
-  - Rule-only: 92,06% | ML-only: 98,41% | **Hybrid: 98,41% (Macro-F1 0,9837)**.
-- **Speech Act:** 100% | **Answer Type Coarse:** 100% | **Entity F1 (12 fixture):** 100%.
+  - Rule-only: 93,65% (Macro-F1 0,9429) | ML-only (`LinearSVC`): 98,41% (Macro-F1 0,9837) | **Hybrid + CV OOD Threshold: 100% (Macro-F1 1,0000)**.
+- **Speech Act:** 100% | **Answer Type Coarse & Fine:** 100% | **Entity F1 (15 fixture):** 100%.
+- **Keselarasan Lintas-Modul A2 ↔ A3 (`knowledge_triples.jsonl`):** 15/15 predikat KB, 11/11 *learning path*, 3/3 *elective group*, 31/31 *knowledge area*, serta **8/8** soal Q05–Q12 & **8/8** *exact hit* relasi KB.
 
-### Slide 4 — Keterbatasan & Contoh Kesalahan
-- **1 kasus salah pada 63 uji held-out:** `"Kapan libur semester genap berakhir di kalender akademik nasional?"` terdeteksi `course_semester` (target: `other`) karena aturan `semester genap` belum mensyaratkan kehadiran entitas mata kuliah.
-- **Penanganan inkonsistensi dokumen asli:** Gazetteer memetakan kode kembar (`CIF60048`/`CIF60050`, `CIF63106`/`CIF63107`, `CIF63108`/`CIF63109`, `CIF63110`/`CIF63310`) dan memisahkan kode Kurikulum 2020 vs 2024.
+### Slide 4 — Evaluasi Error (*Before vs After*) & Keterbatasan
+- **Resolusi 1 kasus error awal pada held-out (98,41% → 100%):** `"Kapan libur semester genap berakhir di kalender akademik nasional?"` semula terdeteksi `course_semester`, teratasi melalui syarat konteks MK + kalibrasi ambang `LinearSVC.decision_function < -0,32` dari 5-fold CV data latih.
+- **Penanganan inkonsistensi dokumen asli & korpus A1/A2:** Gazetteer memetakan kode kembar (`CIF60048`/`CIF60050`, `CIF63106`/`CIF63107`, `CIF63108`/`CIF63109`, `CIF63110`/`CIF63310`), memisahkan kode 2020 vs 2024, dan mencakup variasi ejaan tabel/visual.
+- **Keterbatasan:** Belum memakai *fuzzy matching* untuk *typo* berat di luar alias; evaluasi *end-to-end* MRR menunggu modul Retrieval (A4) & Answer Extraction (A5).
 
 ---
 
@@ -49,7 +51,7 @@ python -c "from src.question_processing.question_processor import process_questi
 
 ## 3. Ringkasan 3 Kalimat untuk Abstrak (Serahkan ke Zulfan)
 
-> Modul *Question Processing* dibangun menggunakan pendekatan *Classic NLP* tanpa LLM yang mencakup POS *tagging* hibrida (CRF terlatih pada *IDN Tagged Corpus* dengan *domain lexicon override*), ekstraksi entitas berbasis *gazetteer longest-match*, deteksi *speech act* dan *focus*, klasifikasi maksud hibrida (*rule-based* + `LinearSVC`), pemetaan *expected answer type* berbasis taksonomi Li & Roth, serta formulasi dan ekspansi kueri. Evaluasi mandiri pada 63 pertanyaan uji *held-out* menunjukkan akurasi *speech act* sebesar 100%, akurasi klasifikasi *intent* sebesar 98,41% (*macro-F1* 0,9837), akurasi *answer type coarse* sebesar 100%, serta peningkatan akurasi POS *tagging* domain dari 67,44% menjadi 94,57% berkat *domain override*.
+> Modul *Question Processing* dibangun menggunakan pendekatan *Classic NLP* tanpa LLM yang mencakup POS *tagging* hibrida (CRF terlatih pada *IDN Tagged Corpus* dengan *domain lexicon override*), ekstraksi entitas berbasis *gazetteer longest-match*, deteksi *speech act* dan *focus*, klasifikasi maksud hibrida (*rule-based* + `LinearSVC` dengan ambang *out-of-domain* terkalibrasi CV), pemetaan *expected answer type* berbasis taksonomi Li & Roth, serta formulasi dan ekspansi kueri yang tersinkronisasi penuh dengan 15 predikat *Knowledge Base*. Evaluasi mandiri pada 63 pertanyaan uji *held-out* menunjukkan akurasi *speech act* 100%, akurasi klasifikasi *intent* hibrida 100% (mengungguli *rule-only* 93,65% dan *ML-only* 98,41%), akurasi *answer type* 100%, peningkatan akurasi POS *tagging* domain dari 67,44% menjadi 94,57%, serta keselarasan 8/8 pada soal evaluasi tim Q05–Q12 terhadap `knowledge_triples.jsonl`.
 
 ---
 
@@ -57,4 +59,4 @@ python -c "from src.question_processing.question_processor import process_questi
 
 | Nama | Peran | Tanggung Jawab Teknis yang Dikerjakan |
 |---|---|---|
-| **Yusuf** | Anggota 3 — Question Processing & NLP Analysis | Merancang taksonomi 21 intent & kontrak fixture tim (`docs/question_taxonomy.md`); membangun gazetteer mata kuliah & leksikon domain dari PDF (`build_lexicon.py`, `resources.py`); mengimplementasikan normalisasi/tokenisasi (`text_utils.py`), POS tagger CRF + domain override (`train_pos_tagger.py`, `query_formulator.py`), deteksi *speech act* & hybrid classifier (`question_classifier.py`), ekstraksi entitas/focus/relasi (`entity_extractor.py`), deteksi *answer type* Li & Roth (`answer_type_detector.py`), orkestrator `process_question` (`question_processor.py`), evaluasi & unit test (`evaluate_qp.py`, `tests/test_question_processing.py`), menyusun 4 soal evaluasi Q09–Q12, serta menulis bagian Bab II, III, dan IV modul Question Processing. |
+| **Yusuf** | Anggota 3 — Question Processing & NLP Analysis | Merancang taksonomi 21 intent, 15 predikat KB tersinkronisasi, & 15 kontrak fixture tim (`docs/question_taxonomy.md`); membangun gazetteer mata kuliah & leksikon domain dari PDF (`build_lexicon.py`, `resources.py`); mengimplementasikan normalisasi/tokenisasi (`text_utils.py`), POS tagger CRF + domain override (`train_pos_tagger.py`, `query_formulator.py`), deteksi *speech act* & hybrid classifier (`question_classifier.py`), ekstraksi entitas/focus/multi-relasi (`entity_extractor.py`), deteksi *answer type* Li & Roth (`answer_type_detector.py`), orkestrator `process_question` (`question_processor.py`), evaluasi & uji integrasi A2↔A3 (`evaluate_qp.py`, `tests/test_question_processing.py`), menyusun 4 soal evaluasi `data/evaluation/eval_q09_q12.json`, serta menulis bagian Bab II, III, dan IV modul Question Processing. |

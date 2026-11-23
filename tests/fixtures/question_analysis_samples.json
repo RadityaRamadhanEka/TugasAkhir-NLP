@@ -461,5 +461,210 @@
       }
     ],
     "relations": []
+  },
+  {
+    "original_question": "Mata kuliah pilihan apa saja yang termasuk kelompok Perekayasa Perangkat Lunak?",
+    "normalized_question": "mata kuliah pilihan apa saja yang termasuk kelompok perekayasa perangkat lunak",
+    "tokens": [
+      "mata",
+      "kuliah",
+      "pilihan",
+      "apa",
+      "saja",
+      "yang",
+      "termasuk",
+      "kelompok",
+      "perekayasa",
+      "perangkat",
+      "lunak"
+    ],
+    "pos_tags": [
+      ["mata", "NN"],
+      ["kuliah", "NN"],
+      ["pilihan", "NN"],
+      ["apa", "WH"],
+      ["saja", "WH"],
+      ["yang", "SC"],
+      ["termasuk", "VB"],
+      ["kelompok", "NN"],
+      ["perekayasa", "NNP"],
+      ["perangkat", "NNP"],
+      ["lunak", "NNP"]
+    ],
+    "speech_act": "wh",
+    "question_category": "list",
+    "intent": "elective_group",
+    "answer_type_coarse": "ENTITY",
+    "answer_type": "ENTITY:course_list",
+    "focus": "mata kuliah pilihan",
+    "query_keywords": [
+      "mata",
+      "kuliah",
+      "pilihan",
+      "kelompok",
+      "Perekayasa Perangkat Lunak"
+    ],
+    "expanded_queries": [
+      "mk pilihan kelompok Perekayasa Perangkat Lunak",
+      "mata kuliah elektif kelompok Perekayasa Perangkat Lunak",
+      "mk pilihan Perekayasa Perangkat Lunak"
+    ],
+    "entities": [
+      {
+        "type": "elective_group",
+        "value": "perekayasa perangkat lunak",
+        "normalized_value": "Perekayasa Perangkat Lunak"
+      }
+    ],
+    "relations": [
+      {
+        "predicate": "elective_group_member",
+        "subject": null,
+        "object": "Perekayasa Perangkat Lunak"
+      }
+    ]
+  },
+  {
+    "original_question": "CPL apa saja yang didukung oleh bahan kajian Intelligent Systems?",
+    "normalized_question": "cpl apa saja yang didukung oleh bahan kajian intelligent systems",
+    "tokens": [
+      "cpl",
+      "apa",
+      "saja",
+      "yang",
+      "didukung",
+      "oleh",
+      "bahan",
+      "kajian",
+      "intelligent",
+      "systems"
+    ],
+    "pos_tags": [
+      ["cpl", "NNP"],
+      ["apa", "WH"],
+      ["saja", "WH"],
+      ["yang", "SC"],
+      ["didukung", "VB"],
+      ["oleh", "IN"],
+      ["bahan", "NN"],
+      ["kajian", "NN"],
+      ["intelligent", "NNP"],
+      ["systems", "NNP"]
+    ],
+    "speech_act": "wh",
+    "question_category": "definition",
+    "intent": "cpl",
+    "answer_type_coarse": "DESCRIPTION",
+    "answer_type": "DESCRIPTION:definition",
+    "focus": null,
+    "query_keywords": [
+      "cpl",
+      "didukung",
+      "bahan",
+      "kajian",
+      "Intelligent Systems (AI) (CC2020)"
+    ],
+    "expanded_queries": [
+      "capaian pembelajaran lulusan didukung bahan kajian Intelligent Systems (AI) (CC2020)",
+      "Capaian Pembelajaran Lulusan CPL"
+    ],
+    "entities": [
+      {
+        "type": "abbreviation",
+        "value": "cpl",
+        "normalized_value": "CPL"
+      },
+      {
+        "type": "knowledge_area",
+        "value": "intelligent systems",
+        "normalized_value": "Intelligent Systems (AI) (CC2020)"
+      }
+    ],
+    "relations": [
+      {
+        "predicate": "supports_cpl",
+        "subject": "Intelligent Systems (AI) (CC2020)",
+        "object": null
+      }
+    ]
+  },
+  {
+    "original_question": "Apa saja mata kuliah prasyarat dan nilai minimumnya untuk mengambil mata kuliah Jaringan Saraf Tiruan?",
+    "normalized_question": "apa saja mata kuliah prasyarat dan nilai minimumnya untuk mengambil mata kuliah jaringan saraf tiruan",
+    "tokens": [
+      "apa",
+      "saja",
+      "mata",
+      "kuliah",
+      "prasyarat",
+      "dan",
+      "nilai",
+      "minimumnya",
+      "untuk",
+      "mengambil",
+      "mata",
+      "kuliah",
+      "jaringan",
+      "saraf",
+      "tiruan"
+    ],
+    "pos_tags": [
+      ["apa", "WH"],
+      ["saja", "WH"],
+      ["mata", "NN"],
+      ["kuliah", "NN"],
+      ["prasyarat", "NN"],
+      ["dan", "CC"],
+      ["nilai", "NN"],
+      ["minimumnya", "NN"],
+      ["untuk", "SC"],
+      ["mengambil", "VB"],
+      ["mata", "VB"],
+      ["kuliah", "NN"],
+      ["jaringan", "NNP"],
+      ["saraf", "NNP"],
+      ["tiruan", "NNP"]
+    ],
+    "speech_act": "wh",
+    "question_category": "factoid",
+    "intent": "course_prerequisite",
+    "answer_type_coarse": "ENTITY",
+    "answer_type": "ENTITY:prerequisite",
+    "focus": "mata kuliah prasyarat",
+    "query_keywords": [
+      "mata",
+      "kuliah",
+      "prasyarat",
+      "nilai",
+      "minimumnya",
+      "Jaringan Saraf Tiruan",
+      "CIF65318"
+    ],
+    "expanded_queries": [
+      "mk prasyarat nilai minimumnya Jaringan Saraf Tiruan CIF65318",
+      "mata kuliah syarat nilai minimumnya Jaringan Saraf Tiruan CIF65318",
+      "syarat Jaringan Saraf Tiruan",
+      "prasyarat Jaringan Saraf Tiruan adalah",
+      "CIF65318 Jaringan Saraf Tiruan prasyarat"
+    ],
+    "entities": [
+      {
+        "type": "course_name",
+        "value": "jaringan saraf tiruan",
+        "normalized_value": "Jaringan Saraf Tiruan"
+      }
+    ],
+    "relations": [
+      {
+        "predicate": "prerequisite_of",
+        "subject": "Jaringan Saraf Tiruan",
+        "object": null
+      },
+      {
+        "predicate": "min_grade",
+        "subject": "Jaringan Saraf Tiruan",
+        "object": null
+      }
+    ]
   }
 ]

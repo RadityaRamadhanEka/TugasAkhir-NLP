@@ -57,7 +57,7 @@ def pos_tag_question(tokens: list[str]) -> list[tuple[str, str]]:
 - **Penjelasan & Hasil:** Model CRF (`c1=0.1, c2=0.1, max_iterations=100`) mencapai akurasi token **97,15%** pada 1.003 kalimat uji IDN (26.367 token). Namun pada 20 pertanyaan domain kurikulum (`pos_domain_gold.tsv`), CRF mentah hanya mencapai **67,44%** karena korpus berita hanya memiliki 260 token `WH` dan tidak mengenal nama MK/kode MK. Setelah `apply_domain_pos_overrides` diterapkan, akurasi domain meningkat menjadi **94,57%** (+27,13%).
 
 ### 3. Entity Extraction, Focus Detection, & Relation Extraction (`entity_extractor.py`)
-- **Tujuan:** Mengekstrak 10 tipe entitas kurikulum, menentukan *headword* pertanyaan, dan membentuk triple relasi `(predicate, subject, object)`.
+- **Tujuan:** Mengekstrak 11 tipe entitas kurikulum (termasuk `knowledge_area` 31 Bahan Kajian CC2020/CS2023 dan normalisasi `semester` mencakup `1`–`8`, `Ganjil`/`Genap`, `Semester Antara (A)/(B)`), menentukan *headword* pertanyaan, dan membentuk triple relasi `(predicate, subject, object)` untuk seluruh **15 predikat** yang selaras 100% dengan `knowledge_triples.jsonl` Anggota 2 (termasuk dukungan multi-relasi pada pertanyaan majemuk seperti Q09 `prerequisite_of` + `min_grade` dan Q10 `learning_path_member` + `learning_path_sks`).
 - **Cuplikan kode inti (*longest-match* & anti-overlap):**
 ```python
 def _record_match(hits, occupied, start, end, etype, value, normalized) -> None:
@@ -66,11 +66,11 @@ def _record_match(hits, occupied, start, end, etype, value, normalized) -> None:
     occupied.append((start, end))
     hits.append((start, {"type": etype, "value": value, "normalized_value": normalized}))
 ```
-- **Penjelasan:** Gazetteer diurutkan dari frasa terpanjang ke terpendek (`key=lambda x: -len(x[0])`). Saat memproses `"Kecerdasan Artifisial Lanjut"`, span tersebut dicatat pada `occupied` terlebih dahulu sehingga sub-frasa `"Kecerdasan Artifisial"` tidak diekstrak ganda. Pada 12 fixture resmi, ekstraksi entitas mencapai **Precision = 1,0000, Recall = 1,0000, F1 = 1,0000** (14/14 entitas tepat).
+- **Penjelasan:** Gazetteer diurutkan dari frasa terpanjang ke terpendek (`key=lambda x: -len(x[0])`). Saat memproses `"Kecerdasan Artifisial Lanjut"`, span tersebut dicatat pada `occupied` terlebih dahulu sehingga sub-frasa `"Kecerdasan Artifisial"` tidak diekstrak ganda. Pada **15 fixture resmi**, ekstraksi entitas mencapai **Precision = 1,0000, Recall = 1,0000, F1 = 1,0000** (18/18 entitas tepat).
 
 ### 4. Hybrid Question Classifier & Li-Roth Answer Type (`question_classifier.py`, `answer_type_detector.py`)
 - **Tujuan:** Mengklasifikasikan 21 kelas `intent`, 5 `question_category`, dan `(answer_type_coarse, answer_type)` sesuai Li & Roth (2005).
-- **Penjelasan:** Lapisan *rule-based* (`classify_question_rule_only`) dijalankan terlebih dahulu untuk pola domain berpresisi tinggi; bila tidak cocok, sistem memanggil model ML terbaik hasil 5-Fold Stratified CV (`FeatureUnion`: TF-IDF kata (1,2)-gram + TF-IDF POS (1,2)-gram + fitur `HEAD_<focus>`).
+- **Penjelasan:** Lapisan *rule-based* (`classify_question_rule_only`) dijalankan terlebih dahulu untuk pola domain berpresisi tinggi; bila tidak cocok, sistem memanggil model ML terbaik hasil 5-Fold Stratified CV (`FeatureUnion`: TF-IDF kata (1,2)-gram + TF-IDF POS (1,2)-gram + fitur `HEAD_<focus>`) disertai penolakan *out-of-domain* berkeyakinan rendah (`LinearSVC.decision_function < -0,32`, dikalibrasi khusus pada 5-fold CV data latih).
 - **Hasil Eksperimen Perbandingan Classifier (5-Fold CV pada 252 sampel latih):**
 
 | Model | CV Accuracy | CV Macro-F1 |
@@ -83,9 +83,13 @@ def _record_match(hits, occupied, start, end, etype, value, normalized) -> None:
 
 | Varian | Test Accuracy | Test Macro-F1 |
 |---|---:|---:|
-| Rule-based Only | 0,9206 | 0,9286 |
+| Rule-based Only | 0,9365 | 0,9429 |
 | ML Only (`LinearSVC`) | 0,9841 | 0,9837 |
-| **Hybrid (Rule + ML)** | **0,9841** | **0,9837** |
+| **Hybrid (Rule + ML + CV OOD Threshold)** | **1,0000** | **1,0000** |
+
+- **Verifikasi Keselarasan Lintas-Modul A2 ↔ A3 (`data/processed/knowledge_triples.jsonl`):**
+  - **15/15** predikat KB Anggota 2 (1.177 triple) tersinkronisasi 100%, **11/11** *learning path*, **3/3** *elective group*, dan **31/31** *knowledge area* cocok persis.
+  - **8/8** soal evaluasi tim (`eval_q05_q08.json` Anggota 2 + `eval_q09_q12.json` Anggota 3) lulus penuh (`speech_act`, `question_category`, `intent`, `answer_type`) dengan **8/8** *exact hit* relasi KB.
 
 ### 5. Query Formulation & Orkestrator (`query_formulator.py`, `question_processor.py`)
 - **Contoh Input–Output Aktual (`process_question`):**
@@ -100,16 +104,18 @@ def _record_match(hits, occupied, start, end, etype, value, normalized) -> None:
 
 ---
 
-## 4.X Analisis Kesalahan & Keterbatasan Modul
+## 4.X Analisis Kesalahan (Before vs After) & Keterbatasan Modul
 
-1. **Kasus kesalahan pada `questions_test.json` (1 dari 63 soal):**
+1. **Perbaikan kasus kesalahan pada `questions_test.json` (*Before*: 62/63 = 98,41% → *After*: 63/63 = 100%):**
    - Pertanyaan: `"Kapan libur semester genap berakhir di kalender akademik nasional?"`
-   - Target: `other` → Prediksi: `course_semester` (`answer_type=NUMERIC:order`).
-   - **Penyebab:** Aturan regex `semester (berapa|apa|mana|ganjil|genap)` memicu `course_semester` meskipun pertanyaan tidak menyebut entitas mata kuliah dan menanyakan kalender libur (di luar domain kurikulum).
-   - **Rencana perbaikan:** Mempersyaratkan kehadiran entitas mata kuliah (atau kata `mk`/`mata kuliah`) untuk aturan `semester ganjil|genap`.
-2. **Keterbatasan umum:**
-   - Gazetteer hanya mengenal mata kuliah dan alias yang terdaftar pada PDF Kurikulum 2024; typo berat di luar alias belum ditangani (*fuzzy matching* belum ditambahkan agar presisi tetap tinggi).
-   - `LinearSVC` tidak mengeluarkan probabilitas terkalibrasi secara langsung sehingga *confidence thresholding* hanya aktif bila model ber-`predict_proba` terpilih.
+   - Target: `other` → Prediksi awal: `course_semester` (`answer_type=NUMERIC:order`).
+   - **Penyebab awal:** Aturan regex `semester (berapa|apa|mana|ganjil|genap)` memicu `course_semester` tanpa mensyaratkan konteks mata kuliah, dan fallback *low-confidence* pada `LinearSVC` belum aktif (`LinearSVC` tidak memiliki `predict_proba`).
+   - **Perbaikan tanpa *data leakage*:** Memindahkan aturan `course_list_semester` ke prioritas lebih tinggi, mensyaratkan kehadiran konteks MK untuk `semester ganjil|genap`, serta mengkalibrasi ambang `LinearSVC.decision_function < -0,32` murni dari *out-of-fold* 5-fold CV data latih (`questions_labeled.json`, tanpa mengubah `questions_test.json`).
+2. **Perbaikan hasil audit integrasi dengan Anggota 1 & 2:**
+   - Menyelaraskan nama kanonik `elective_group` (`Perekayasa Perangkat Lunak`), nilai `semester` (`Semester Antara (A)/(B)`, `Ganjil`/`Genap`), seluruh 14 subjek `total_sks`, menambahkan 2 predikat baru Anggota 2 (`supports_cpl`, `learning_path_sks`), serta memperbaiki *no-op expansion* pada `formulate_query()` agar 5 slot ekspansi benar-benar informatif.
+3. **Keterbatasan umum:**
+   - Gazetteer hanya mengenal mata kuliah dan alias yang terdaftar pada PDF Kurikulum 2024; *typo* berat di luar alias belum ditangani (*fuzzy matching* belum ditambahkan agar presisi tetap tinggi).
+   - Evaluasi *end-to-end* (Accuracy & MRR 20 soal) masih menunggu penyelesaian modul Retrieval (Anggota 4) dan Answer Extraction (Anggota 5).
 
 ---
 

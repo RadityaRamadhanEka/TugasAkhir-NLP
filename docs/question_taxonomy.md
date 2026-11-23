@@ -62,36 +62,44 @@ Urutan evaluasi prioritas (aturan pertama yang cocok menang):
 |---|---|---|---|
 | `course_code` | Regex `\b[a-z]{3}\d{5}(?:-\d)?\b` | UPPERCASE | `cif63110` → `CIF63110` |
 | `course_name` | Gazetteer *longest-match* (termasuk alias seperti `AI`, `KA`, `KAL`, `IMK`, `APS`, `RPL`, `MLOps`) | Nama kanonik resmi 2024 | `"kecerdasan artifisial lanjut"` → `"Kecerdasan Artifisial Lanjut"` |
-| `semester` | Regex `semester\s+(\d|[ivx]+|satu..delapan|antara)` | `"1"`–`"8"` atau `"antara"` | `"semester tiga"` → `"3"` |
+| `semester` | Regex `semester\s+(\d\|[ivx]+\|satu..delapan\|antara(?:\s+[ab])?\|ganjil/genap\|ganjil\|genap)` | `"1"`–`"8"`, `"antara"`, `"Semester Antara (A)"`, `"Semester Antara (B)"`, `"Ganjil"`, `"Genap"`, atau `"Ganjil/Genap"` | `"Semester Antara (A)"` → `"Semester Antara (A)"` |
 | `sks_value` | Regex `(\d+)\s*sks` | Angka string | `"3 sks"` → `"3"` |
-| `cpl_code` | Regex `if[_\s-]?cpl[_\s-]?(s|p|ku|kk|kp)\s?(\d)` | `IF_CPL_<KATEGORI><N>` | `"cpl kk1"` → `"IF_CPL_KK1"` |
-| `learning_path` | Gazetteer 11 *learning path* + alias spasi | Nama kanonik | `"data science"` → `"Data Scientist"` |
-| `elective_group` | Gazetteer 3 kelompok MK pilihan Tabel 7.1–7.3 | Nama kanonik | `"infrastruktur komputasi"` → `"Perekayasa Infrastruktur Komputasi"` |
-| `grade` | Regex `nilai\s+(minimal\s+|minimum\s+)?([a-e])\b` | UPPERCASE huruf | `"nilai minimal c"` → `"C"` |
-| `curriculum_year` | Regex `\b(2020|2024)\b` | Tahun string | `"2024"` |
+| `cpl_code` | Regex `if[_\s-]?cpl[_\s-]?(s\|p\|ku\|kk\|kp)\s?(\d)` | `IF_CPL_<KATEGORI><N>` | `"cpl kk1"` → `"IF_CPL_KK1"` |
+| `learning_path` | Gazetteer 11 *learning path* + alias spasi | Nama kanonik (selaras A2) | `"data science"` → `"Data Scientist"` |
+| `elective_group` | Gazetteer 3 kelompok MK pilihan Tabel 7.1–7.3 | Nama kanonik persis A2 (`Perekayasa Perangkat Lunak`, `Perekayasa Infrastruktur Komputasi`, `Perekayasa Komputasi Cerdas`) | `"perekayasa perangkat lunak"` → `"Perekayasa Perangkat Lunak"` |
+| `knowledge_area` | Gazetteer 31 Bahan Kajian CC2020/CS2023 Tabel 4.1 | Nama kanonik persis A2 (`supports_cpl` subject) | `"intelligent systems"` → `"Intelligent Systems (AI) (CC2020)"` |
+| `grade` | Regex `nilai\s+(minimal\s+\|minimum\s+)?([a-e])\b` | UPPERCASE huruf | `"nilai minimal c"` → `"C"` |
+| `curriculum_year` | Regex `\b(2020\|2024)\b` | Tahun string | `"2024"` |
 | `abbreviation` | Kamus singkatan (`MBKM`, `SKS`, `CPL`, `CPMK`, `MK`, `PkM`, `BK`) | UPPERCASE | `"mbkm"` → `"MBKM"` |
 
 ---
 
-## 4. Vocabulary `relations[].predicate` (Sinkronisasi ⛔ GATE-A)
+## 4. Vocabulary `relations[].predicate` (Tersinkronisasi dengan Anggota 2 — 15 Predikat)
 
-Daftar predikat standar yang dihasilkan oleh `extract_relations` (slot yang ditanyakan diisi `null`/`None`):
+Seluruh **15 predikat** berikut telah diverifikasi **100% cocok** dengan `data/processed/knowledge_triples.jsonl` (1.177 triple milik Anggota 2 — Radit). Slot yang ditanyakan diisi `null`/`None`:
 
-- `course_code`
-- `course_name`
-- `sks`
-- `semester`
-- `prerequisite_of`
-- `min_grade`
-- `has_practicum`
-- `elective_group_member`
-- `learning_path_member`
-- `equivalent_to`
-- `cpl_description`
-- `course_description`
-- `total_sks`
+1. `course_code` *(88 triple)*
+2. `course_name` *(88 triple)*
+3. `sks` *(160 triple)*
+4. `semester` *(135 triple; mendukung `"1"`–`"8"`, `"Ganjil"`, `"Genap"`, `"Ganjil/Genap"`, `"Semester Antara (A)"`, `"Semester Antara (B)"`)*
+5. `prerequisite_of` *(42 triple)*
+6. `min_grade` *(38 triple)*
+7. `has_practicum` *(77 triple)*
+8. `elective_group_member` *(64 triple; objek kanonik: `Perekayasa Perangkat Lunak`, `Perekayasa Infrastruktur Komputasi`, `Perekayasa Komputasi Cerdas`)*
+9. `learning_path_member` *(37 triple; objek kanonik 11 Learning Path Gambar 7.1–7.11)*
+10. `learning_path_sks` *(27 triple; predikat tambahan A2 untuk bobot SKS MK pada diagram Learning Path)*
+11. `equivalent_to` *(114 triple; subjek nama/kode MK 2020 → objek kode + nama MK 2024)*
+12. `cpl_description` *(10 triple; subjek kode `IF_CPL_*`)*
+13. `supports_cpl` *(153 triple; predikat tambahan A2 untuk pemetaan 31 Bahan Kajian CC2020/CS2023 → 10 kode `IF_CPL_*` pada Tabel 4.1)*
+14. `course_description` *(130 triple; subjek nama/kode MK dari silabus Bab 11)*
+15. `total_sks` *(14 triple; subjek `muatan nasional`, `muatan universitas`, `muatan fakultas`, `muatan program studi`, `semester 1`–`8`, `semester Semester Antara (A)/(B)`)*
 
-**Catatan untuk Anggota 2 (Radit):** Mohon konfirmasi apakah `knowledge_triples.jsonl` dapat menggunakan daftar predikat di atas agar `retrieve_triples()` milik Anggota 4 dapat mencocokkan langsung tanpa lapisan pemetaan tambahan.
+**Dukungan Multi-Relasi pada Pertanyaan Majemuk:**
+- Pertanyaan prasyarat yang sekaligus menanyakan nilai minimum (mis. Q09) memancarkan 2 relasi: `prerequisite_of` dan `min_grade`.
+- Pertanyaan *learning path* yang sekaligus menanyakan bobot SKS (mis. Q10) memancarkan 2 relasi: `learning_path_member` dan `learning_path_sks`.
+- Pertanyaan CPL yang menyebut bahan kajian atau pemetaan/dukungan CPL memancarkan `supports_cpl` (dua arah: Bahan Kajian → CPL maupun CPL ← Bahan Kajian).
+
+**Status Sinkronisasi (GATE-A):** **SELESAI & TERVERIFIKASI OTOMATIS** melalui `tests/test_question_processing.py::test_a2_kb_alignment_lexicon_and_predicates`. `retrieve_triples()` milik Anggota 4 dapat mencocokkan langsung tanpa lapisan pemetaan tambahan.
 
 ---
 
