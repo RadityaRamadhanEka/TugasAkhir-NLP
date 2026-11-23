@@ -1,0 +1,105 @@
+[
+  {
+    "id": "Q17",
+    "author": "Zulfan (Anggota 5)",
+    "question": "Berapa SKS mata kuliah Kecerdasan Artifisial?",
+    "speech_act": "wh",
+    "question_category": "factoid",
+    "expected_answer_type_coarse": "NUMERIC",
+    "expected_answer_type": "NUMERIC:count",
+    "ground_truth": "2 SKS",
+    "acceptable_variants": [
+      "2",
+      "dua SKS",
+      "Kecerdasan Artifisial (CIF63110) 2 SKS"
+    ],
+    "source_pdf_page": 20,
+    "source_doc_page": "12",
+    "source_section": "6. Struktur Kurikulum",
+    "source_table_title": "Distribusi Mata Kuliah Semester 3",
+    "other_valid_sources": [
+      {
+        "pdf_page": 19,
+        "doc_page": "11",
+        "table_title": "Tabel 6.4 Mata Kuliah Muatan Program Studi (termasuk mekanisme MBKM) 75 SKS"
+      }
+    ],
+    "content_type": "table",
+    "question_type": "course_sks",
+    "acceptance_criteria": "Benar jika menyebut 2 SKS. Salah jika menjawab 3 SKS, karena 3 SKS adalah SKS Penerapan Kecerdasan Artifisial (MK pilihan) atau Kecerdasan Buatan di kurikulum lama.",
+    "validated_by": ""
+  },
+  {
+    "id": "Q18",
+    "author": "Zulfan (Anggota 5)",
+    "question": "Pada semester berapa mata kuliah Jaringan Nirkabel ditempuh?",
+    "speech_act": "wh",
+    "question_category": "factoid",
+    "expected_answer_type_coarse": "NUMERIC",
+    "expected_answer_type": "NUMERIC:order",
+    "ground_truth": "Semester 5",
+    "acceptable_variants": [
+      "5",
+      "semester lima",
+      "Jaringan Nirkabel (CIF65217) ditempuh di semester 5"
+    ],
+    "source_pdf_page": 21,
+    "source_doc_page": "13",
+    "source_section": "6. Struktur Kurikulum",
+    "source_table_title": "Distribusi Mata Kuliah Semester 5",
+    "other_valid_sources": [],
+    "content_type": "table",
+    "question_type": "course_semester",
+    "acceptance_criteria": "Benar jika menyebut semester 5. Salah jika menyebut semester lain atau ikut menyebut angka lain yang membuat jawaban ambigu.",
+    "validated_by": ""
+  },
+  {
+    "id": "Q19",
+    "author": "Zulfan (Anggota 5)",
+    "question": "Mata kuliah Kecerdasan Buatan pada kurikulum lama diganti menjadi mata kuliah apa pada Kurikulum 2024?",
+    "speech_act": "wh",
+    "question_category": "factoid",
+    "expected_answer_type_coarse": "ENTITY",
+    "expected_answer_type": "ENTITY:course_name",
+    "ground_truth": "Kecerdasan Artifisial (CIF63110), dengan SKS berubah dari 3 SKS menjadi 2 SKS.",
+    "acceptable_variants": [
+      "Kecerdasan Artifisial",
+      "CIF63110 Kecerdasan Artifisial"
+    ],
+    "unacceptable_answers": [
+      "Kecerdasan Artifisial Lanjut",
+      "Penerapan Kecerdasan Artifisial"
+    ],
+    "source_pdf_page": 41,
+    "source_doc_page": "33",
+    "source_section": "9. Perubahan Kurikulum, Penyetaraan, dan Aturan Peralihan",
+    "source_table_title": "Tabel 9.2 Nama MK berubah SKS dan Kode berubah",
+    "other_valid_sources": [],
+    "content_type": "table",
+    "question_type": "course_equivalence",
+    "acceptance_criteria": "Benar jika menyebut Kecerdasan Artifisial. Kode MK dan perubahan SKS tidak wajib disebut. Salah jika menjawab Kecerdasan Artifisial Lanjut atau Penerapan Kecerdasan Artifisial.",
+    "validated_by": ""
+  },
+  {
+    "id": "Q20",
+    "author": "Zulfan (Anggota 5)",
+    "question": "Apa profil lulusan Program Studi Sarjana Teknik Informatika UB?",
+    "speech_act": "wh",
+    "question_category": "definition",
+    "expected_answer_type_coarse": "DESCRIPTION",
+    "expected_answer_type": "DESCRIPTION:definition",
+    "ground_truth": "Perekayasa perangkat lunak, infrastruktur komputasi, dan kecerdasan artifisial yang berjiwa technopreneur serta berintegritas tinggi dalam mewujudkan solusi berbasis sistem pintar untuk menunjang industri dan masyarakat.",
+    "acceptable_variants": [
+      "Perekayasa perangkat lunak, infrastruktur komputasi, dan kecerdasan artifisial yang berjiwa technopreneur serta berintegritas tinggi"
+    ],
+    "source_pdf_page": 10,
+    "source_doc_page": "3",
+    "source_section": "2. Profil Lulusan",
+    "source_table_title": null,
+    "other_valid_sources": [],
+    "content_type": "text",
+    "question_type": "graduate_profile",
+    "acceptance_criteria": "Benar jika memuat inti kalimat profil lulusan: perekayasa perangkat lunak, infrastruktur komputasi, dan kecerdasan artifisial, berjiwa technopreneur, dan berintegritas tinggi. Salah jika hanya menyebut standar acuannya (SKKNI, ACM, IABEE, APTIKOM) tanpa isi profil.",
+    "validated_by": ""
+  }
+]

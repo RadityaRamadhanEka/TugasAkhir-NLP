@@ -27,4 +27,6 @@ DEFAULT_EVAL_RESULTS_FILE = REPORTS_DIR / "evaluation_results.csv"
 # Parameter default retrieval, candidate ranking (MRR), & fallback
 DEFAULT_TOP_K = 5
 DEFAULT_ANSWER_TOP_M = 5
-MIN_CONFIDENCE_THRESHOLD = 0.2
+# Tanpa bukti jenis jawaban cocok (bobot 0.30) maupun pola cocok (0.20), skor kandidat
+# paling tinggi 0.50. Jadi ambang 0.5 = jawaban wajib punya minimal satu bukti kuat.
+MIN_CONFIDENCE_THRESHOLD = 0.5
