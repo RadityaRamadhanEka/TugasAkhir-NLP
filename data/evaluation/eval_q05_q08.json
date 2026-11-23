@@ -1,0 +1,84 @@
+[
+  {
+    "id": "Q05",
+    "author": "Radit (Anggota 2)",
+    "question": "Apa visi keilmuan Program Studi Sarjana Teknik Informatika pada Kurikulum 2024?",
+    "speech_act": "wh",
+    "question_category": "definition",
+    "expected_answer_type_coarse": "DESCRIPTION",
+    "expected_answer_type": "DESCRIPTION:definition",
+    "ground_truth": "Memberikan solusi permasalahan industri dan masyarakat melalui pengetahuan teoritis dan keterampilan dalam bidang rekayasa teknologi komputasi tepat guna berbasis sistem pintar.",
+    "acceptable_variants": [
+      "Mengusung visi keilmuan memberikan solusi permasalahan industri dan masyarakat melalui pengetahuan teoritis dan keterampilan dalam bidang rekayasa teknologi komputasi tepat guna berbasis sistem pintar."
+    ],
+    "source_pdf_page": 8,
+    "source_doc_page": "1",
+    "source_section": "1. Deskripsi Program Studi (B. Visi)",
+    "content_type": "text",
+    "question_type": "vision_mission",
+    "acceptance_criteria": "Menyebutkan inti visi keilmuan: solusi permasalahan industri dan masyarakat melalui pengetahuan teoritis dan keterampilan rekayasa teknologi komputasi tepat guna berbasis sistem pintar.",
+    "validated_by": ""
+  },
+  {
+    "id": "Q06",
+    "author": "Radit (Anggota 2)",
+    "question": "Berapa total SKS mata kuliah muatan program studi termasuk mekanisme MBKM?",
+    "speech_act": "wh",
+    "question_category": "factoid",
+    "expected_answer_type_coarse": "NUMERIC",
+    "expected_answer_type": "NUMERIC:count",
+    "ground_truth": "75 SKS.",
+    "acceptable_variants": [
+      "75",
+      "75 sks"
+    ],
+    "source_pdf_page": 19,
+    "source_doc_page": "11",
+    "source_section": "6. Struktur Kurikulum (Tabel 6.4)",
+    "content_type": "table",
+    "question_type": "total_sks",
+    "acceptance_criteria": "Menyebutkan angka 75 SKS untuk total mata kuliah muatan program studi sesuai Tabel 6.4.",
+    "validated_by": ""
+  },
+  {
+    "id": "Q07",
+    "author": "Radit (Anggota 2)",
+    "question": "Apakah mata kuliah Sistem Operasi memiliki praktikum?",
+    "speech_act": "yes_no",
+    "question_category": "yes_no",
+    "expected_answer_type_coarse": "DESCRIPTION",
+    "expected_answer_type": "DESCRIPTION:yes_no",
+    "ground_truth": "Ya, mata kuliah CIF62203 Sistem Operasi memiliki praktikum.",
+    "acceptable_variants": [
+      "Ya",
+      "Ya, ada praktikum"
+    ],
+    "source_pdf_page": 20,
+    "source_doc_page": "12",
+    "source_section": "6. Struktur Kurikulum (Distribusi Mata Kuliah Semester 2)",
+    "content_type": "table",
+    "question_type": "course_practicum",
+    "acceptance_criteria": "Menjawab Ya dan/atau merujuk pada CIF62203 Sistem Operasi yang memiliki tanda praktikum.",
+    "validated_by": ""
+  },
+  {
+    "id": "Q08",
+    "author": "Radit (Anggota 2)",
+    "question": "Mata kuliah pilihan apa saja yang direkomendasikan pada Learning Path Frontend Developer?",
+    "speech_act": "wh",
+    "question_category": "list",
+    "expected_answer_type_coarse": "ENTITY",
+    "expected_answer_type": "ENTITY:course_list",
+    "ground_truth": "Perancangan Pengalaman Pengguna (3 SKS), Pengujian Perangkat Lunak (3 SKS), Pemrograman Sistem Interaktif (4 SKS), dan Arsitektur berbasis layanan (4 SKS).",
+    "acceptable_variants": [
+      "Perancangan Pengalaman Pengguna, Pengujian Perangkat Lunak, Pemrograman Sistem Interaktif, Arsitektur berbasis layanan"
+    ],
+    "source_pdf_page": 25,
+    "source_doc_page": "17",
+    "source_section": "7. Mata Kuliah Pilihan (Gambar 7.1 Learning Path Frontend Developer)",
+    "content_type": "visual",
+    "question_type": "learning_path",
+    "acceptance_criteria": "Menyebutkan keempat mata kuliah pilihan pada Gambar 7.1 untuk Learning Path Frontend Developer.",
+    "validated_by": ""
+  }
+]
