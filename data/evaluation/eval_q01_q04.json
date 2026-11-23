@@ -1,0 +1,87 @@
+[
+  {
+    "id": "Q01",
+    "author": "Mas Syafiq (Anggota 1)",
+    "question": "Apa kode mata kuliah Basis Data?",
+    "speech_act": "wh",
+    "question_category": "factoid",
+    "expected_answer_type_coarse": "NUMERIC",
+    "expected_answer_type": "NUMERIC:code",
+    "ground_truth": "CIF62104.",
+    "acceptable_variants": [
+      "CIF62104",
+      "Kode mata kuliah Basis Data adalah CIF62104"
+    ],
+    "source_pdf_page": 20,
+    "source_doc_page": "12",
+    "source_section": "6. Struktur Kurikulum (Distribusi Mata Kuliah Semester 2)",
+    "content_type": "table",
+    "question_type": "course_code",
+    "acceptance_criteria": "Menyebutkan kode mata kuliah CIF62104 untuk Basis Data sesuai tabel Distribusi Mata Kuliah Semester 2.",
+    "validated_by": ""
+  },
+  {
+    "id": "Q02",
+    "author": "Mas Syafiq (Anggota 1)",
+    "question": "Mata kuliah Algoritma dan Struktur Data diambil di semester berapa?",
+    "speech_act": "wh",
+    "question_category": "factoid",
+    "expected_answer_type_coarse": "NUMERIC",
+    "expected_answer_type": "NUMERIC:order",
+    "ground_truth": "Semester 3.",
+    "acceptable_variants": [
+      "3",
+      "Semester 3",
+      "Semester tiga"
+    ],
+    "source_pdf_page": 20,
+    "source_doc_page": "12",
+    "source_section": "6. Struktur Kurikulum (Distribusi Mata Kuliah Semester 3)",
+    "content_type": "table",
+    "question_type": "course_semester",
+    "acceptance_criteria": "Menyebutkan semester 3 sebagai semester pengambilan mata kuliah Algoritma dan Struktur Data (COM60004).",
+    "validated_by": ""
+  },
+  {
+    "id": "Q03",
+    "author": "Mas Syafiq (Anggota 1)",
+    "question": "Apa kepanjangan dari MBKM?",
+    "speech_act": "wh",
+    "question_category": "definition",
+    "expected_answer_type_coarse": "ABBREVIATION",
+    "expected_answer_type": "ABBREVIATION:expansion",
+    "ground_truth": "Merdeka Belajar Kampus Merdeka.",
+    "acceptable_variants": [
+      "Merdeka Belajar Kampus Merdeka",
+      "Merdeka Belajar - Kampus Merdeka"
+    ],
+    "source_pdf_page": 8,
+    "source_doc_page": "1",
+    "source_section": "1. Deskripsi Program Studi (A. Deskripsi)",
+    "content_type": "text",
+    "question_type": "abbreviation",
+    "acceptance_criteria": "Menyebutkan kepanjangan MBKM yaitu Merdeka Belajar Kampus Merdeka sesuai Bab 1.A.",
+    "validated_by": ""
+  },
+  {
+    "id": "Q04",
+    "author": "Mas Syafiq (Anggota 1)",
+    "question": "Mata kuliah apa saja pada Learning Path Cloud Engineer?",
+    "speech_act": "wh",
+    "question_category": "list",
+    "expected_answer_type_coarse": "ENTITY",
+    "expected_answer_type": "ENTITY:course_list",
+    "ground_truth": "Administrasi sistem server (3 SKS), Penyediaan dan otomasi layanan (3 SKS), dan DevSecOps (4 SKS).",
+    "acceptable_variants": [
+      "Administrasi sistem server, Penyediaan dan otomasi layanan, DevSecOps",
+      "Administrasi Sistem Server (3 SKS), Penyediaan dan Otomasi Layanan (3 SKS), DevSecOps (4 SKS)"
+    ],
+    "source_pdf_page": 28,
+    "source_doc_page": "20",
+    "source_section": "7. Mata Kuliah Pilihan (Gambar 7.4 MK Learning Path Cloud Engineer)",
+    "content_type": "visual",
+    "question_type": "learning_path",
+    "acceptance_criteria": "Menyebutkan ketiga mata kuliah pilihan pada Gambar 7.4 untuk Learning Path Cloud Engineer yaitu Administrasi sistem server, Penyediaan dan otomasi layanan, dan DevSecOps.",
+    "validated_by": ""
+  }
+]
