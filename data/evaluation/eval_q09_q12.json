@@ -18,7 +18,7 @@
     "content_type": "table",
     "question_type": "course_prerequisite",
     "acceptance_criteria": "Menyebutkan mata kuliah prasyarat Kecerdasan Artifisial Lanjut (atau kode CIF64311) beserta nilai minimum C.",
-    "validated_by": ""
+    "validated_by": "Radit"
   },
   {
     "id": "Q10",
@@ -39,7 +39,7 @@
     "content_type": "visual",
     "question_type": "learning_path",
     "acceptance_criteria": "Menyebutkan kedua mata kuliah pada Gambar 7.10 yaitu Pemrosesan Bahasa Alami (3 SKS) dan Pemerolehan Informasi dan Penambangan Teks (4 SKS).",
-    "validated_by": ""
+    "validated_by": "Radit"
   },
   {
     "id": "Q11",
@@ -59,7 +59,7 @@
     "content_type": "text",
     "question_type": "curriculum_transition",
     "acceptance_criteria": "Menjelaskan bahwa nilai D pada MK berkode Kurikulum 2024 wajib diperbaiki (sedangkan MK Kurikulum 2020/2018 masih dapat memakai nilai D).",
-    "validated_by": ""
+    "validated_by": "Radit"
   },
   {
     "id": "Q12",
@@ -79,6 +79,6 @@
     "content_type": "table",
     "question_type": "cpl",
     "acceptance_criteria": "Menyebutkan inti kemampuan rekayasa pengembangan perangkat lunak berkualitas pada berbagai platform sesuai Tabel 3.1.",
-    "validated_by": ""
+    "validated_by": "Radit"
   }
 ]
