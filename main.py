@@ -26,6 +26,17 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Tampilkan output lengkap (termasuk top kandidat) dalam format JSON.",
     )
+    parser.add_argument(
+        "--web",
+        action="store_true",
+        help="Jalankan antarmuka web di http://127.0.0.1:<port> (butuh Flask).",
+    )
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=5000,
+        help="Port untuk mode --web (bawaan 5000).",
+    )
     return parser.parse_args()
 
 
@@ -63,6 +74,15 @@ def main() -> None:
         )
         return
 
+    if args.web:
+        from web.app import create_app
+
+        print("Menyiapkan indeks dan server web...")
+        app = create_app()
+        print(f"Buka http://127.0.0.1:{args.port} di browser. Tekan Ctrl+C untuk berhenti.")
+        app.run(host="127.0.0.1", port=args.port, debug=False)
+        return
+
     from src.pipeline.qa_pipeline import answer_question
 
     print("Menyiapkan indeks...")
@@ -88,7 +108,11 @@ def main() -> None:
 
     print("Ketik pertanyaan tentang Kurikulum 2024 TIF UB (kosongkan lalu Enter untuk keluar).")
     while True:
-        question = input("\nPertanyaan: ").strip()
+        try:
+            question = input("\nPertanyaan: ").strip()
+        except (KeyboardInterrupt, EOFError):
+            print()
+            break
         if not question:
             break
         ask(question)
